@@ -1,0 +1,102 @@
+.boxshadow {
+  position: relative;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  padding: 10px;
+  background: white;
+}
+
+
+.boxshadow::after {
+  content: '';
+  position: absolute;
+  z-index: -1; /* hide shadow behind image */
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+  width: 70%;
+  left: 15%; /* one half of the remaining 30% */
+  height: 100px;
+  bottom: 0;
+}
+
+
+.cardshadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.col-form-label {
+  text-align: right;
+}
+
+.btn-social {
+  width: 30px;
+}
+
+.language-select {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.language-select .btn {
+  background-size: contain !important;
+  background-position: 50% 50% !important;
+  background-repeat: no-repeat !important;
+  height: 23px;
+  width: 30px;
+}
+
+/*import image language*/
+.language-select .english {
+  background: url('/assets/images/languages/en.gif');
+}
+
+//select language thailand
+.language-select .thailand {
+  background: url('/assets/images/languages/th.gif');
+}
+
+.language-select .french {
+  background: url('/assets/images/languages/fr.gif');
+}
+
+.language-select .german {
+  background: url('/assets/images/languages/de.gif');
+}
+
+.language-select .portuguese {
+  background: url('/assets/images/languages/pt.gif');
+}
+
+.language-select .arabic {
+  background: url('/assets/images/languages/ar.gif');
+}
+
+.language-select .korean {
+  background: url('/assets/images/languages/kr.gif');
+}
+
+.account-controls a {
+  margin-left: inherit;
+}
+
+
+.last-control-group {
+  margin-bottom: -0.75rem;
+}
+
+
+.h-95 {
+  height: 95%;
+}
+
+
+@media (min-width: 768px) {
+  .login-container {
+    width: 700px;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .login-container {
+    width: 730px;
+  }
+}

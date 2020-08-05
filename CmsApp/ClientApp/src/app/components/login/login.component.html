@@ -1,0 +1,93 @@
+<div class="d-flex h-95">
+
+  <div class="login-container m-auto">
+    <!--*************box card shadow**********-->
+    <div class="card boxshadow">
+      <div class="card-header bg-primary dark text-white clearfix">
+        <i class="fa fa-lock" aria-hidden="true"></i> {{'login.Login' | translate}}
+        <button *ngIf="isModal" type="button" class="close float-right text-light" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="card-body">
+        <div class="col-md-10 offset-md-1">
+          <!--*******************form login **************************-->
+          <form *ngIf="formResetToggle" class="login" name="loginForm" #f="ngForm" novalidate
+                (ngSubmit)="f.form.valid ? login() :
+                          (!username.valid && showErrorAlert('login.alerts.UsernameRequired', 'login.alerts.EnterValidUsername'));
+                          (!password.valid && showErrorAlert('login.alerts.PasswordRequired', 'login.alerts.EnterValidPassword'))">
+            <div class="form-group row">
+              <label class="col-form-label col-md-4" for="login-username">{{'login.Username' | translate}}</label>
+              <div class="col-md-8">
+                <input type="text" id="login-username" name="username" placeholder="{{'login.UsernamePlaceholder' | translate}}" autocomplete="username" class="form-control" [ngClass]="{'is-valid': f.submitted && username.valid, 'is-invalid' : f.submitted && !username.valid}"
+                       [(ngModel)]="userLogin.userName" #username="ngModel" required />
+                <span class="invalid-feedback" *ngIf="f.submitted && !username.valid">
+                  {{'login.UsernameRequired' | translate}}
+                </span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-form-label col-md-4" for="login-password">{{'login.Password' | translate}}</label>
+              <div class="col-md-8">
+                <input type="password" id="login-password" name="password" placeholder="{{'login.PasswordPlaceholder' | translate}}" autocomplete="current-password" class="form-control" [ngClass]="{'is-valid': f.submitted && password.valid, 'is-invalid' : f.submitted && !password.valid}"
+                       [(ngModel)]="userLogin.password" #password="ngModel" required />
+                <span class="invalid-feedback" *ngIf="f.submitted && !password.valid">
+                  {{'login.PasswordRequired' | translate}}
+                </span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="offset-md-4 col-md-8">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="login-rememberme" name="rememberMe" [(ngModel)]="userLogin.rememberMe">
+                  <label class="form-check-label" for="login-rememberme">{{'login.RememberMe' | translate}}</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="offset-md-4 col-md-8">
+                <!--connect login-->
+                <button *ngIf="!isExternalLogin" type="submit" class="btn btn-primary" [disabled]="isLoading">
+                  <i *ngIf="isLoading" class='fa fa-circle-o-notch fa-spin'></i> {{isLoading ? ('login.LoggingIn' | translate) : ('login.Login' | translate)}}
+                </button>
+
+                <!--****connect login by google, facebook, twiter****-->
+                <div *ngIf="!isLoading || isExternalLogin" class="d-flex h-100 float-right">
+                  <span class="align-self-center text-muted mr-1">{{'login.ConnectWith' | translate}} </span>
+                  <button class="align-self-center btn btn-outline-danger btn-sm  btn-social" (click)="loginWithGoogle()" [disabled]="isLoading"><i class="fa fa-google"></i></button>
+                  <button class="align-self-center btn btn-outline-primary btn-sm btn-social mx-1" (click)="loginWithFacebook()" [disabled]="isLoading"><i class="fa fa-facebook"></i></button>
+                  <button class="align-self-center btn btn-outline-info btn-sm btn-social" (click)="loginWithTwitter()" [disabled]="isLoading"><i class="fa fa-twitter"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="!isModal" class="col-md-12">
+              <hr />
+            </div>
+
+            <!--****if user no account or if user forgot account  for register or reset password*****-->
+            <div *ngIf="!isModal" class="col-md-12 last-control-group account-controls">
+              <span class="card-text">{{'login.RegisterIntro' | translate}} </span><a class="card-link" routerLink="/register">{{'login.Register' | translate}}</a>
+              |
+              <a class="card-link" routerLink="/recoverpassword">{{'login.RecoverPassword' | translate}}</a>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- **********************select Language******************** -->
+    <div *ngIf="!isModal" ngPreserveWhitespaces class="language-select">
+      <button type="button" (click)="changeLanguage('en')" class="btn english"></button>
+      <button type="button" (click)="changeLanguage('th')" class="btn thailand"></button>
+
+      <!--<button type="button" (click)="changeLanguage('fr')" class="btn french"></button>
+      <button type="button" (click)="changeLanguage('de')" class="btn german"></button>
+      <button type="button" (click)="changeLanguage('pt')" class="btn portuguese"></button>
+      <button type="button" (click)="changeLanguage('ar')" class="btn arabic"></button>
+      <button type="button" (click)="changeLanguage('ko')" class="btn korean"></button>-->
+    </div>
+  </div>
+</div>

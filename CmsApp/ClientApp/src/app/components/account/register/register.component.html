@@ -1,0 +1,94 @@
+<div class="d-flex h-90">
+  <div class="register-container m-auto">
+    <div class="card boxshadow">
+      <div class="card-header bg-primary dark text-white clearfix">
+        <i class="fa fa-user-plus" aria-hidden="true"></i> {{'register.RegisterUser' | translate}}
+      </div>
+      <div class="card-body">
+        <div class="col-md-10 offset-md-1">
+
+          <form *ngIf="formResetToggle" class="register" name="registerForm" #f="ngForm" novalidate
+                (ngSubmit)="f.form.valid ? register() :
+                (!username.valid && showErrorAlert('register.alerts.UsernameRequired', 'register.alerts.EnterUsername'));
+
+                (email.errors?.required && showErrorAlert('register.alerts.EmailRequired', 'register.alerts.EnterEmail'));
+                (email.errors?.pattern && showErrorAlert('register.alerts.InvalidEmail', 'register.alerts.EnterValidEmail'));
+
+                (!password.valid && showErrorAlert('register.alerts.NewPasswordRequired', 'register.alerts.EnterNewValidPassword'));
+
+                (password.valid && confirmPassword.errors?.required && showErrorAlert('register.alerts.ConfirmationPasswordRequired', 'register.alerts.EnterConfirmationPassword'));
+                (password.valid && confirmPassword.errors?.validateEqual && showErrorAlert('register.alerts.PasswordMismatch', 'register.alerts.NewAndConfirmationPasswordMismatch'))">
+            <div class="form-group row">
+              <label class="col-form-label col-md-4" for="register-username">{{'register.Username' | translate}}</label>
+              <div class="col-md-8">
+                <input type="text" id="register-username" name="username" placeholder="{{'register.UsernamePlaceholder' | translate}}" class="form-control" [ngClass]="{'is-valid': f.submitted && username.valid, 'is-invalid' : f.submitted && !username.valid}"
+                       [(ngModel)]="userEdit.userName" #username="ngModel" required />
+                <span class="invalid-feedback" *ngIf="f.submitted && !username.valid">
+                  {{'register.UsernameRequired' | translate}}
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-form-label col-md-4" for="register-email">{{'register.Email' | translate}}</label>
+              <div class="col-md-8">
+                <input type="text" id="register-email" name="email" placeholder="{{'register.EmailPlaceholder' | translate}}" class="form-control" [ngClass]="{'is-valid': f.submitted && email.valid, 'is-invalid' : f.submitted && !email.valid}"
+                       [(ngModel)]="userEdit.email" #email="ngModel" required maxlength="200" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" />
+                <span class="invalid-feedback" *ngIf="f.submitted && email.errors?.required">
+                  {{'register.EmailRequired' | translate}}
+                </span>
+                <span class="invalid-feedback" *ngIf="f.submitted && email.errors?.pattern">
+                  {{'register.InvalidEmail' | translate}}
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-form-label col-md-4" for="register-password">{{'register.Password' | translate}}</label>
+              <div class="col-md-8">
+                <input type="password" id="register-password" name="password" placeholder="{{'register.PasswordPlaceholder' | translate}}" class="form-control" [ngClass]="{'is-valid': f.submitted && password.valid, 'is-invalid' : f.submitted && !password.valid}"
+                       [(ngModel)]="userEdit.newPassword" #password="ngModel" required minlength="6" validateEqual="confirmPassword" reverse="true" />
+                <span class="invalid-feedback" *ngIf="f.submitted && !password.valid">
+                  {{'register.PasswordRequired' | translate}}
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-form-label col-md-4" for="register-confirm-password">{{'register.ConfirmPassword' | translate}}</label>
+              <div class="col-md-8">
+                <input type="password" id="register-confirm-password" name="confirmPassword" placeholder="{{'register.ConfirmPasswordPlaceholder' | translate}}" class="form-control" [ngClass]="{'is-valid': f.submitted && confirmPassword.valid, 'is-invalid' : f.submitted && !confirmPassword.valid}"
+                       [(ngModel)]="userEdit.confirmPassword" #confirmPassword="ngModel" required validateEqual="password" />
+                <span class="invalid-feedback" *ngIf="f.submitted && confirmPassword.errors?.required">
+                  {{'register.ConfirmPasswordRequired' | translate}}
+                </span>
+                <span class="invalid-feedback" *ngIf="f.submitted && confirmPassword.errors?.validateEqual && !confirmPassword.errors?.required">
+                  {{'register.PasswordMismatch' | translate}}
+                </span>
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <div class="offset-md-4 col-md-8">
+                <button type="submit" class="btn btn-primary" [disabled]="isLoading">
+                  <i *ngIf="isLoading" class='fa fa-circle-o-notch fa-spin'></i> {{isLoading ? ('register.Processing' | translate) : ('register.Register' | translate)}}
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <hr />
+            </div>
+            <div class="col-md-12 last-control-group account-controls">
+              <span class="card-text">{{'register.LoginIntro' | translate}} </span><a class="card-link" routerLink="/login">{{'register.Login' | translate}}</a>
+              |
+              <a class="card-link" routerLink="/recoverpassword">{{'register.RecoverPassword' | translate}}</a>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

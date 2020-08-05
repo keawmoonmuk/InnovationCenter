@@ -1,0 +1,20 @@
+<div class="d-flex h-90">
+  <div class="login-container m-auto">
+    <div class="card boxshadow">
+      <div class="card-header bg-primary dark text-white clearfix">
+        <span>
+          <i class="fa fa-envelope"></i>
+        </span>
+        {{'confirmEmail.ConfirmEmail' | translate}}
+      </div>
+      <div class="card-body">
+        <div>
+          {{message}}
+        </div>
+        <div class="float-right">
+          <button type="button" routerLink="/login" class="btn" [ngClass]="{'btn-outline-success': isSuccess, 'btn-outline-danger' : !isSuccess}">{{'confirmEmail.Finish' | translate}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

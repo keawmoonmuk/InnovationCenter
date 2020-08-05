@@ -1,0 +1,76 @@
+<div class="container">
+  <!--title header-->
+  <header class="pageHeader">
+    <div>
+      <h3>
+        <i class="fa fa-credit-card" aria-hidden="true"></i> {{'pageHeader.Payment' | translate}}
+
+        <button type="button" class="btn btn-outline-success float-right">Excel </button>
+        <button type="button" class="btn btn-outline-danger float-right" style="margin-right:5px;">Pdf</button>
+      </h3>
+    </div>
+   
+  </header>
+  
+  <!--content page-->
+  <div [@fadeInOut]>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">NO.</th>
+          <th scope="col">Bill No.</th>
+          <th scope="col">ชื่อ</th>
+          <th scope="col">รายการ</th>
+          <th scope="col">เวลา</th>
+          <th scope="col">สิทธิ์ใช้บริการ</th>
+          <th scope="col">ราคา</th>
+          <th scope="col">ส่วนลดสิทธิ์ใช้บริการ</th>
+          <th scope="col">ชำระเงิน</th>
+          <th scope="col">สถานะ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>001</td>
+          <td>DEMO TEST 1</td>
+          <td>ฝังเข็มเฉพาะจุด</td>
+          <td>13/08/2563 12.34.00 </td>
+          <td>อปท ข้าราชการ</td>
+          <td>250</td>
+          <td>100</td>
+          <td>150</td>
+          <td><span class="badge badge-success">Complete</span></td>
+
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>002</td>
+          <td>DEMO TEST 2</td>
+          <td>ฝังเข็มเฉพาะจุด</td>
+          <td>13/08/2563 12.34.00 </td>
+          <td>อปท ข้าราชการ</td>
+          <td>250</td>
+          <td>100</td>
+          <td>150</td>
+          <td><span class="badge badge-success">Complete</span></td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>003</td>
+          <td>DEMO TEST 3</td>
+          <td>ฝังเข็มเฉพาะจุด</td>
+          <td>13/08/2563 12.34.00 </td>
+          <td>อปท ข้าราชการ</td>
+          <td>250</td>
+          <td>100</td>
+          <td>150</td>
+          <td><span class="badge badge-danger">Pending</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

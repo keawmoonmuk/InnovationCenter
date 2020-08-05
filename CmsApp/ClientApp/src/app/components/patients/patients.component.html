@@ -1,0 +1,387 @@
+ 
+  <div class="container">
+    <!--******title header*********-->
+    <header class="pageHeader">
+      <h3><i class="fa fa-id-card" aria-hidden="true"></i> {{'pageHeader.Patient' | translate}}</h3>
+    </header>
+
+    <!--****************content page*****************-->
+ <div [@fadeInOut]>
+
+      <div class="container-fluid p-3 my-3 border">
+
+        <form>
+          <!-- <h2>Register</h2> -->
+          <!--*************************row  id card , HN *************************-->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="first">เลขบัตรประชาชน</label>
+                <input type="text" class="form-control" placeholder="" id="first" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="last"> HN</label>
+                <input type="text" class="form-control" placeholder="" id="last" />
+              </div>
+            </div>
+          </div>
+
+          <!--****************** prefix Name , name , surname*********************** -->
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="company">คำนำหน้า</label>
+                <input type="text" class="form-control" placeholder="" id="company" />
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <div class="form-group">
+                <label for="last"> ชื่อ</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="form-group">
+                <label for="last"> นามสกุล</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- *******************brithofdate , age ***********************-->
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="company">วัน/เดือน/ปีเกิด</label>
+                <input type="text" class="form-control" placeholder="" id="company" />
+              </div>
+            </div>
+
+            <div class="col-md-1">
+              <div class="form-group">
+                <label for="last">อายุ</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="last">เชื้อชาติ</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="last"> สัญชาติ</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="last">ศาสนา</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- ******************เพศ สถานภาพ อาชีพ*************************** -->
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="first">เพศ</label>
+                <input type="text" class="form-control" placeholder="" id="first" />
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="last"> สถานภาพ</label>
+                <input type="text" class="form-control" placeholder="" id="last" />
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="form-group">
+                <label for="last"> อาชีพ</label>
+                <input type="text" class="form-control" placeholder="" id="last" />
+              </div>
+            </div>
+          </div>
+
+          <!-- ***********************address current  **********************-->
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group">
+                <label for="company">ที่อยู่ปัจจุบัน</label>
+                <input type="text" class="form-control" placeholder="" id="company" />
+              </div>
+            </div>
+
+            <div class="col-md-1">
+              <div class="form-group">
+                <label for="last">หมู่</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="last"> ซอย</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="last">ถนน</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="last"> ตำบล/แขวง</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- **********************address current ************************ -->
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="last"> อำเภอ/เขต</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="last">จังหวัด</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="last">รหัสไปรษณีย์</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="last">โทรศัพท์</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+          </div>
+
+          <!--************************** row email ***********************   -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="email">อีเมลล์</label>
+                <input type="email" class="form-control" id="email" placeholder="" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="url">เว็ปไซต์</label>
+                <input type="url" class="form-control" id="url" placeholder="" />
+              </div>
+            </div>
+          </div>
+
+          <!-- ****************************** row  mather fother********************  -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="email">ชื่อ-นามสกุล บิดา</label>
+                <input type="email" class="form-control" id="email" placeholder="" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="url">ชื่อ-นามสกุล มารดา</label>
+                <input type="url" class="form-control" id="url" placeholder="" />
+              </div>
+            </div>
+            <!--  col-md-6   -->
+          </div>
+
+          <!-- ***************************** row ผู้ติดต่อได้กรณีฉุกเฉิน  ************************* -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="email">ผู้ติดต่อได้กรณีฉุกเฉิน</label>
+                <input type="email" class="form-control" id="email" placeholder="" />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="url">ที่อยู่สามารถติดต่อได้</label>
+                <input type="url" class="form-control" id="url" placeholder="" />
+              </div>
+            </div>
+          </div>
+
+          <!--********************** telephone********************* -->
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="last">โทรศัพท์</label>
+                <input type="text" class="form-control" placeholder="" />
+              </div>
+            </div>
+
+            <div class="col-md-8">
+              <div class="form-group">
+                <label for="last"><ins>ผู้ติดต่อได้เกี่ยวข้องเป็น</ins></label>
+                <div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadioInline1">บิดา</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadioInline2">มารดา</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadioInline3">บุตร</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline4" name="customRadioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadioInline4">ภรรยา</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline5" name="customRadioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadioInline5">สามี</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline6" name="customRadioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadioInline6">ญาติ</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline7" name="customRadioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadioInline7">เพื่อน</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline8" name="customRadioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadioInline8">ผู้ปกครอง</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline9" name="customRadioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadioInline9">นายจ้าง</label>
+                  </div>
+
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline10" name="customRadioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="customRadioInline10">อื่นๆ โปรดระบุ</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <!-- ***************************สิทธิ์การักษา****************************** -->
+          <div class="row">
+            <div class="col-md-6">
+              <label for="contact-preference"><ins>สิทธิ์การักษา</ins></label>
+
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input" />
+                <label class="custom-control-label" for="customRadio1">ชำระเงินเอง</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio2" name="customRadio1" class="custom-control-input" />
+                <label class="custom-control-label" for="customRadio2">เบิกได้/จ่ายตรง</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio3" name="customRadio1" class="custom-control-input" />
+                <label class="custom-control-label" for="customRadio3">ประกันสังคม</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio4" name="customRadio1" class="custom-control-input" />
+                <label class="custom-control-label" for="customRadio4">ประกันสุขภาพถ้วนหน้า</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio5" name="customRadio1" class="custom-control-input" />
+                <label class="custom-control-label" for="customRadio5">ผู้พิการ/ทุพพลภาพ</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio6" name="customRadio1" class="custom-control-input" />
+                <label class="custom-control-label" for="customRadio6">อื่นๆ</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="contact-preference"><ins>ประวัติการแพ้ยา</ins></label>
+
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio7" name="customRadio2" class="custom-control-input" />
+                <label class="custom-control-label" for="customRadio7">ไม่เคยแพ้ยา</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio8" name="customRadio2" class="custom-control-input" />
+                <label class="custom-control-label" for="customRadio8">
+                  เคยแพ้ยา โปรดระบุ
+                </label>
+              </div>
+              <br />
+              <div class="form-group">
+                <label for="company">โรคประจำตัว</label>
+                <input type="text" class="form-control" placeholder="" id="company" />
+              </div>
+
+              <div class="form-group">
+                <label for="last"><ins>หมู่เลือด</ins></label>
+                <div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="radioInline1" name="radioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="radioInline1">A</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="radioInline2" name="radioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="radioInline2">B</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="radioInline3" name="radioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="radioInline3">O</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="radioInline4" name="radioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="radioInline4">AB</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="radioInline5" name="radioInline1" class="custom-control-input" />
+                    <label class="custom-control-label" for="radioInline5">อื่นๆ โปรดระบุ</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+          <!-- ********************row Print consent form ****************** -->
+          <div class="row">
+            <div class="col text-center">
+              <button type="submit" class="btn btn-primary">
+                PRINT FORM
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <br /><br />
+
+    </div>
+
+
+  </div>
