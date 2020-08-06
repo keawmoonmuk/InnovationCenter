@@ -108,6 +108,7 @@ export class AlertService {
     }
   }
 
+  //show message
   private showMessageHelper(summary: string, detail: string, severity: MessageSeverity, isSticky: boolean, onRemove?: () => any) {
 
     const alertCommand: AlertCommand = {
@@ -123,6 +124,7 @@ export class AlertService {
     this.messages.next({ operation: 'clear' });
   }
 
+  // start Loading Message
   startLoadingMessage(message = 'Loading...', caption = '') {
     clearTimeout(this.loadingMessageTimeoutId);
 
@@ -131,6 +133,7 @@ export class AlertService {
     }, 1000);
   }
 
+  // stop loading message
   stopLoadingMessage() {
     clearTimeout(this.loadingMessageTimeoutId);
     this.resetStickyMessage();

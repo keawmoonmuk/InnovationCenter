@@ -21,7 +21,7 @@ import { UserLogin } from '../../models/user-login.model';
 export class LoginComponent implements OnInit, OnDestroy {
 
 
-  userLogin = new UserLogin();        //class Userlogin 
+  userLogin = new UserLogin();        
   isLoading = false;
   isExternalLogin = false;
   formResetToggle = true;
@@ -33,14 +33,12 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   gT = (key: string | Array<string>, interpolateParams?: object) => this.translationService.getTranslation(key, interpolateParams);
 
-
   constructor(private alertService: AlertService, private translationService: AppTranslationService, private authService: AuthService, private configurations: ConfigurationService) {
 
   }
 
-
   ngOnInit() {
-    //rememberMe
+   
     this.userLogin.rememberMe = this.authService.rememberMe;
 
     if (this.getShouldRedirect()) {
@@ -91,7 +89,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.configurations.language = language;
   }
 
-  //*****login page********
+  //*****************login page***********************
   login() {
     this.isLoading = true;
     this.isExternalLogin = false;

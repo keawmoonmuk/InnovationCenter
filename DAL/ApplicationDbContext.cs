@@ -16,6 +16,7 @@ using DAL.Models.Interfaces;
 
 namespace DAL
 {
+    //import ApplicationUser , ApplicationRole
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
         //entities
@@ -76,6 +77,7 @@ namespace DAL
             builder.Entity<OrderDetail>().Property(p => p.Discount).HasColumnType(priceDecimalType);
         }
 
+        //บันทึกการเปลี่ยนแปลง
         public override int SaveChanges()
         {
             UpdateAuditEntities();
@@ -100,6 +102,7 @@ namespace DAL
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
 
+        //Update AuditEntities ตรวจสอบ
         private void UpdateAuditEntities()
         {
             var modifiedEntries = ChangeTracker.Entries()
