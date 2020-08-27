@@ -12,10 +12,10 @@ using Microsoft.EntityFrameworkCore;
 using DAL.Models;
 using DAL.Repositories.Interfaces;
 
-namespace DAL.Repositories
-{
-    public class CustomerRepository : Repository<Customer>, ICustomerRepository
-    {
+namespace DAL.Repositories {
+    //public class CustomerRepository : Repository<Customer>, ICustomerRepository
+    public class CustomerRepository : Repository<Customer> {
+
         public CustomerRepository(ApplicationDbContext context) : base(context)
         { }
 
@@ -26,14 +26,14 @@ namespace DAL.Repositories
         }
 
 
-        public IEnumerable<Customer> GetAllCustomersData()
-        {
-            return _appContext.Customers
-                .Include(c => c.Orders).ThenInclude(o => o.OrderDetails).ThenInclude(d => d.Product)
-                .Include(c => c.Orders).ThenInclude(o => o.Cashier)
-                .OrderBy(c => c.Name)
-                .ToList();
-        }
+        //public IEnumerable<Customer> GetAllCustomersData()
+        //{
+        //    return _appContext.Customers
+        //        // .Include(c => c.Orders).ThenInclude(o => o.OrderDetails).ThenInclude(d => d.Product)
+        //       // .Include(c => c.Orders).ThenInclude(o => o.Cashier)
+        //        .OrderBy(c => c.Name)
+        //        .ToList();
+        //}
 
 
 

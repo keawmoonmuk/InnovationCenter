@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CmsApp\\DAL\\DAL.csproj": {}
+    "D:\\CMS PROJECT\\CmsApp\\DAL\\DAL.csproj": {}
   },
   "projects": {
-    "D:\\CmsApp\\DAL\\DAL.csproj": {
+    "D:\\CMS PROJECT\\CmsApp\\DAL\\DAL.csproj": {
       "version": "4.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CmsApp\\DAL\\DAL.csproj",
+        "projectUniqueName": "D:\\CMS PROJECT\\CmsApp\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "D:\\CmsApp\\DAL\\DAL.csproj",
+        "projectPath": "D:\\CMS PROJECT\\CmsApp\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\MDT\\.nuget\\packages\\",
-        "outputPath": "D:\\CmsApp\\DAL\\obj\\",
+        "outputPath": "D:\\CMS PROJECT\\CmsApp\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

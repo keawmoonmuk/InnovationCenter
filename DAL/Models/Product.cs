@@ -35,6 +35,6 @@ namespace DAL.Models
         public ProductCategory ProductCategory { get; set; }
 
         public ICollection<Product> Children { get; set; }      // โดย class Product สามารถบรรจุ Product ได้หลายรายการ
-        public ICollection<OrderDetail> OrderDetails { get; set; } // โดย class  Product สามารถบรรจุ OrdersDetail ได้หลายรายการ
+       // public ICollection<OrderDetail> OrderDetails { get; set; } // โดย class  Product สามารถบรรจุ OrdersDetail ได้หลายรายการ
     }
 }

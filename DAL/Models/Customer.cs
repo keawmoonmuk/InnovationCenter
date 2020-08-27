@@ -25,7 +25,6 @@ namespace DAL.Models
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
 
-
-        public ICollection<Order> Orders { get; set; }     // โดย class Customer บรรจุ Orders ได้หลายรายการ
+       // public ICollection<Order> Orders { get; set; }     // โดย class Customer บรรจุ Orders ได้หลายรายการ
     }
 }

@@ -8511,11 +8511,11 @@
   "project": {
     "version": "4.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CmsApp\\CmsApp\\CmsApp.csproj",
+      "projectUniqueName": "D:\\CMS PROJECT\\CmsApp\\CmsApp\\CmsApp.csproj",
       "projectName": "CmsApp",
-      "projectPath": "D:\\CmsApp\\CmsApp\\CmsApp.csproj",
+      "projectPath": "D:\\CMS PROJECT\\CmsApp\\CmsApp\\CmsApp.csproj",
       "packagesPath": "C:\\Users\\MDT\\.nuget\\packages\\",
-      "outputPath": "D:\\CmsApp\\CmsApp\\obj\\",
+      "outputPath": "D:\\CMS PROJECT\\CmsApp\\CmsApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8534,8 +8534,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\CmsApp\\DAL\\DAL.csproj": {
-              "projectPath": "D:\\CmsApp\\DAL\\DAL.csproj"
+            "D:\\CMS PROJECT\\CmsApp\\DAL\\DAL.csproj": {
+              "projectPath": "D:\\CMS PROJECT\\CmsApp\\DAL\\DAL.csproj"
             }
           }
         }

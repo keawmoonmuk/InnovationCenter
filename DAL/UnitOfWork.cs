@@ -13,8 +13,9 @@ using DAL.Repositories.Interfaces;
 
 namespace DAL
 {
-    public class UnitOfWork : IUnitOfWork
-    {
+    //public class UnitOfWork : IUnitOfWork
+        public class UnitOfWork 
+        {
         readonly ApplicationDbContext _context;
 
         ICustomerRepository _customers;
@@ -30,16 +31,16 @@ namespace DAL
 
 
 
-        public ICustomerRepository Customers
-        {
-            get
-            {
-                if (_customers == null)
-                    _customers = new CustomerRepository(_context);
+        //public ICustomerRepository Customers
+        //{
+        //    get
+        //    {
+        //        if (_customers == null)
+        //            _customers = new CustomerRepository(_context);
 
-                return _customers;
-            }
-        }
+        //        return _customers;
+        //    }
+        //}
 
 
 

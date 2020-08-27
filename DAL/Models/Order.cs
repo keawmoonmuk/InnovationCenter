@@ -29,6 +29,6 @@ namespace DAL.Models
         public Customer Customer { get; set; }
 
 
-        public ICollection<OrderDetail> OrderDetails { get; set; }   // โดย class Order สามารถบรรจุ OrdersDetail ได้หลายรายการ
+       // public ICollection<OrderDetail> OrderDetails { get; set; }   // โดย class Order สามารถบรรจุ OrdersDetail ได้หลายรายการ
     }
 }

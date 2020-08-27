@@ -30,6 +30,8 @@ using System.Reflection;
 using AppPermissions = DAL.Core.ApplicationPermissions;
 using Microsoft.Extensions.Options;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;    //mysql 
+using DAL.DATA;
+using DAL.Models.Identity;
 
 namespace CmsApp
 {
@@ -191,7 +193,7 @@ namespace CmsApp
 
 
             // Repositories
-            services.AddScoped<IUnitOfWork, HttpUnitOfWork>();
+           // services.AddScoped<IUnitOfWork, HttpUnitOfWork>();
             services.AddScoped<IAccountManager, AccountManager>();
 
             // Auth Handlers

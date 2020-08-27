@@ -6,7 +6,7 @@
 using DAL.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;             //import Logging
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.Core;
 using DAL.Core.Interfaces;
-using IdentityServer4.EntityFramework.DbContexts;
+using IdentityServer4.EntityFramework.DbContexts;  //import IdentityServer4 EntityFramwork DbContext
 using DAL;
 using IdentityServer4.EntityFramework.Mappers;
 using Microsoft.Extensions.Options;
