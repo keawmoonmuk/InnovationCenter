@@ -50,8 +50,6 @@ namespace CmsApp.Helpers
             return await SendEmailAsync(from, new MailboxAddress[] { to }, subject, body, config, isHtml);
         }
 
-
-
         public async Task<(bool success, string errorMsg)> SendEmailAsync(
             string senderName,
             string senderEmail,
@@ -67,7 +65,6 @@ namespace CmsApp.Helpers
 
             return await SendEmailAsync(from, new MailboxAddress[] { to }, subject, body, config, isHtml);
         }
-
 
         //For background tasks such as sending emails, its good practice to use job runners such as hangfire https://www.hangfire.io
         //or a service such as SendGrid https://sendgrid.com/

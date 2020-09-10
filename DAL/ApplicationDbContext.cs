@@ -56,39 +56,6 @@ namespace DAL {
             builder.Entity<ApplicationRole>().HasMany(r => r.Claims).WithOne().HasForeignKey(c => c.RoleId).IsRequired().OnDelete(DeleteBehavior.Cascade);
             builder.Entity<ApplicationRole>().HasMany(r => r.Users).WithOne().HasForeignKey(r => r.RoleId).IsRequired().OnDelete(DeleteBehavior.Cascade);
 
-            //Customer
-            //builder.Entity<Customer>().Property(c => c.Name).IsRequired().HasMaxLength(100);
-            //builder.Entity<Customer>().HasIndex(c => c.Name);
-            //builder.Entity<Customer>().Property(c => c.Email).HasMaxLength(100);
-            //builder.Entity<Customer>().Property(c => c.PhoneNumber).IsUnicode(false).HasMaxLength(30);
-            //builder.Entity<Customer>().Property(c => c.City).HasMaxLength(50);
-            //builder.Entity<Customer>().ToTable($"App{nameof(this.Customers)}");
-
-            //ProductCategory
-            //builder.Entity<ProductCategory>().Property(p => p.Name).IsRequired().HasMaxLength(100);
-            //builder.Entity<ProductCategory>().Property(p => p.Description).HasMaxLength(500);
-            //builder.Entity<ProductCategory>().ToTable($"App{nameof(this.ProductCategories)}");      
-
-            //Product
-            //builder.Entity<Product>().Property(p => p.Name).IsRequired().HasMaxLength(100);
-            //builder.Entity<Product>().HasIndex(p => p.Name);
-            //builder.Entity<Product>().Property(p => p.Description).HasMaxLength(500);
-            //builder.Entity<Product>().Property(p => p.Icon).IsUnicode(false).HasMaxLength(256);
-            //builder.Entity<Product>().HasOne(p => p.Parent).WithMany(p => p.Children).OnDelete(DeleteBehavior.Restrict);
-            //builder.Entity<Product>().ToTable($"App{nameof(this.Products)}");
-            //builder.Entity<Product>().Property(p => p.BuyingPrice).HasColumnType(priceDecimalType);
-            //builder.Entity<Product>().Property(p => p.SellingPrice).HasColumnType(priceDecimalType);
-
-            //Order
-            //builder.Entity<Order>().Property(o => o.Comments).HasMaxLength(500);
-            //builder.Entity<Order>().ToTable($"App{nameof(this.Orders)}");
-            //builder.Entity<Order>().Property(p => p.Discount).HasColumnType(priceDecimalType);
-
-            ////OrderDetatil
-            //builder.Entity<OrderDetail>().ToTable($"App{nameof(this.OrderDetails)}");
-            //builder.Entity<OrderDetail>().Property(p => p.UnitPrice).HasColumnType(priceDecimalType);
-            //builder.Entity<OrderDetail>().Property(p => p.Discount).HasColumnType(priceDecimalType);
-
             //***************************************************************************    
             //Admin
             builder.Entity<Tbl_Admins>().Property(a => a.AdminName).IsRequired().HasMaxLength(255);       //ต้องระบุ, Max Length 255

@@ -52,7 +52,6 @@ D:\CmsApp\DAL\bin\Debug\netcoreapp3.1\DAL.runtimeconfig.dev.json
 D:\CmsApp\DAL\bin\Debug\netcoreapp3.1\DAL.dll
 D:\CmsApp\DAL\bin\Debug\netcoreapp3.1\DAL.pdb
 D:\CmsApp\DAL\obj\Debug\netcoreapp3.1\DAL.csprojAssemblyReference.cache
-D:\CmsApp\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache
 D:\CmsApp\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfoInputs.cache
 D:\CmsApp\DAL\obj\Debug\netcoreapp3.1\DAL.AssemblyInfo.cs
 D:\CmsApp\DAL\obj\Debug\netcoreapp3.1\DAL.dll
@@ -70,3 +69,4 @@ D:\CMS PROJECT\CmsApp\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.c
 D:\CMS PROJECT\CmsApp\DAL\obj\Debug\netcoreapp3.1\DAL.dll
 D:\CMS PROJECT\CmsApp\DAL\obj\Debug\netcoreapp3.1\DAL.pdb
 D:\CMS PROJECT\CmsApp\DAL\obj\Debug\netcoreapp3.1\DAL.genruntimeconfig.cache
+D:\CmsApp\DAL\obj\Debug\netcoreapp3.1\DAL.csproj.CoreCompileInputs.cache

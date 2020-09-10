@@ -33,8 +33,6 @@ namespace CmsApp.Controllers
             _emailSender = emailSender;
         }
 
-
-
         // GET: api/values
         [HttpGet]
         public IActionResult Get()
@@ -68,8 +66,6 @@ namespace CmsApp.Controllers
 
             return "Error: " + errorMsg;
         }
-
-
 
         // GET api/values/5
         [HttpGet("{id}")]

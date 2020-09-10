@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CMS PROJECT\\CmsApp\\CmsApp\\CmsApp.csproj": {}
+    "D:\\CmsApp\\CmsApp\\CmsApp.csproj": {}
   },
   "projects": {
-    "D:\\CMS PROJECT\\CmsApp\\CmsApp\\CmsApp.csproj": {
+    "D:\\CmsApp\\CmsApp\\CmsApp.csproj": {
       "version": "4.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CMS PROJECT\\CmsApp\\CmsApp\\CmsApp.csproj",
+        "projectUniqueName": "D:\\CmsApp\\CmsApp\\CmsApp.csproj",
         "projectName": "CmsApp",
-        "projectPath": "D:\\CMS PROJECT\\CmsApp\\CmsApp\\CmsApp.csproj",
+        "projectPath": "D:\\CmsApp\\CmsApp\\CmsApp.csproj",
         "packagesPath": "C:\\Users\\MDT\\.nuget\\packages\\",
-        "outputPath": "D:\\CMS PROJECT\\CmsApp\\CmsApp\\obj\\",
+        "outputPath": "D:\\CmsApp\\CmsApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\CMS PROJECT\\CmsApp\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\CMS PROJECT\\CmsApp\\DAL\\DAL.csproj"
+              "D:\\CmsApp\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\CmsApp\\DAL\\DAL.csproj"
               }
             }
           }
@@ -128,6 +128,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.2, 3.1.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -140,14 +158,14 @@
         }
       }
     },
-    "D:\\CMS PROJECT\\CmsApp\\DAL\\DAL.csproj": {
+    "D:\\CmsApp\\DAL\\DAL.csproj": {
       "version": "4.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CMS PROJECT\\CmsApp\\DAL\\DAL.csproj",
+        "projectUniqueName": "D:\\CmsApp\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "D:\\CMS PROJECT\\CmsApp\\DAL\\DAL.csproj",
+        "projectPath": "D:\\CmsApp\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\MDT\\.nuget\\packages\\",
-        "outputPath": "D:\\CMS PROJECT\\CmsApp\\DAL\\obj\\",
+        "outputPath": "D:\\CmsApp\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -206,6 +224,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.2, 3.1.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
