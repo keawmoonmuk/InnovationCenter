@@ -14,9 +14,13 @@ using ExtensionGrantModels = IdentityServer.ExtensionGrant.Delegation.Models;
 namespace CmsApp {
     public class IdentityServerConfig
     {
-        public const string ApiName = "quickapp_api";
-        public const string ApiFriendlyName = "QuickApp API";
-        public const string QuickAppClientID = "quickapp_spa";
+        //public const string ApiName = "quickapp_api";
+        //public const string ApiFriendlyName = "QuickApp API";
+        //public const string QuickAppClientID = "quickapp_spa";
+        //public const string SwaggerClientID = "swaggerui";
+        public const string ApiName = "cmsapp_api";
+        public const string ApiFriendlyName = "CmsApp API";
+        public const string QuickAppClientID = "cmsapp_spa";
         public const string SwaggerClientID = "swaggerui";
 
         // Identity resources (used by UserInfo endpoint).

@@ -112,11 +112,11 @@ export class ConfigurationService {
     public static readonly defaultShowDashboardTodo: boolean = false;
     public static readonly defaultShowDashboardBanner: boolean = true;
 
-    public baseUrl = environment.baseUrl || Utilities.baseUrl();
-    public tokenUrl = environment.tokenUrl || environment.baseUrl || Utilities.baseUrl();
-    public loginUrl = environment.loginUrl;
-    public googleClientId = environment.googleClientId;
-    public facebookClientId = environment.facebookClientId;
+    public baseUrl = environment.baseUrl || Utilities.baseUrl();    //base Url
+    public tokenUrl = environment.tokenUrl || environment.baseUrl || Utilities.baseUrl(); // token Url
+    public loginUrl = environment.loginUrl; // log Url
+    public googleClientId = environment.googleClientId;   //google 
+    public facebookClientId = environment.facebookClientId; //fecebook
     public fallbackBaseUrl = 'https://quickapp-standard.ebenmonney.com';
     // ***End of defaults***
 

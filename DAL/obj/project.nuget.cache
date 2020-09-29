@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OjhGWZC6yy32gDCLv9w+st43uL9c67knwPr9zarHzPuj9PvBSTrRV7dc6KvgoYvu5PMDL7n/js7l+O0bwU6pVw==",
+  "dgSpecHash": "skCc9QlQ5FOZW7l8iJRSk0ua4LWjwd8xK/xxbWu/umQZIMCnAF1hx4LpstDKdmQm7bnNvBDbkCwctR5Zi85bhA==",
   "success": true,
   "projectFilePath": "D:\\CmsApp\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
@@ -39,9 +39,7 @@
     "C:\\Users\\MDT\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\MDT\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.0\\system.diagnostics.diagnosticsource.4.7.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
-    "C:\\Users\\MDT\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512",
-    "C:\\Users\\MDT\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\MDT\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512"
+    "C:\\Users\\MDT\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
   "logs": []
 }

@@ -19,6 +19,7 @@
     <RootNamespace>CmsApp</RootNamespace>
   </PropertyGroup>
 
+  <!--Package Install-->
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />        <!--auto mapper-->
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
