@@ -27,7 +27,7 @@ export class Utilities {
         }
 
         let sExpires = '';
-
+         
         if (vEnd) {
           switch (vEnd.constructor) {
             case Number:

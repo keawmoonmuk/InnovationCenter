@@ -12,10 +12,10 @@ using System.Collections.ObjectModel;
 
 namespace DAL.Core
 {
+    //****************Premissioin****************
     public static class ApplicationPermissions
     {
         public static ReadOnlyCollection<ApplicationPermission> AllPermissions;
-
 
         public const string UsersPermissionGroupName = "User Permissions";
         public static ApplicationPermission ViewUsers = new ApplicationPermission("View Users", "users.view", UsersPermissionGroupName, "Permission to view other users account details");
@@ -52,6 +52,7 @@ namespace DAL.Core
             return AllPermissions.Where(p => p.Value == permissionValue).SingleOrDefault();
         }
 
+        //get permission values
         public static string[] GetAllPermissionValues()
         {
             return AllPermissions.Select(p => p.Value).ToArray();

@@ -9,7 +9,7 @@
 
 export const environment = {
     production: false,
-    baseUrl: null, // Change this to the address of your backend API if different from frontend address
+    baseUrl: 'https://localhost:44350', // Change this to the address of your backend API if different from frontend address
     tokenUrl: null, // For IdentityServer/Authorization Server API. You can set to null if same as baseUrl
     loginUrl: '/login',
     googleClientId: '439188608778-n9a4ulafkm5s8f2k4p8afglcrvohht3h.apps.googleusercontent.com',

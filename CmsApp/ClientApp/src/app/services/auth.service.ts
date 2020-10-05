@@ -99,7 +99,7 @@ export class AuthService {
     return this.oidcHelperService.refreshLogin()
       .pipe(map(resp => this.processLoginResponse(resp, this.rememberMe)));
   }
-
+  //login username and password
   loginWithPassword(userName: string, password: string, rememberMe?: boolean) {
     if (this.isLoggedIn) {
       this.logout();

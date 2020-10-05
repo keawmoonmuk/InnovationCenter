@@ -161,10 +161,11 @@ namespace CmsApp
                 configuration.RootPath = "ClientApp/dist";
             });
 
+            //*********************Add Service Swagger**********************
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = IdentityServerConfig.ApiFriendlyName, Version = "v1" });
-                c.OperationFilter<AuthorizeCheckOperationFilter>();
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = IdentityServerConfig.ApiFriendlyName, Version = "v1" });   //Config Swagger Document
+                c.OperationFilter<AuthorizeCheckOperationFilter>();      // Authorize Check Operation Filter  
                 c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {
                     Type = SecuritySchemeType.OAuth2,
@@ -249,10 +250,11 @@ namespace CmsApp
             app.UseIdentityServer();
             app.UseAuthorization();
 
+            //********************Config Swagger Api Document*******************************
             app.UseSwagger();
-            app.UseSwaggerUI(c =>
+            app.UseSwaggerUI( c =>
             {
-                c.DocumentTitle = "Swagger UI - QuickApp";
+                c.DocumentTitle = "Swagger UI - CmsApp";
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{IdentityServerConfig.ApiFriendlyName} V1");
                 c.OAuthClientId(IdentityServerConfig.SwaggerClientID);
                 c.OAuthClientSecret("no_password"); //Leaving it blank doesn't work
@@ -275,7 +277,7 @@ namespace CmsApp
                 if (env.IsDevelopment())
                 {
                     spa.UseAngularCliServer(npmScript: "start");
-                    spa.Options.StartupTimeout = TimeSpan.FromSeconds(300); // Increase the timeout if angular app is taking longer to startup
+                    spa.Options.StartupTimeout = TimeSpan.FromSeconds(600); // Increase the timeout if angular app is taking longer to startup
                     //spa.UseProxyToSpaDevelopmentServer("http://localhost:4200"); // Use this instead to use the angular cli server
                 }
             });

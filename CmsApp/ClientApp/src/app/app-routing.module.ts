@@ -65,9 +65,10 @@ const routes: Routes = [
     { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard], data: { title: 'Orders' } },
     { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard], data: { title: 'Settings' } },
   { path: 'about', component: AboutComponent, data: { title: 'About Us' } },
-  { path: 'payment', component: PaymentsComponent, data: { title: 'Payments' } },
-  { path: 'patient', component: PatientsComponent, data: {title:'Patients'} },
-  { path: 'priceLists', component: PricelistComponent, data: {title: 'Price List'} },
+
+  { path: 'payment', component: PaymentsComponent, canActivate: [AuthGuard], data: { title: 'Payments' } },
+  { path: 'patient', component: PatientsComponent, canActivate: [AuthGuard], data: { title: 'Patients' } },
+  { path: 'priceLists', component: PricelistComponent, canActivate: [AuthGuard], data: { title: 'Price List' } },
     { path: 'home', redirectTo: '/', pathMatch: 'full' },
     { path: '**', component: NotFoundComponent, data: { title: 'Page Not Found' } }
 ];

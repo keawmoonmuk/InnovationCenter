@@ -19,6 +19,7 @@ import { LoginResponse } from '../models/login-response.model';
 export class OidcHelperService {
 
   private get baseUrl() { return this.configurations.baseUrl; }
+  //private clientId = 'cmsapp_spa'
   private clientId = 'quickapp_spa';
   private scope = 'openid email phone profile offline_access roles quickapp_api';
 
@@ -30,7 +31,7 @@ export class OidcHelperService {
 
   }
 
-
+  //login for username and passs
   loginWithPassword(userName: string, password: string) {
     const header = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const params = new HttpParams()

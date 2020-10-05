@@ -111,7 +111,7 @@ export class ConfigurationService {
     public static readonly defaultShowDashboardNotifications: boolean = true;
     public static readonly defaultShowDashboardTodo: boolean = false;
     public static readonly defaultShowDashboardBanner: boolean = true;
-
+  
     public baseUrl = environment.baseUrl || Utilities.baseUrl();    //base Url
     public tokenUrl = environment.tokenUrl || environment.baseUrl || Utilities.baseUrl(); // token Url
     public loginUrl = environment.loginUrl; // log Url
