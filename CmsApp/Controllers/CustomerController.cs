@@ -19,7 +19,7 @@ namespace CmsApp.Controllers
     [Route("api/[controller]")]
     public class CustomerController : ControllerBase
     {
-        private readonly IMapper _mapper;
+        private readonly IMapper _mapper;               //IMapper   
         private readonly IUnitOfWork _unitOfWork;
         private readonly ILogger _logger;
         private readonly IEmailSender _emailSender;
@@ -42,7 +42,7 @@ namespace CmsApp.Controllers
         }
 
 
-
+        //GET : api/Customer/throw
         [HttpGet("throw")]
         public IEnumerable<CustomerViewModel> Throw()
         {
@@ -50,7 +50,7 @@ namespace CmsApp.Controllers
         }
 
 
-
+        //GET : api/Customer/email
         [HttpGet("email")]
         public async Task<string> Email()
         {
