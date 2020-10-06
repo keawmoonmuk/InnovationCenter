@@ -79,7 +79,7 @@ export class UserInfoComponent implements OnInit {
 
   constructor(private ngZone: NgZone, private alertService: AlertService, private accountService: AccountService, private localStorage: LocalStoreManager) {
   }
-
+    
   ngOnInit() {
     if (!this.isGeneralEditor) {
       this.loadCurrentUserData();

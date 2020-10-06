@@ -1,7 +1,3 @@
-// =============================
-// Email: info@ebenmonney.com
-// www.ebenmonney.com/templates
-// =============================
 
 import { Injectable } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
@@ -15,31 +11,34 @@ import { DBkeys } from './db-keys';
 import { JwtHelper } from './jwt-helper';
 import { Utilities } from './utilities';
 import { AccessToken, LoginResponse } from '../models/login-response.model';
-import { User } from '../models/user.model';
+import { User } from '../models/user.model';                                //import class User
 import { PermissionValues } from '../models/permission.model';
 
-@Injectable()
+@Injectable() 
 export class AuthService {
-  public get loginUrl() { return this.configurations.loginUrl; }
-  public get homeUrl() { return this.configurations.homeUrl; }
+  public get loginUrl() { return this.configurations.loginUrl; }    //get status login url
+  public get homeUrl() { return this.configurations.homeUrl; }      // get page home url
 
-  public loginRedirectUrl: string;
-  public logoutRedirectUrl: string;
+  public loginRedirectUrl: string;                    // กำหนด url login url ที่จะ link ไป
+  public logoutRedirectUrl: string;                   //  กำหนด url logout url ที่จะ link ไป 
 
-  public reLoginDelegate: () => void;
+  public reLoginDelegate: () => void;                 // ผู้รับมอบสิทธิ์
 
-  private previousIsLoggedInCheck = false;
-  private loginStatus = new Subject<boolean>();
+  private previousIsLoggedInCheck = false;   
+  private loginStatus = new Subject<boolean>();       // login status
 
+  //constuctor ==> for create varible router, oidcHelperService, configurations, localStorage
   constructor(
     private router: Router,
     private oidcHelperService: OidcHelperService,
     private configurations: ConfigurationService,
-    private localStorage: LocalStoreManager) {
+    private localStorage: LocalStoreManager)
 
+  {
     this.initializeLoginStatus();
   }
 
+  //initialize   Login start
   private initializeLoginStatus() {
     this.localStorage.getInitEvent().subscribe(() => {
       this.reevaluateLoginStatus();
@@ -59,6 +58,7 @@ export class AuthService {
     this.router.navigate([this.homeUrl]);
   }
 
+  //Redirect LoginUser
   redirectLoginUser() {
     const redirect = this.loginRedirectUrl && this.loginRedirectUrl !== '/' && this.loginRedirectUrl !== ConfigurationService.defaultHomeUrl ? this.loginRedirectUrl : this.homeUrl;
     this.loginRedirectUrl = null;
@@ -75,6 +75,7 @@ export class AuthService {
     this.router.navigate([urlAndParams.firstPart], navigationExtras);
   }
 
+  // Redirect Logout User
   redirectLogoutUser() {
     const redirect = this.logoutRedirectUrl ? this.logoutRedirectUrl : this.loginUrl;
     this.logoutRedirectUrl = null;

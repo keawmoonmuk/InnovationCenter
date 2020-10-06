@@ -19,8 +19,8 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { AuthService } from './services/auth.service';
-import { AuthGuard } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';      //สำหรับเป็น Authorized Service
+import { AuthGuard } from './services/auth-guard.service';  //สำหรับเป็น Guard Service
 import { Utilities } from './services/utilities';
 import { PricelistComponent } from './components/pricelist/pricelist.component';
 import { PaymentsComponent } from './components/payments/payments.component';
@@ -48,9 +48,10 @@ export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
         return super.parse(processedUrl);
     }
 }
-
+//  CanActivate สำหรับเป็นตัวกลางพิจารณาการเข้าถึง Route Path
 //routing
 const routes: Routes = [
+    
     { path: '', component: HomeComponent, canActivate: [AuthGuard], data: { title: 'Home' } },
     { path: 'login', component: LoginComponent, data: { title: 'Login' } },
     { path: 'google-login', component: AuthCallbackComponent, data: { title: 'Google Login' } },
@@ -64,11 +65,11 @@ const routes: Routes = [
     { path: 'products', component: ProductsComponent, canActivate: [AuthGuard], data: { title: 'Products' } },
     { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard], data: { title: 'Orders' } },
     { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard], data: { title: 'Settings' } },
-  { path: 'about', component: AboutComponent, data: { title: 'About Us' } },
+    { path: 'about', component: AboutComponent, data: { title: 'About Us' } },
 
-  { path: 'payment', component: PaymentsComponent, canActivate: [AuthGuard], data: { title: 'Payments' } },
-  { path: 'patient', component: PatientsComponent, canActivate: [AuthGuard], data: { title: 'Patients' } },
-  { path: 'priceLists', component: PricelistComponent, canActivate: [AuthGuard], data: { title: 'Price List' } },
+    { path: 'payment', component: PaymentsComponent, canActivate: [AuthGuard], data: { title: 'Payments' } },
+    { path: 'patient', component: PatientsComponent, canActivate: [AuthGuard], data: { title: 'Patients' } },
+    { path: 'priceLists', component: PricelistComponent, canActivate: [AuthGuard], data: { title: 'Price List' } },
     { path: 'home', redirectTo: '/', pathMatch: 'full' },
     { path: '**', component: NotFoundComponent, data: { title: 'Page Not Found' } }
 ];

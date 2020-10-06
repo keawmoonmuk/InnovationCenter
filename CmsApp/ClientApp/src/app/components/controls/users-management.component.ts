@@ -175,7 +175,7 @@ export class UsersManagementComponent implements OnInit, AfterViewInit {
     this.userEditor.resetForm(true);
   }
 
-
+  //------add new user--------
   newUser() {
     this.editingUserName = null;
     this.sourceUser = null;
