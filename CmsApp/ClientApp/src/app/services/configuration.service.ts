@@ -1,7 +1,3 @@
-// =============================
-// Email: info@ebenmonney.com
-// www.ebenmonney.com/templates
-// =============================
 
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
@@ -9,7 +5,7 @@ import { Subject } from 'rxjs';
 import { AppTranslationService } from './app-translation.service';
 import { ThemeManager } from './theme-manager';
 import { LocalStoreManager } from './local-store-manager.service';
-import { DBkeys } from './db-keys';
+import { DBkeys } from './db-keys';    //DB keys
 import { Utilities } from './utilities';
 import { environment } from '../../environments/environment';
 
@@ -39,15 +35,18 @@ export class ConfigurationService {
         this._language = value;
         this.saveToLocalStore(value, DBkeys.LANGUAGE);
         this.translationService.changeLanguage(value);
-    }
+  }
+
     get language() {
         return this._language || ConfigurationService.defaultLanguage;
     }
 
+  //set globalLanguage
     set globalLanguage(value: string) {
         this._globalLanguage = value;
         this.saveToLocalStore(value, DBkeys.GLOBAL_LANGUAGE);
-    }
+  }
+  // get globalLanguage
     get globalLanguage() {
         return this._globalLanguage;
     }
@@ -62,10 +61,12 @@ export class ConfigurationService {
         return this._themeId || ConfigurationService.defaultThemeId;
     }
 
+  //set homeUrl
     set homeUrl(value: string) {
         this._homeUrl = value;
         this.saveToLocalStore(value, DBkeys.HOME_URL);
-    }
+  }
+  // get home Url
     get homeUrl() {
         return this._homeUrl || ConfigurationService.defaultHomeUrl;
     }
@@ -103,7 +104,7 @@ export class ConfigurationService {
     }
     public static readonly appVersion: string = '4.0.0';
 
-    // ***Specify default configurations here***
+    // ***Specify default configurations here --- ระบุการกำหนดค่าเริ่มต้นที่นี่***
     public static readonly defaultLanguage: string = 'en';
     public static readonly defaultHomeUrl: string = '/';
     public static readonly defaultThemeId: number = 1;
@@ -114,10 +115,11 @@ export class ConfigurationService {
   
     public baseUrl = environment.baseUrl || Utilities.baseUrl();                          //base Url
     public tokenUrl = environment.tokenUrl || environment.baseUrl || Utilities.baseUrl(); // token Url
-    public loginUrl = environment.loginUrl; // log Url
+    public loginUrl = environment.loginUrl;                // log Url
     public googleClientId = environment.googleClientId;   //google 
     public facebookClientId = environment.facebookClientId; //fecebook
-    public fallbackBaseUrl = 'https://quickapp-standard.ebenmonney.com';
+    public fallbackBaseUrl = null;      //base url ทางเลือก
+    //public fallbackBaseUrl = 'https://quickapp-standard.ebenmonney.com';
     // ***End of defaults***
 
     private _language: string = null;

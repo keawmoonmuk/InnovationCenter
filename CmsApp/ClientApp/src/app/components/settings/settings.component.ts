@@ -38,14 +38,12 @@ export class SettingsComponent implements OnInit, OnDestroy {
   tab: BootstrapTabDirective;
 
 
-  constructor(private router: Router, private route: ActivatedRoute, private accountService: AccountService) {
-  }
-
+  constructor(private router: Router, private route: ActivatedRoute, private accountService: AccountService)
+  {}
 
   ngOnInit() {
     this.fragmentSubscription = this.route.fragment.subscribe(anchor => this.showContent(anchor));
   }
-
 
   ngOnDestroy() {
     this.fragmentSubscription.unsubscribe();
@@ -64,7 +62,6 @@ export class SettingsComponent implements OnInit, OnDestroy {
     this.tab.show(`#${anchor || this.profileTab}Tab`);
   }
 
-
   isFragmentEquals(fragment1: string, fragment2: string) {
 
     if (fragment1 == null) {
@@ -77,7 +74,6 @@ export class SettingsComponent implements OnInit, OnDestroy {
 
     return fragment1.toLowerCase() === fragment2.toLowerCase();
   }
-
 
   onShowTab(event) {
     const activeTab = event.target.hash.split('#', 2).pop();
