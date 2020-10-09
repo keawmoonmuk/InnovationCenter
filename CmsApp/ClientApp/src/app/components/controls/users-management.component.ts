@@ -60,6 +60,9 @@ export class UsersManagementComponent implements OnInit, AfterViewInit {
 
     const gT = (key: string) => this.translationService.getTranslation(key);
 
+    console.log(" file (user-management.component.ts) ==> ")
+    console.log(gT)
+
     this.columns = [
       { prop: 'index', name: '#', width: 40, cellTemplate: this.indexTemplate, canAutoResize: false },
       { prop: 'jobTitle', name: gT('users.management.Title'), width: 50 },

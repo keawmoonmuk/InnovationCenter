@@ -1,7 +1,3 @@
-// =============================
-// Email: info@ebenmonney.com
-// www.ebenmonney.com/templates
-// =============================
 
 import { Component, NgZone, OnInit, ViewChild, Input } from '@angular/core';
 
@@ -14,7 +10,8 @@ import { User } from '../../models/user.model';
 import { UserEdit } from '../../models/user-edit.model';
 import { Role } from '../../models/role.model';
 import { Permission } from '../../models/permission.model';
-
+//add Patient 
+import { Patient } from '../../models/patient.model';
 
 @Component({
   selector: 'app-user-info',
@@ -33,9 +30,12 @@ export class UserInfoComponent implements OnInit {
   public showValidationErrors = false;
   public uniqueId: string = Utilities.uniqueId();
   public emailConfirmed: boolean;
-  public user: User = new User();
+  public user: User = new User();     // User
   public userEdit: UserEdit;
   public allRoles: Role[] = [];
+
+  //add patient 
+  public patient: Patient = new Patient();  //Patient
 
   public formResetToggle = true;
 
@@ -48,8 +48,6 @@ export class UserInfoComponent implements OnInit {
 
   @Input()
   isGeneralEditor = false;
-
-
 
   @ViewChild('f')
   public form;
@@ -76,7 +74,7 @@ export class UserInfoComponent implements OnInit {
   @ViewChild('roles')
   public roles;
 
-
+  //constructor work when start program
   constructor(private ngZone: NgZone, private alertService: AlertService, private accountService: AccountService, private localStorage: LocalStoreManager) {
   }
     
@@ -86,6 +84,7 @@ export class UserInfoComponent implements OnInit {
     }
   }
 
+  //load Current User Data
   private loadCurrentUserData() {
     this.alertService.startLoadingMessage();
 
@@ -134,7 +133,7 @@ export class UserInfoComponent implements OnInit {
         });
   }
 
-
+  //----- send VerificatinEmail---------
   sendVerificationEmail() {
     this.ngZone.run(() => {
       this.isSendingEmail = true;
@@ -177,7 +176,7 @@ export class UserInfoComponent implements OnInit {
     delete userEdit.confirmPassword;
   }
 
-
+  //-------edit----------
   edit() {
     if (!this.isGeneralEditor) {
       this.isEditingSelf = true;
@@ -196,7 +195,7 @@ export class UserInfoComponent implements OnInit {
     this.isChangePassword = false;
   }
 
-
+  //-------------save----------------
   save() {
     this.isSaving = true;
     this.alertService.startLoadingMessage('Saving changes...');
@@ -275,7 +274,7 @@ export class UserInfoComponent implements OnInit {
   }
 
 
-
+  //-------------cancle-------------------
   cancel() {
     if (this.isGeneralEditor) {
       this.userEdit = this.user = new UserEdit();
@@ -298,7 +297,7 @@ export class UserInfoComponent implements OnInit {
     }
   }
 
-
+  //-----------------Close-------------------
   close() {
     this.userEdit = this.user = new UserEdit();
     this.showValidationErrors = false;
@@ -323,16 +322,15 @@ export class UserInfoComponent implements OnInit {
         });
   }
 
-
+  //---------------change Password--------------
   changePassword() {
     this.isChangePassword = true;
   }
 
-
+  //--------unlockUser---------------
   unlockUser() {
     this.isSaving = true;
     this.alertService.startLoadingMessage('Unblocking user...');
-
 
     this.accountService.unblockUser(this.userEdit.id)
       .subscribe(() => {
@@ -349,7 +347,7 @@ export class UserInfoComponent implements OnInit {
         });
   }
 
-
+  //--------------resetForm-----------------
   resetForm(replace = false) {
     this.isChangePassword = false;
 
@@ -364,7 +362,7 @@ export class UserInfoComponent implements OnInit {
     }
   }
 
-
+  //-------------newUser------------------
   newUser(allRoles: Role[]) {
     this.isGeneralEditor = true;
     this.isNewUser = true;
@@ -377,6 +375,7 @@ export class UserInfoComponent implements OnInit {
     return this.userEdit;
   }
 
+  //--------------editUser-------------------
   editUser(user: User, allRoles: Role[]) {
     if (user) {
       this.isGeneralEditor = true;
@@ -399,7 +398,7 @@ export class UserInfoComponent implements OnInit {
     }
   }
 
-
+  //------------------displayUser----------------
   displayUser(user: User, allRoles?: Role[]) {
 
     this.user = new User();
@@ -411,7 +410,7 @@ export class UserInfoComponent implements OnInit {
   }
 
 
-
+  //-------------setRoles-------------
   private setRoles(user: User, allRoles?: Role[]) {
 
     this.allRoles = allRoles ? [...allRoles] : [];

@@ -1,8 +1,4 @@
-﻿// =============================
-// Email: info@ebenmonney.com
-// www.ebenmonney.com/templates
-// =============================
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +16,9 @@ namespace CmsApp.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly IMapper _mapper;               //IMapper   
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly ILogger _logger;
-        private readonly IEmailSender _emailSender;
+        private readonly IUnitOfWork _unitOfWork;       //IUnitOfWork
+        private readonly ILogger _logger;               //logger
+        private readonly IEmailSender _emailSender;     //IEmailSender
 
 
         public CustomerController(IMapper mapper, IUnitOfWork unitOfWork, ILogger<CustomerController> logger, IEmailSender emailSender)

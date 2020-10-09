@@ -52,9 +52,6 @@ namespace DAL.Models
         }
 
 
-
-
-
         /// <summary>
         /// Gets or sets the description for this role.
         /// </summary>

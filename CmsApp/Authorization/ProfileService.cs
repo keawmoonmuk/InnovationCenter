@@ -29,6 +29,7 @@ namespace CmsApp.Authorization
             _claimsFactory = claimsFactory;
         }
 
+        //get profile async data  
         public async Task GetProfileDataAsync(ProfileDataRequestContext context)
         {
             var sub = context.Subject.GetSubjectId();

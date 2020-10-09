@@ -1,7 +1,3 @@
-// =============================
-// Email: info@ebenmonney.com
-// www.ebenmonney.com/templates
-// =============================
 
 import { Component, ViewEncapsulation, OnInit, OnDestroy, ViewChildren, AfterViewInit, QueryList, ElementRef } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
@@ -13,7 +9,7 @@ import { NotificationService } from '../services/notification.service';
 import { AppTranslationService } from '../services/app-translation.service';
 import { AccountService } from '../services/account.service';
 import { LocalStoreManager } from '../services/local-store-manager.service';
-import { AppTitleService } from '../services/app-title.service';
+import { AppTitleService } from '../services/app-title.service';     // Set title app 
 import { AuthService } from '../services/auth.service';
 import { ConfigurationService } from '../services/configuration.service';
 import { Permission } from '../models/permission.model';
@@ -48,7 +44,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   loginControl: LoginComponent;
 
   gT = (key: string | Array<string>, interpolateParams?: object) => this.translationService.getTranslation(key, interpolateParams);
-
+  
   get notificationsTitle() {
     if (this.newNotificationCount) {
       return `${this.gT('app.Notifications')} (${this.newNotificationCount} ${this.gT('app.New')})`;
@@ -79,6 +75,9 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.toastaConfig.showDuration = false;
 
     this.appTitleService.appName = this.appTitle;
+
+    console.log("log gT....")
+    console.log(this.gT);
   }
 
   //********login control *********
@@ -128,6 +127,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     setTimeout(() => this.isAppLoaded = true, 500);
     setTimeout(() => this.removePrebootScreen = true, 1000);
 
+    //setTimeout userLogIn
     setTimeout(() => {
       if (this.isUserLoggedIn) {
         this.alertService.resetStickyMessage();
@@ -263,7 +263,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
 
-
+  //showToast
   showToast(alert: AlertCommand) {
 
     if (alert.operation === 'clear') {
@@ -315,38 +315,45 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+  //logut
   logout() {
     this.authService.logout();
     this.authService.redirectLogoutUser();
   }
 
-
+  //Get Year
   getYear() {
     return new Date().getUTCFullYear();
   }
 
+  //get Username in database
   get userName(): string {
-    return this.authService.currentUser ? this.authService.currentUser.userName : '';
+    return this.authService.currentUser ? this.authService.currentUser.userName : '';  // if authService.currentUser.jobTitle = true  
   }
 
-
+  //get fullname in database
   get fullName(): string {
     return this.authService.currentUser ? this.authService.currentUser.fullName : '';
   }
-
+  //get patient*******
+  get patient(): string {
+    return this.authService.currentPatient ? this.authService.currentPatient.patientLastname : '';
+  }
+  //get ViewCustomers
   get canViewCustomers() {
     return this.accountService.userHasPermission(Permission.viewUsersPermission); // eg. viewCustomersPermission
   }
 
+  //get ViewProducts
   get canViewProducts() {
     return this.accountService.userHasPermission(Permission.viewUsersPermission); // eg. viewProductsPermission
   }
-
+  //get ViewOrders
   get canViewOrders() {
     return true; // eg. viewOrdersPermission
   }
 
-  //view Payments
+  //Get viewPayments
   get canViewPayments() {
     return true;
   }

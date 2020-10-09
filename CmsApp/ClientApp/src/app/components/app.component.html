@@ -67,6 +67,8 @@
           {{userName}}
           <span *ngIf="newNotificationCount > 0" class="badge badge-pill badge-secondary">{{newNotificationCount}}</span>
         </a>
+        <!--Pop template show notification-->
+        <!--app/component/control/app-notifications.component.ts-->
         <ng-template #popTemplate>
           <app-notifications-viewer [isViewOnly]="true"></app-notifications-viewer>
         </ng-template>
@@ -80,7 +82,7 @@
           </li>
         </ul>
       </div>
-
+      <!-- login -->
       <div *ngIf="!isUserLoggedIn && router.isActive('/about', false)" class="app-component collapse navbar-collapse menuItemsContainer">
         <ul class="app-component nav nav-pills flex-column flex-lg-row ml-auto">
           <li class="nav-item" routerLinkActive="active">
@@ -88,7 +90,7 @@
           </li>
         </ul>
       </div>
-
+      <!--about-->
       <div *ngIf="!isUserLoggedIn && !router.isActive('/about', false) || false" class="app-component collapse navbar-collapse menuItemsContainer">
         <ul class="app-component nav nav-pills flex-column flex-lg-row ml-auto">
           <li class="nav-item" routerLinkActive="active">

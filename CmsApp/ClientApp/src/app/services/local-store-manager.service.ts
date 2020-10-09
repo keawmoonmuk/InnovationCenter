@@ -149,6 +149,7 @@ export class LocalStoreManager {
     return data;
   }
 
+  //get data  odjcet
   public getDataObject<T>(key = LocalStoreManager.DBKEY_USER_DATA, isDateType = false): T {
     let data = this.getData(key);
 

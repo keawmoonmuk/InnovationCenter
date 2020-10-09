@@ -503,3 +503,5 @@ D:\CMS PROJECT\CmsApp\CmsApp\obj\Debug\netcoreapp3.1\staticwebassets\CmsApp.Stat
 D:\CMS PROJECT\CmsApp\CmsApp\obj\Debug\netcoreapp3.1\CmsApp.dll
 D:\CMS PROJECT\CmsApp\CmsApp\obj\Debug\netcoreapp3.1\CmsApp.pdb
 D:\CMS PROJECT\CmsApp\CmsApp\obj\Debug\netcoreapp3.1\CmsApp.genruntimeconfig.cache
+D:\CmsApp\CmsApp\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\CmsApp\CmsApp\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll

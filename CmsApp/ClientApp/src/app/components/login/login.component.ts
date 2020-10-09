@@ -116,6 +116,8 @@ export class LoginComponent implements OnInit, OnDestroy {
             }
           }, 500);
         },
+
+        //error to connect host
         error => {
 
           this.alertService.stopLoadingMessage();

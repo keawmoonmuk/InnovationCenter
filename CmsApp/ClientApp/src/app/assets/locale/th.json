@@ -78,7 +78,7 @@
       "LoginErrorOccured": "เกิดข้อผิดพลาดขณะลงชื่อเข้าใช้โปรดลองอีกครั้งในภายหลัง.\nError: {{error}}",
       "InvalidUsernameOrPassword": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง",
       "AccountDisabled": "บัญชีนี้ถูกปิดการใช้งาน",
-      "DeveloperDemoApiNotice": "Dear Developer!\nIt appears your backend Web API service is not running...\nWould you want to temporarily switch to the online Demo API below?(Or specify another)",
+      "DeveloperDemoApiNotice": "เรียนนักพัฒนา!\n ดูเหมือนว่าบริการ Web API แบ็กเอนด์ของคุณไม่ทำงาน ...\n คุณต้องการเปลี่ยนไปใช้ Demo API ออนไลน์ด้านล่างชั่วคราวหรือไม่ (หรือระบุอื่น)",
       "ApiChanged": "API เปลี่ยนแล้ว!",
       "ApiChangedTo": "API เว็บเป้าหมายถูกเปลี่ยนเป็น: {{API}}"
     }

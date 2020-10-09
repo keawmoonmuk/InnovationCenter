@@ -7,9 +7,10 @@ import { ThemeManager } from './theme-manager';
 import { LocalStoreManager } from './local-store-manager.service';
 import { DBkeys } from './db-keys';    //DB keys
 import { Utilities } from './utilities';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment';   //enviroment
 
 interface UserConfiguration {
+
     language: string;
     homeUrl: string;
     themeId: number;
@@ -22,12 +23,13 @@ interface UserConfiguration {
 @Injectable()
 export class ConfigurationService {
 
+  //Constructor Create => localStorage , thanslateionService , themeManger
     constructor(
         private localStorage: LocalStoreManager,
         private translationService: AppTranslationService,
         private themeManager: ThemeManager) {
 
-        this._globalLanguage = this.localStorage.getDataObject<string>(DBkeys.GLOBAL_LANGUAGE);
+        this._globalLanguage = this.localStorage.getDataObject<string>(DBkeys.GLOBAL_LANGUAGE);  //get global language
         this.loadLocalChanges();
     }
 
@@ -101,9 +103,9 @@ export class ConfigurationService {
     }
     get showDashboardBanner() {
         return this._showDashboardBanner != null ? this._showDashboardBanner : ConfigurationService.defaultShowDashboardBanner;
-    }
-    public static readonly appVersion: string = '4.0.0';
+  }
 
+    public static readonly appVersion: string = '4.0.0';
     // ***Specify default configurations here --- ระบุการกำหนดค่าเริ่มต้นที่นี่***
     public static readonly defaultLanguage: string = 'en';
     public static readonly defaultHomeUrl: string = '/';

@@ -12,18 +12,18 @@ import { JwtHelper } from './jwt-helper';
 import { Utilities } from './utilities';
 import { AccessToken, LoginResponse } from '../models/login-response.model';
 import { User } from '../models/user.model';                                //import class User
+import { Patient } from '../models/patient.model'                           //import class patient
+
 import { PermissionValues } from '../models/permission.model';
 
 @Injectable() 
 export class AuthService {
-  public get loginUrl() { return this.configurations.loginUrl; }    //get status login url
-  public get homeUrl() { return this.configurations.homeUrl; }      // get page home url
-
+  public get loginUrl() { return this.configurations.loginUrl; }      //get status login url
+  public get homeUrl() { return this.configurations.homeUrl; }        //get page home url
+  
   public loginRedirectUrl: string;                    // กำหนด url login url ที่จะ link ไป
   public logoutRedirectUrl: string;                   //  กำหนด url logout url ที่จะ link ไป 
-
   public reLoginDelegate: () => void;                 // ผู้รับมอบสิทธิ์
-
   private previousIsLoggedInCheck = false;   
   private loginStatus = new Subject<boolean>();       // login status
 
@@ -81,6 +81,7 @@ export class AuthService {
     this.logoutRedirectUrl = null;
 
     this.router.navigate([redirect]);
+
   }
 
   redirectForLogin() {
@@ -102,7 +103,8 @@ export class AuthService {
   }
   //login username and password
   loginWithPassword(userName: string, password: string, rememberMe?: boolean) {
-    if (this.isLoggedIn) {
+    if (this.isLoggedIn)
+    {
       this.logout();
     }
 
@@ -220,6 +222,7 @@ export class AuthService {
     this.reevaluateLoginStatus();
   }
 
+  //-------------------current User-----------------
   private reevaluateLoginStatus(currentUser?: User) {
     const user = currentUser || this.localStorage.getDataObject<User>(DBkeys.CURRENT_USER);
     const isLoggedIn = user != null;
@@ -233,16 +236,37 @@ export class AuthService {
     this.previousIsLoggedInCheck = isLoggedIn;
   }
 
+  //------------------current patient----------------------
+  private showvaluepatient(currentPatient?: Patient) {
+    const patient = this.currentPatient || this.localStorage.getDataObject<Patient>(DBkeys.CURRENT_PATIENT);
+    const ispatient = patient != null;
+    if (this.previousIsLoggedInCheck !== ispatient) {
+      setTimeout(() => {
+        this.loginStatus.next(ispatient);
+      });
+    }
+    this.previousIsLoggedInCheck = this.isLoggedIn;
+  }
+  
+
   getLoginStatusEvent(): Observable<boolean> {
     return this.loginStatus.asObservable();
   }
 
+  //get currentUser
   get currentUser(): User {
-
     const user = this.localStorage.getDataObject<User>(DBkeys.CURRENT_USER);
     this.reevaluateLoginStatus(user);
-
+   
     return user;
+  }
+
+  //get patient
+  get currentPatient(): Patient {
+    const patient = this.localStorage.getDataObject<Patient>(DBkeys.CURRENT_PATIENT);
+    this.showvaluepatient(patient);
+    console.log(patient)
+    return patient;
   }
 
   get userPermissions(): PermissionValues[] {
