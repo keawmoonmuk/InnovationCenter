@@ -44,7 +44,7 @@ namespace CmsApp.Controllers
             _logger = logger;
         }
 
-
+       //https://localhost:port/api/Account/user/me
         [HttpGet("users/me")]
         [ProducesResponseType(200, Type = typeof(UserViewModel))]
         public async Task<IActionResult> GetCurrentUser()

@@ -1,11 +1,12 @@
 
+//import for angular 
 import { Injectable } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { LocalStoreManager } from './local-store-manager.service';
-import { OidcHelperService } from './oidc-helper.service';
+import { LocalStoreManager } from './local-store-manager.service';  // Manage in Local Store
+import { OidcHelperService } from './oidc-helper.service';          
 import { ConfigurationService } from './configuration.service';
 import { DBkeys } from './db-keys';
 import { JwtHelper } from './jwt-helper';
@@ -16,25 +17,23 @@ import { Patient } from '../models/patient.model'                           //im
 
 import { PermissionValues } from '../models/permission.model';
 
-@Injectable() 
+@Injectable()
 export class AuthService {
-  public get loginUrl() { return this.configurations.loginUrl; }      //get status login url
-  public get homeUrl() { return this.configurations.homeUrl; }        //get page home url
-  
-  public loginRedirectUrl: string;                    // กำหนด url login url ที่จะ link ไป
-  public logoutRedirectUrl: string;                   //  กำหนด url logout url ที่จะ link ไป 
-  public reLoginDelegate: () => void;                 // ผู้รับมอบสิทธิ์
-  private previousIsLoggedInCheck = false;   
-  private loginStatus = new Subject<boolean>();       // login status
+  public get loginUrl() { return this.configurations.loginUrl; }      // get status login url
+  public get homeUrl() { return this.configurations.homeUrl; }        // get page home url
 
-  //constuctor ==> for create varible router, oidcHelperService, configurations, localStorage
+  public loginRedirectUrl: string;                                    // กำหนด url login url ที่จะ link ไป
+  public logoutRedirectUrl: string;                                   // กำหนด url logout url ที่จะ link ไป 
+  public reLoginDelegate: () => void;                                 // รับมอบสิทธิ์ authorized  
+  private previousIsLoggedInCheck = false;                            // ก่อนเข้าสู่ระบบ (Check)
+  private loginStatus = new Subject<boolean>();                       // login status
+
+  //constuctor ==> start for create varible router, oidcHelperService, configurations, localStorage
   constructor(
     private router: Router,
     private oidcHelperService: OidcHelperService,
     private configurations: ConfigurationService,
-    private localStorage: LocalStoreManager)
-
-  {
+    private localStorage: LocalStoreManager) {
     this.initializeLoginStatus();
   }
 
@@ -103,8 +102,7 @@ export class AuthService {
   }
   //login username and password
   loginWithPassword(userName: string, password: string, rememberMe?: boolean) {
-    if (this.isLoggedIn)
-    {
+    if (this.isLoggedIn) {
       this.logout();
     }
 
@@ -112,46 +110,47 @@ export class AuthService {
       .pipe(map(resp => this.processLoginResponse(resp, rememberMe)));
   }
 
-    loginWithExternalToken(token: string, provider: string, email?: string, password?: string) {
-        if (this.isLoggedIn) {
-            this.logout();
-        }
-
-        return this.oidcHelperService.loginWithExternalToken(token, provider, email, password)
-            .pipe(map(resp => this.processLoginResponse(resp)));
+  loginWithExternalToken(token: string, provider: string, email?: string, password?: string) {
+    if (this.isLoggedIn) {
+      this.logout();
     }
 
-    initLoginWithGoogle(rememberMe?: boolean) {
-        if (this.isLoggedIn) {
-            this.logout();
-        }
+    return this.oidcHelperService.loginWithExternalToken(token, provider, email, password)
+      .pipe(map(resp => this.processLoginResponse(resp)));
+  }
 
-        this.localStorage.savePermanentData(rememberMe, DBkeys.REMEMBER_ME);
-        this.oidcHelperService.initLoginWithGoogle();
+  initLoginWithGoogle(rememberMe?: boolean) {
+    if (this.isLoggedIn) {
+      this.logout();
     }
 
-    initLoginWithFacebook(rememberMe?: boolean) {
-        if (this.isLoggedIn) {
-            this.logout();
-        }
+    this.localStorage.savePermanentData(rememberMe, DBkeys.REMEMBER_ME);
+    this.oidcHelperService.initLoginWithGoogle();
+  }
 
-        this.localStorage.savePermanentData(rememberMe, DBkeys.REMEMBER_ME);
-        this.oidcHelperService.initLoginWithFacebook();
+  initLoginWithFacebook(rememberMe?: boolean) {
+    if (this.isLoggedIn) {
+      this.logout();
     }
 
-    initLoginWithTwitter(rememberMe?: boolean) {
-        if (this.isLoggedIn) {
-            this.logout();
-        }
+    this.localStorage.savePermanentData(rememberMe, DBkeys.REMEMBER_ME);
+    this.oidcHelperService.initLoginWithFacebook();
+  }
 
-        this.localStorage.savePermanentData(rememberMe, DBkeys.REMEMBER_ME);
-        this.oidcHelperService.initLoginWithTwitter();
+  initLoginWithTwitter(rememberMe?: boolean) {
+    if (this.isLoggedIn) {
+      this.logout();
     }
 
-    getTwitterAccessToken(oauthToken: string, oauthVerifier: string) {
-        return this.oidcHelperService.getTwitterAccessToken(oauthToken, oauthVerifier);
-    }
+    this.localStorage.savePermanentData(rememberMe, DBkeys.REMEMBER_ME);
+    this.oidcHelperService.initLoginWithTwitter();
+  }
 
+  getTwitterAccessToken(oauthToken: string, oauthVerifier: string) {
+    return this.oidcHelperService.getTwitterAccessToken(oauthToken, oauthVerifier);
+  }
+
+  //*******************Response Login********************* 
   private processLoginResponse(response: LoginResponse, rememberMe?: boolean) {
     const accessToken = response.access_token;
 
@@ -185,13 +184,14 @@ export class AuthService {
       Array.isArray(decodedAccessToken.role) ? decodedAccessToken.role : [decodedAccessToken.role]);
     user.isEnabled = true;
 
+    //saveUserDetail  ==>
     this.saveUserDetails(user, permissions, accessToken, refreshToken, accessTokenExpiry, rememberMe);
 
     this.reevaluateLoginStatus(user);
 
     return user;
   }
-
+  //save User Detail
   private saveUserDetails(user: User, permissions: PermissionValues[], accessToken: string, refreshToken: string, expiresIn: Date, rememberMe: boolean) {
     if (rememberMe) {
       this.localStorage.savePermanentData(accessToken, DBkeys.ACCESS_TOKEN);
@@ -209,7 +209,7 @@ export class AuthService {
 
     this.localStorage.savePermanentData(rememberMe, DBkeys.REMEMBER_ME);
   }
-
+  //----------------logout--------------------
   logout(): void {
     this.localStorage.deleteData(DBkeys.ACCESS_TOKEN);
     this.localStorage.deleteData(DBkeys.REFRESH_TOKEN);
@@ -238,7 +238,7 @@ export class AuthService {
 
   //------------------current patient----------------------
   private showvaluepatient(currentPatient?: Patient) {
-    const patient = this.currentPatient || this.localStorage.getDataObject<Patient>(DBkeys.CURRENT_PATIENT);
+    const patient = currentPatient || this.localStorage.getDataObject<Patient>(DBkeys.CURRENT_PATIENT);
     const ispatient = patient != null;
     if (this.previousIsLoggedInCheck !== ispatient) {
       setTimeout(() => {
@@ -247,8 +247,8 @@ export class AuthService {
     }
     this.previousIsLoggedInCheck = this.isLoggedIn;
   }
-  
 
+  //get Status Login Event
   getLoginStatusEvent(): Observable<boolean> {
     return this.loginStatus.asObservable();
   }
@@ -257,11 +257,11 @@ export class AuthService {
   get currentUser(): User {
     const user = this.localStorage.getDataObject<User>(DBkeys.CURRENT_USER);
     this.reevaluateLoginStatus(user);
-   
+
     return user;
   }
 
-  //get patient
+  //--------get patient-------
   get currentPatient(): Patient {
     const patient = this.localStorage.getDataObject<Patient>(DBkeys.CURRENT_PATIENT);
     this.showvaluepatient(patient);
@@ -269,30 +269,37 @@ export class AuthService {
     return patient;
   }
 
+  //get Permissions
   get userPermissions(): PermissionValues[] {
     return this.localStorage.getDataObject<PermissionValues[]>(DBkeys.USER_PERMISSIONS) || [];
   }
 
+  //get accessToken
   get accessToken(): string {
     return this.oidcHelperService.accessToken;
   }
 
+  //get for ExpirryDate accessToken
   get accessTokenExpiryDate(): Date {
     return this.oidcHelperService.accessTokenExpiryDate;
   }
 
+  //get refreshToken
   get refreshToken(): string {
     return this.oidcHelperService.refreshToken;
   }
 
+  //get Session Expired
   get isSessionExpired(): boolean {
     return this.oidcHelperService.isSessionExpired;
   }
 
+  //get LoggendIn
   get isLoggedIn(): boolean {
     return this.currentUser != null;
   }
 
+  //get rememberMe
   get rememberMe(): boolean {
     return this.localStorage.getDataObject<boolean>(DBkeys.REMEMBER_ME) === true;
   }

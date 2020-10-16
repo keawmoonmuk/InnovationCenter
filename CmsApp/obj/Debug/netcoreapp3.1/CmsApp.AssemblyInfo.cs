@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EBENMONNEY")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © 2019 www.ebenmonney.com")]
-[assembly: System.Reflection.AssemblyDescriptionAttribute("ASPNET Core 3.1 - Angular 9 startup template for Quick Application Development")]
+[assembly: System.Reflection.AssemblyDescriptionAttribute("ASPNET Core 3.1 - Angular 9 startup template for Application Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("4.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("4.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("CmsApp")]

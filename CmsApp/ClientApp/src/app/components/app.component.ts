@@ -337,7 +337,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   //get patient*******
   get patient(): string {
-    return this.authService.currentPatient ? this.authService.currentPatient.patientLastname : '';
+    return this.authService.currentPatient ? this.authService.currentPatient.patientFirstname : '';
   }
   //get ViewCustomers
   get canViewCustomers() {

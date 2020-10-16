@@ -1,7 +1,3 @@
-// =============================
-// Email: info@ebenmonney.com
-// www.ebenmonney.com/templates
-// =============================
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -34,6 +30,7 @@ export class AccountEndpoint extends EndpointBase {
 
   constructor(private configurations: ConfigurationService, http: HttpClient, authService: AuthService) {
     super(http, authService);
+    console.log(this.usersUrl);
   }
 
 

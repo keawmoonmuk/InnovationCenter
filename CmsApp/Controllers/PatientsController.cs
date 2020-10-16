@@ -6,6 +6,7 @@ using AutoMapper;
 using DAL;
 using DAL.Models.DB;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -24,17 +25,44 @@ namespace CmsApp.Controllers {
         //Create contrutor 
         public PatientsController(ApplicationDbContext applicationDbContext)
         {
-            _applicationDbContext = applicationDbContext;
+            this._applicationDbContext = applicationDbContext;
         }
 
         // GET: api/<PatientsController>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Tbl_Patients>>>GetPatient()
+        public async Task<ActionResult<IEnumerable<Tbl_Patients>>> Getpatinet()
         {
-            //return await _context.Products.ToListAsync();
-            return await _applicationDbContext.Patients.ToListAsync();
-        }
 
+            var patient = await _applicationDbContext.Patients.Select(p => new Tbl_Patients
+                            {
+                                PatientIDcard = p.PatientIDcard,
+                                PatientHN = p.PatientHN,
+                                PatientPrefix = p.PatientPrefix,
+                                PatientFirstName = p.PatientFirstName,
+                                PatientLastName = p.PatientLastName,
+                                DateOfBirth = p.DateOfBirth,
+                                Age = p.Age,
+                                GenderID = p.GenderID,
+                                StatusID = p.StatusID,
+                                Race = p.Race,
+                                Nationality = p.Nationality,
+                                Religion = p.Religion,
+                                PatientAddress = p.PatientAddress,
+                                PatientTel = p.PatientTel,
+                                PatientEmail = p.PatientEmail,
+                                ContactemergencyID = p.ContactemergencyID,
+                                BloodTypeID = p.BloodTypeID,
+                                TreatmentID = p.TreatmentID,
+                                DrugAllergyID = p.DrugAllergyID,
+                                Createby = p.Createby,
+                                CreateDate = p.CreateDate,
+                                UpdateBy = p.UpdateBy,
+                                UpdateDate = p.UpdateDate
+
+                            }).ToListAsync();
+                          
+            return patient;
+        }
         // GET api/<PatientsController>/5
         [HttpGet("{id}")]
         public string Get(int id)

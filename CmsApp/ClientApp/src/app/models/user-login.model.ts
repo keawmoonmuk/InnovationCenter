@@ -1,8 +1,5 @@
-// =============================
-// Email: info@ebenmonney.com
-// www.ebenmonney.com/templates
-// =============================
 
+//UserLogin 
 export class UserLogin {
     constructor(userName?: string, password?: string, rememberMe?: boolean) {
         this.userName = userName;

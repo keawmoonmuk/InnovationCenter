@@ -1,16 +1,12 @@
-// =============================
-// Email: info@ebenmonney.com
-// www.ebenmonney.com/templates
-// =============================
 
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 
 import { AlertService, MessageSeverity, DialogType } from '../../services/alert.service';
 import { AppTranslationService } from '../../services/app-translation.service';  //import service thanslateion
-import { AuthService } from '../../services/auth.service';
-import { ConfigurationService } from '../../services/configuration.service';
+import { AuthService } from '../../services/auth.service';        //import AuthService
+import { ConfigurationService } from '../../services/configuration.service';  //import configurationService
 import { Utilities } from '../../services/utilities';
-import { UserLogin } from '../../models/user-login.model';
+import { UserLogin } from '../../models/user-login.model';    //import class model for user login
 
 @Component({
   selector: 'app-login',
@@ -39,6 +35,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
    
+    //when (checkbox rememberMe = true) = (authSevice.rememberMe)
     this.userLogin.rememberMe = this.authService.rememberMe;
 
     if (this.getShouldRedirect()) {

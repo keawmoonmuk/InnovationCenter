@@ -1,6 +1,6 @@
 
 export class Patient {
-  // Note: Using only optional constructor properties without backing store disables typescript's type checking for the type
+
   constructor(patientIDcard?: string, patientHN?: string, patientprefix?: string, patientFirstname?: string, patientLastname?: string, dateOfbrith?: string, age?: string) {
 
     this.patientIDcard = patientIDcard;

@@ -273,11 +273,11 @@ namespace CmsApp
                 // see https://go.microsoft.com/fwlink/?linkid=864501
 
                 spa.Options.SourcePath = "ClientApp";
-
+    
                 if (env.IsDevelopment())
                 {
                     spa.UseAngularCliServer(npmScript: "start");
-                    spa.Options.StartupTimeout = TimeSpan.FromMinutes(5); // Increase the timeout if angular app is taking longer to startup
+                    spa.Options.StartupTimeout = TimeSpan.FromSeconds(600); // Increase the timeout if angular app is taking longer to startup
                     //spa.UseProxyToSpaDevelopmentServer("http://localhost:4200"); // Use this instead to use the angular cli server
                 }
             });

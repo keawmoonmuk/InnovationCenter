@@ -11,15 +11,17 @@ import { Utilities } from './utilities';
 @Injectable()
 /**
  * Provides a wrapper for accessing the web storage API and synchronizing session storage across tabs/windows.
+  *จัดเตรียม Wrapper สำหรับการเข้าถึง API ที่เก็บข้อมูลบนเว็บและการซิงโครไนซ์ที่เก็บเซสชันระหว่างแท็บ / หน้าต่าง
  */
 export class LocalStoreManager {
-  private static syncListenerInitialised = false;
 
-  public static readonly DBKEY_USER_DATA = 'user_data';
-  private static readonly DBKEY_SYNC_KEYS = 'sync_keys';
+  private static syncListenerInitialised = false;
+  public static readonly DBKEY_USER_DATA = 'user_data';       //DBkey user key
+  private static readonly DBKEY_SYNC_KEYS = 'sync_keys';      //DBkey sync key
   private syncKeys: string[] = [];
   private initEvent = new Subject();
 
+  //reserver => Keys
   private reservedKeys: string[] =
     [
       'sync_keys',
@@ -32,7 +34,9 @@ export class LocalStoreManager {
       'clearAllSessionsStorage'
     ];
 
+  //initial storage
   public initialiseStorageSyncListener() {
+
     if (LocalStoreManager.syncListenerInitialised === true) {
       return;
     }
@@ -141,6 +145,19 @@ export class LocalStoreManager {
     this.testForInvalidKeys(key);
 
     let data = this.sessionStorageGetItem(key);
+    console.log(data);
+    if (data == null) {
+      data = this.localStorageGetItem(key);
+    }
+
+    return data;
+  }
+
+  //****************getData Patients************************
+  public getDataPatient(key = LocalStoreManager.DBKEY_USER_DATA) {
+    this.testForInvalidKeys(key);
+
+    let data = this.sessionStorageGetItem(key);
 
     if (data == null) {
       data = this.localStorageGetItem(key);
@@ -149,9 +166,24 @@ export class LocalStoreManager {
     return data;
   }
 
-  //get data  odjcet
+
+  //get data  odjcet   get global langauage
   public getDataObject<T>(key = LocalStoreManager.DBKEY_USER_DATA, isDateType = false): T {
     let data = this.getData(key);
+
+    if (data != null) {
+      if (isDateType) {
+        data = new Date(data);
+      }
+      return data as T;
+    } else {
+      return null;
+    }
+  }
+
+  //*************Get data object patient *******************
+  public getDataObjectPatient<T>(key = LocalStoreManager.DBKEY_USER_DATA, isDateType = false): T {
+    let data = this.getDataPatient(key);
 
     if (data != null) {
       if (isDateType) {
@@ -219,11 +251,13 @@ export class LocalStoreManager {
     }
   }
 
+  // synce Session Storage
   private syncSessionStorage() {
     localStorage.setItem('getSessionStorage', '_dummy');
     localStorage.removeItem('getSessionStorage');
   }
 
+  // add Session Storage
   private addToSessionStorage(data: any, key: string) {
     this.addToSessionStorageHelper(data, key);
     this.addToSyncKeysBackup(key);
@@ -232,6 +266,7 @@ export class LocalStoreManager {
     localStorage.removeItem('addToSessionStorage');
   }
 
+  //add to session Storage Helper
   private addToSessionStorageHelper(data: any, key: string) {
     this.addToSyncKeysHelper(key);
     this.sessionStorageSetItem(key, data);

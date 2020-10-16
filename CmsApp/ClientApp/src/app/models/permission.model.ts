@@ -1,7 +1,5 @@
-// =============================
-// Email: info@ebenmonney.com
-// www.ebenmonney.com/templates
-// =============================
+
+//************PermissionNames*********************
 
 export type PermissionNames =
     'View Users' | 'Manage Users' |
@@ -13,13 +11,11 @@ export type PermissionValues =
 
 export class Permission {
 
-    public static readonly viewUsersPermission: PermissionValues = 'users.view';
-    public static readonly manageUsersPermission: PermissionValues = 'users.manage';
-
-    public static readonly viewRolesPermission: PermissionValues = 'roles.view';
-    public static readonly manageRolesPermission: PermissionValues = 'roles.manage';
-    public static readonly assignRolesPermission: PermissionValues = 'roles.assign';
-
+    public static readonly viewUsersPermission: PermissionValues = 'users.view';      // แสดงสิทธิ์ user
+    public static readonly manageUsersPermission: PermissionValues = 'users.manage';  // จัดการสิทธิ์ user
+    public static readonly viewRolesPermission: PermissionValues = 'roles.view';      // แสดงบทบาทสิทธิ์
+    public static readonly manageRolesPermission: PermissionValues = 'roles.manage';  // จัดการบทบาทสิทธิ์
+    public static readonly assignRolesPermission: PermissionValues = 'roles.assign';  // กำหนดบทบาทสิทธิ์
 
     constructor(name?: PermissionNames, value?: PermissionValues, groupName?: string, description?: string) {
         this.name = name;

@@ -12,6 +12,7 @@ namespace DAL.Models.DB {
         [Key]
         public int StatusID { get; set; }
         public string StatusName { get; set; }
+        public string StatusImages { get; set; }
 
     }
 }

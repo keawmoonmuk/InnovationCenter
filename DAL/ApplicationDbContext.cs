@@ -58,96 +58,193 @@ namespace DAL {
 
             //***************************************************************************    
             //Admin
-            builder.Entity<Tbl_Admins>().Property(a => a.AdminName).IsRequired().HasMaxLength(255);       //ต้องระบุ, Max Length 255
+            builder.Entity<Tbl_Admins>().Property(a => a.AdminID).IsRequired().HasMaxLength(255);       //ต้องระบุ, Max Length 255
+            builder.Entity<Tbl_Admins>().HasIndex(a => a.AdminID);
+
+            builder.Entity<Tbl_Admins>().Property(a => a.AdminName).HasMaxLength(255);       // Max Length 255
             builder.Entity<Tbl_Admins>().HasIndex(a => a.AdminName);
-            builder.Entity<Tbl_Admins>().Property(a => a.AdminUserName).IsRequired().HasMaxLength(255);  //ต้องระบุ,  Max Length 255 
+
+            builder.Entity<Tbl_Admins>().Property(a => a.AdminUserName).HasMaxLength(255);  //  Max Length 255 
             builder.Entity<Tbl_Admins>().HasIndex(a => a.AdminUserName);
-            builder.Entity<Tbl_Admins>().Property(a => a.AdminPassword).IsRequired().HasMaxLength(255);  //ต้องระบุ,  Max Length 255 
+
+            builder.Entity<Tbl_Admins>().Property(a => a.AdminPassword).HasMaxLength(255);  //  Max Length 255 
             builder.Entity<Tbl_Admins>().HasIndex(a => a.AdminPassword);
-            builder.Entity<Tbl_Admins>().Property(a => a.Premission).HasMaxLength(100);  //ต้องระบุ,  Max Length 255 
-            builder.Entity<Tbl_Admins>().Property(a => a.CreateBy).HasMaxLength(100);  //ต้องระบุ,  Max Length 255 
-            builder.Entity<Tbl_Admins>().Property(a => a.UpdateBy).HasMaxLength(100);  //ต้องระบุ,  Max Length 255 
+
+            builder.Entity<Tbl_Admins>().Property(a => a.Premission).HasMaxLength(100);  // Max Length 255 
+            builder.Entity<Tbl_Admins>().HasIndex(a => a.Premission);
+
+            builder.Entity<Tbl_Admins>().Property(a => a.CreateBy).HasMaxLength(100);  // Max Length 255 
+            builder.Entity<Tbl_Admins>().HasIndex(a => a.CreateBy);
+
+            builder.Entity<Tbl_Admins>().Property(a => a.CreateDate).HasMaxLength(100);  // Max Length 255 
+            builder.Entity<Tbl_Admins>().HasIndex(a => a.CreateDate);
+
+            builder.Entity<Tbl_Admins>().Property(a => a.UpdateBy).HasMaxLength(100);  //  Max Length 255 
+            builder.Entity<Tbl_Admins>().HasIndex(a => a.UpdateBy);
+
+            builder.Entity<Tbl_Admins>().Property(a => a.UpdateDate).HasMaxLength(100);  //  Max Length 255 
+            builder.Entity<Tbl_Admins>().HasIndex(a => a.UpdateDate);
+
             builder.Entity<Tbl_Admins>().ToTable($"Tbl_{nameof(this.Admins)}");  //Create table name ex... Tbl_Admins
-          
+
             //BloodType
+            builder.Entity<Tbl_BloodType>().Property(b => b.BloodTypeID).IsRequired().HasMaxLength(100);
+            builder.Entity<Tbl_BloodType>().HasIndex(b => b.BloodTypeID);
+
             builder.Entity<Tbl_BloodType>().Property(b => b.BloodTypeName).HasMaxLength(255);
+            builder.Entity<Tbl_BloodType>().HasIndex(b => b.BloodTypeName);
+
             builder.Entity<Tbl_BloodType>().Property(b=> b.BloodtypeDetail).HasMaxLength(255);
+            builder.Entity<Tbl_BloodType>().HasIndex(b => b.BloodtypeDetail);
+
             builder.Entity<Tbl_BloodType>().ToTable($"Tbl_{nameof(this.BloodTypes)}");    //Create Table Name
 
             //Contactemergency
-            builder.Entity<Tbl_ContactEmergency>().Property(c => c.ContactemergencyFirstname).IsRequired().HasMaxLength(100);
+            builder.Entity<Tbl_ContactEmergency>().Property(c => c.ContactemergencyID).IsRequired().HasMaxLength(100);
+            builder.Entity<Tbl_ContactEmergency>().HasIndex(c => c.ContactemergencyID);
+
+            builder.Entity<Tbl_ContactEmergency>().Property(c => c.ContactemergencyFirstname).HasMaxLength(100);
             builder.Entity<Tbl_ContactEmergency>().HasIndex(c => c.ContactemergencyFirstname);
-            builder.Entity<Tbl_ContactEmergency>().Property(c => c.ContactemergencyLastname).IsRequired().HasMaxLength(100);
+
+            builder.Entity<Tbl_ContactEmergency>().Property(c => c.ContactemergencyLastname).HasMaxLength(100);
             builder.Entity<Tbl_ContactEmergency>().HasIndex(c => c.ContactemergencyLastname);
+
+            builder.Entity<Tbl_ContactEmergency>().Property(c => c.PatientIDcard).HasMaxLength(15);
+            builder.Entity<Tbl_ContactEmergency>().HasIndex(c => c.PatientIDcard);
+
             builder.Entity<Tbl_ContactEmergency>().Property(c => c.ContactemergencyAddress).HasMaxLength(255);
+            builder.Entity<Tbl_ContactEmergency>().HasIndex(c => c.ContactemergencyAddress);
+
             builder.Entity<Tbl_ContactEmergency>().Property(c => c.ContatctemergencyTel).IsUnicode(false).HasMaxLength(30);
+            builder.Entity<Tbl_ContactEmergency>().HasIndex(c => c.ContatctemergencyTel);
+
             builder.Entity<Tbl_ContactEmergency>().Property(c => c.ContactemergencyConcerned).HasMaxLength(255);
+            builder.Entity<Tbl_ContactEmergency>().HasIndex(c => c.ContactemergencyConcerned);
+
             builder.Entity<Tbl_ContactEmergency>().ToTable($"Tbl_{nameof(this.ContextEmergencys)}");  //  //Create Table Name
 
-            //DrugAllergy
+            //****************DrugAllergy***************
+            builder.Entity<Tbl_DrugAllergy>().Property(d => d.DrugAllergyID).IsRequired().HasMaxLength(100);
+            builder.Entity<Tbl_DrugAllergy>().HasIndex(d => d.DrugAllergyID);
+
             builder.Entity<Tbl_DrugAllergy>().Property(d => d.DrugAllergyName).IsRequired().HasMaxLength(100);
             builder.Entity<Tbl_DrugAllergy>().HasIndex(d => d.DrugAllergyName);
-            builder.Entity<Tbl_DrugAllergy>().Property(d => d.DrugAllergyDetail).IsRequired().HasMaxLength(100);
+
+            builder.Entity<Tbl_DrugAllergy>().Property(d => d.DrugAllergyDetail).HasMaxLength(100);
             builder.Entity<Tbl_DrugAllergy>().HasIndex(d => d.DrugAllergyDetail);
+
             builder.Entity<Tbl_DrugAllergy>().ToTable($"Tbl_{nameof(this.DrugAllergys)}");  // //Create Table Name
 
-            //Finance
-            builder.Entity<Tbl_Finance>().Property(f => f.FinanceName).IsRequired().HasMaxLength(150);
+            //***********Finance****************
+            builder.Entity<Tbl_Finance>().Property(f => f.FinanceID).IsRequired().HasMaxLength(100);
+            builder.Entity<Tbl_Finance>().HasIndex(f => f.FinanceID);
+
+            builder.Entity<Tbl_Finance>().Property(f => f.FinanceName).HasMaxLength(150);
             builder.Entity<Tbl_Finance>().HasIndex(f => f.FinanceName);
+
             builder.Entity<Tbl_Finance>().Property(f => f.FinanceIdcard).IsRequired().HasMaxLength(100);
             builder.Entity<Tbl_Finance>().HasIndex(f => f.FinanceIdcard);
-            builder.Entity<Tbl_Finance>().Property(f => f.FinanceHN).IsRequired().HasMaxLength(50);
+
+            builder.Entity<Tbl_Finance>().Property(f => f.FinanceHN).HasMaxLength(50);
             builder.Entity<Tbl_Finance>().HasIndex(f => f.FinanceHN);
-            builder.Entity<Tbl_Finance>().Property(f => f.CreateBy).IsRequired().HasMaxLength(50);
+
+            builder.Entity<Tbl_Finance>().Property(f => f.CreateBy).HasMaxLength(50);
             builder.Entity<Tbl_Finance>().HasIndex(f => f.CreateBy);
-            builder.Entity<Tbl_Finance>().Property(f => f.Updateby).IsRequired().HasMaxLength(50);
+
+            builder.Entity<Tbl_Finance>().Property(f => f.CreateDate).HasMaxLength(50);
+            builder.Entity<Tbl_Finance>().HasIndex(f => f.CreateDate);
+
+            builder.Entity<Tbl_Finance>().Property(f => f.Updateby).HasMaxLength(50);
             builder.Entity<Tbl_Finance>().HasIndex(f => f.Updateby);
+
+            builder.Entity<Tbl_Finance>().Property(f => f.UpdateDate).HasMaxLength(50);
+            builder.Entity<Tbl_Finance>().HasIndex(f => f.UpdateDate);
+
             builder.Entity<Tbl_Finance>().ToTable($"Tbl_{nameof(this.Finances)}");  //  //Create Table Name
 
-            //patient 
-            builder.Entity<Tbl_Patients>().Property(p => p.PatientHN).IsRequired().HasMaxLength(15);
+            //*********Patient***************** 
+            builder.Entity<Tbl_Patients>().Property(p => p.PatientIDcard).IsRequired().HasMaxLength(15);
+            builder.Entity<Tbl_Patients>().HasIndex(p => p.PatientIDcard);
+
+            builder.Entity<Tbl_Patients>().Property(p => p.PatientHN).HasMaxLength(15);
             builder.Entity<Tbl_Patients>().HasIndex(p => p.PatientHN);
-            builder.Entity<Tbl_Patients>().Property(p => p.PatientPrefix).IsRequired().HasMaxLength(10);
+
+            builder.Entity<Tbl_Patients>().Property(p => p.PatientPrefix).HasMaxLength(10);
             builder.Entity<Tbl_Patients>().HasIndex(p => p.PatientPrefix);
-            builder.Entity<Tbl_Patients>().Property(p => p.PatientFirstName).IsRequired().HasMaxLength(100);
+
+            builder.Entity<Tbl_Patients>().Property(p => p.PatientFirstName).HasMaxLength(100);
             builder.Entity<Tbl_Patients>().HasIndex(p => p.PatientFirstName);
-            builder.Entity<Tbl_Patients>().Property(p => p.PatientLastName).IsRequired().HasMaxLength(100);
+
+            builder.Entity<Tbl_Patients>().Property(p => p.PatientLastName).HasMaxLength(100);
             builder.Entity<Tbl_Patients>().HasIndex(p => p.PatientLastName);
-            builder.Entity<Tbl_Patients>().Property(p => p.Race).IsRequired().HasMaxLength(100);
+
+            builder.Entity<Tbl_Patients>().Property(p => p.Age).HasMaxLength(3);
+            builder.Entity<Tbl_Patients>().HasIndex(p => p.Age);
+            //เชื้อชาติ
+            builder.Entity<Tbl_Patients>().Property(p => p.Race).HasMaxLength(100);
             builder.Entity<Tbl_Patients>().HasIndex(p => p.Race);
-            builder.Entity<Tbl_Patients>().Property(p => p.Nationality).IsRequired().HasMaxLength(100);
+            //สัญชาติ
+            builder.Entity<Tbl_Patients>().Property(p => p.Nationality).HasMaxLength(100);
             builder.Entity<Tbl_Patients>().HasIndex(p => p.Nationality);
-            builder.Entity<Tbl_Patients>().Property(p => p.Religion).IsRequired().HasMaxLength(100);
+            //ศาสนา
+            builder.Entity<Tbl_Patients>().Property(p => p.Religion).HasMaxLength(100);
             builder.Entity<Tbl_Patients>().HasIndex(p => p.Religion);
-            builder.Entity<Tbl_Patients>().Property(p => p.PatientAddress).IsRequired().HasMaxLength(100);
+
+            builder.Entity<Tbl_Patients>().Property(p => p.PatientAddress).HasMaxLength(100);
             builder.Entity<Tbl_Patients>().HasIndex(p => p.PatientAddress);
-            builder.Entity<Tbl_Patients>().Property(p => p.PatientTel).IsRequired().HasMaxLength(100);
+
+            builder.Entity<Tbl_Patients>().Property(p => p.PatientTel).HasMaxLength(100);
             builder.Entity<Tbl_Patients>().HasIndex(p => p.PatientTel);
-            builder.Entity<Tbl_Patients>().Property(p => p.PatientEmail).IsRequired().HasMaxLength(100);
+
+            builder.Entity<Tbl_Patients>().Property(p => p.PatientEmail).HasMaxLength(100);
             builder.Entity<Tbl_Patients>().HasIndex(p => p.PatientEmail);
-            builder.Entity<Tbl_Patients>().Property(p => p.Createby).IsRequired().HasMaxLength(50);
+
+            builder.Entity<Tbl_Patients>().Property(p => p.Createby).HasMaxLength(50);
             builder.Entity<Tbl_Patients>().HasIndex(p => p.Createby);
-            builder.Entity<Tbl_Patients>().Property(p => p.UpdateBy).IsRequired().HasMaxLength(50);
+
+            builder.Entity<Tbl_Patients>().Property(p => p.UpdateBy).HasMaxLength(50);
             builder.Entity<Tbl_Patients>().HasIndex(p => p.UpdateBy);
             builder.Entity<Tbl_Patients>().ToTable($"Tbl_{nameof(this.Patients)}");  //  //Create Table Name
 
-            //Gender         
-            builder.Entity<Tbl_Gender>().Property(g => g.GenderName).IsRequired().HasMaxLength(100);
+            //Gender     
+            builder.Entity<Tbl_Gender>().Property(g => g.GenderID).HasMaxLength(100);
+            builder.Entity<Tbl_Gender>().HasIndex(g => g.GenderID);
+
+            builder.Entity<Tbl_Gender>().Property(g => g.GenderName).HasMaxLength(100);
             builder.Entity<Tbl_Gender>().HasIndex(g => g.GenderName);
-            builder.Entity<Tbl_Gender>().Property(g => g.CreateBy).IsRequired().HasMaxLength(50);
+
+            builder.Entity<Tbl_Gender>().Property(g => g.CreateBy).HasMaxLength(50);
             builder.Entity<Tbl_Gender>().HasIndex(g => g.CreateBy);
-            builder.Entity<Tbl_Gender>().Property(g => g.Updateby).IsRequired().HasMaxLength(50);
+
+            builder.Entity<Tbl_Gender>().Property(g => g.CreateDate).HasMaxLength(50);
+            builder.Entity<Tbl_Gender>().HasIndex(g => g.CreateDate);
+
+            builder.Entity<Tbl_Gender>().Property(g => g.Updateby).HasMaxLength(50);
             builder.Entity<Tbl_Gender>().HasIndex(g => g.Updateby);
+
+            builder.Entity<Tbl_Gender>().Property(g => g.UpdateDate).HasMaxLength(50);
+            builder.Entity<Tbl_Gender>().HasIndex(g => g.UpdateDate);
+
             builder.Entity<Tbl_Gender>().ToTable($"Tbl_{nameof(this.Genders)}");  //  //Create Table Name
 
-            //Status         
-            builder.Entity<Tbl_Status>().Property(s => s.StatusName).IsRequired().HasMaxLength(100);
+            //Status       
+            builder.Entity<Tbl_Status>().Property(s => s.StatusID).HasMaxLength(100);
+            builder.Entity<Tbl_Status>().HasIndex(s => s.StatusID);
+
+            builder.Entity<Tbl_Status>().Property(s => s.StatusName).HasMaxLength(100);
             builder.Entity<Tbl_Status>().HasIndex(s => s.StatusName);
+
+            builder.Entity<Tbl_Status>().HasIndex(s => s.StatusImages);
+
             builder.Entity<Tbl_Status>().ToTable($"Tbl_{nameof(this.Status)}");  //  //Create Table Name
 
             //TreatMent         
-            builder.Entity<Tbl_TreatMent>().Property(t => t.TreatmentName).IsRequired().HasMaxLength(100);
+            builder.Entity<Tbl_TreatMent>().Property(t => t.TreatmentID).HasMaxLength(100);
+            builder.Entity<Tbl_TreatMent>().HasIndex(t => t.TreatmentID);
+
+            builder.Entity<Tbl_TreatMent>().Property(t => t.TreatmentName).HasMaxLength(100);
             builder.Entity<Tbl_TreatMent>().HasIndex(t => t.TreatmentName);
+
             builder.Entity<Tbl_TreatMent>().ToTable($"Tbl_{nameof(this.TreatMent)}");  //  //Create Table Name
         }
 

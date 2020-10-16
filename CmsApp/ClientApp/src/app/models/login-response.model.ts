@@ -1,10 +1,5 @@
-// =============================
-// Email: info@ebenmonney.com
-// www.ebenmonney.com/templates
-// =============================
 
 import { PermissionValues } from './permission.model';
-
 
 export interface LoginResponse {
     access_token: string;
@@ -12,7 +7,6 @@ export interface LoginResponse {
     expires_in: number;
     token_type: string;
 }
-
 
 export interface AccessToken {
     nbf: number;

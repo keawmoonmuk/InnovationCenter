@@ -18,7 +18,7 @@ import { LoginResponse } from '../models/login-response.model';
 @Injectable()
 export class OidcHelperService {
 
-  private get baseUrl() { return this.configurations.baseUrl; }
+  private get baseUrl() { return this.configurations.baseUrl; }    //get baseUrl
   //private clientId = 'cmsapp_spa'
   private clientId = 'quickapp_spa';
   private scope = 'openid email phone profile offline_access roles quickapp_api';
@@ -31,7 +31,7 @@ export class OidcHelperService {
 
   }
 
-  //login for username and passs
+  //-------------login for username and passs----------------------
   loginWithPassword(userName: string, password: string) {
     const header = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const params = new HttpParams()
@@ -48,7 +48,7 @@ export class OidcHelperService {
         return this.http.post<LoginResponse>(this.oauthService.tokenEndpoint, params, { headers: header });
       }));
   }
-
+  //-----------------refreshLogin--------------------------------------
   refreshLogin() {
     const header = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     const params = new HttpParams()
@@ -63,7 +63,7 @@ export class OidcHelperService {
         return this.http.post<LoginResponse>(this.oauthService.tokenEndpoint, params, { headers: header });
       }));
   }
-
+  //-------------------loginWithExternalToken---------------------------
   loginWithExternalToken(token: string, provider: string, email?: string, password?: string) {
     const header = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let params = new HttpParams()
@@ -88,7 +88,7 @@ export class OidcHelperService {
         return this.http.post<LoginResponse>(this.oauthService.tokenEndpoint, params, { headers: header });
       }));
   }
-
+  //----------------LoginWithGoogle------------------------
   initLoginWithGoogle() {
     this.oauthService.configure({
       issuer: 'https://accounts.google.com',
@@ -103,7 +103,7 @@ export class OidcHelperService {
       this.oauthService.initImplicitFlow();
     });
   }
-
+  //-----------------LoginWithFacebook-------------------
   initLoginWithFacebook() {
     this.oauthService.configure({
       loginUrl: 'https://www.facebook.com/v5.0/dialog/oauth',
@@ -116,7 +116,7 @@ export class OidcHelperService {
 
     this.oauthService.initImplicitFlow();
   }
-
+  //------------------Login Wtih Twitter-----------------------
   initLoginWithTwitter() {
     this.getTwitterRequestToken()
       .subscribe(response => {
@@ -131,17 +131,17 @@ export class OidcHelperService {
         }
       });
   }
-
+  //-------------------getTwitterRequestToken-------------------------
   private getTwitterRequestToken() {
     const requestTokenUrl = this.baseUrl + '/oauth/twitter/request_token';
     const requestObject = { oauth_callback: this.baseUrl + '/twitter-login' };
     return this.http.post(requestTokenUrl, requestObject, { responseType: 'text' });
   }
-
+  //-------------------authenticate Twitter RequestToken----------------
   private authenticateTwitterRequestToken(oauthToken: string) {
     window.location.href = 'https://api.twitter.com/oauth/authenticate?oauth_token=' + oauthToken;
   }
-
+  //--------------------getTwitter AccessToken---------------------------
   getTwitterAccessToken(oauthToken: string, oauthVerifier: string) {
     const savedOauthToken = this.localStorage.getDataObject<string>(DBkeys.TWITTER_OAUTH_TOKEN);
     const savedOauthTokenSecret = this.localStorage.getDataObject<string>(DBkeys.TWITTER_OAUTH_TOKEN_SECRET);
@@ -162,19 +162,19 @@ export class OidcHelperService {
     return this.http.post(requestTokenUrl, requestObject, { responseType: 'text' });
   }
 
-
+  //-------------------accessToken----------------------
   get accessToken(): string {
     return this.localStorage.getData(DBkeys.ACCESS_TOKEN);
   }
-
+  //------------------accessToken Expiry Date-----------
   get accessTokenExpiryDate(): Date {
     return this.localStorage.getDataObject<Date>(DBkeys.TOKEN_EXPIRES_IN, true);
   }
-
+  //-----------------refrestToken-----------------------
   get refreshToken(): string {
     return this.localStorage.getData(DBkeys.REFRESH_TOKEN);
   }
-
+  //----------------Session Expired----------------------
   get isSessionExpired(): boolean {
     if (this.accessTokenExpiryDate == null) {
       return true;

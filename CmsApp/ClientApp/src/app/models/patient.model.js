@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Patient = /** @class */ (function () {
-    // Note: Using only optional constructor properties without backing store disables typescript's type checking for the type
     function Patient(patientIDcard, patientHN, patientprefix, patientFirstname, patientLastname, dateOfbrith, age) {
         this.patientIDcard = patientIDcard;
         this.patientHN = patientHN;

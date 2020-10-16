@@ -3,14 +3,16 @@ using System;
 using DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CmsApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201015032740_UpdateClassTbl_Patient")]
+    partial class UpdateClassTbl_Patient
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -150,18 +152,20 @@ namespace CmsApp.Migrations
                 {
                     b.Property<int>("AdminID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasMaxLength(255);
+                        .HasColumnType("int");
 
                     b.Property<string>("AdminName")
+                        .IsRequired()
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4")
                         .HasMaxLength(255);
 
                     b.Property<string>("AdminPassword")
+                        .IsRequired()
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4")
                         .HasMaxLength(255);
 
                     b.Property<string>("AdminUserName")
+                        .IsRequired()
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4")
                         .HasMaxLength(255);
 
@@ -170,8 +174,7 @@ namespace CmsApp.Migrations
                         .HasMaxLength(100);
 
                     b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime(6)")
-                        .HasMaxLength(100);
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Premission")
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
@@ -182,28 +185,15 @@ namespace CmsApp.Migrations
                         .HasMaxLength(100);
 
                     b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime(6)")
-                        .HasMaxLength(100);
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("AdminID");
-
-                    b.HasIndex("AdminID");
 
                     b.HasIndex("AdminName");
 
                     b.HasIndex("AdminPassword");
 
                     b.HasIndex("AdminUserName");
-
-                    b.HasIndex("CreateBy");
-
-                    b.HasIndex("CreateDate");
-
-                    b.HasIndex("Premission");
-
-                    b.HasIndex("UpdateBy");
-
-                    b.HasIndex("UpdateDate");
 
                     b.ToTable("Tbl_Admins");
                 });
@@ -212,8 +202,7 @@ namespace CmsApp.Migrations
                 {
                     b.Property<int>("BloodTypeID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasMaxLength(100);
+                        .HasColumnType("int");
 
                     b.Property<string>("BloodTypeName")
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4")
@@ -225,12 +214,6 @@ namespace CmsApp.Migrations
 
                     b.HasKey("BloodTypeID");
 
-                    b.HasIndex("BloodTypeID");
-
-                    b.HasIndex("BloodTypeName");
-
-                    b.HasIndex("BloodtypeDetail");
-
                     b.ToTable("Tbl_BloodTypes");
                 });
 
@@ -238,8 +221,7 @@ namespace CmsApp.Migrations
                 {
                     b.Property<int>("ContactemergencyID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasMaxLength(100);
+                        .HasColumnType("int");
 
                     b.Property<string>("ContactemergencyAddress")
                         .HasColumnType("varchar(255) CHARACTER SET utf8mb4")
@@ -250,10 +232,12 @@ namespace CmsApp.Migrations
                         .HasMaxLength(255);
 
                     b.Property<string>("ContactemergencyFirstname")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
                     b.Property<string>("ContactemergencyLastname")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
@@ -263,24 +247,13 @@ namespace CmsApp.Migrations
                         .IsUnicode(false);
 
                     b.Property<int>("PatientIDcard")
-                        .HasColumnType("int")
-                        .HasMaxLength(15);
+                        .HasColumnType("int");
 
                     b.HasKey("ContactemergencyID");
 
-                    b.HasIndex("ContactemergencyAddress");
-
-                    b.HasIndex("ContactemergencyConcerned");
-
                     b.HasIndex("ContactemergencyFirstname");
 
-                    b.HasIndex("ContactemergencyID");
-
                     b.HasIndex("ContactemergencyLastname");
-
-                    b.HasIndex("ContatctemergencyTel");
-
-                    b.HasIndex("PatientIDcard");
 
                     b.ToTable("Tbl_ContextEmergencys");
                 });
@@ -289,10 +262,10 @@ namespace CmsApp.Migrations
                 {
                     b.Property<int>("DrugAllergyID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasMaxLength(100);
+                        .HasColumnType("int");
 
                     b.Property<string>("DrugAllergyDetail")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
@@ -305,8 +278,6 @@ namespace CmsApp.Migrations
 
                     b.HasIndex("DrugAllergyDetail");
 
-                    b.HasIndex("DrugAllergyID");
-
                     b.HasIndex("DrugAllergyName");
 
                     b.ToTable("Tbl_DrugAllergys");
@@ -316,18 +287,18 @@ namespace CmsApp.Migrations
                 {
                     b.Property<int>("FinanceID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasMaxLength(100);
+                        .HasColumnType("int");
 
                     b.Property<string>("CreateBy")
+                        .IsRequired()
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
                         .HasMaxLength(50);
 
                     b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime(6)")
-                        .HasMaxLength(50);
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("FinanceHN")
+                        .IsRequired()
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
                         .HasMaxLength(50);
 
@@ -337,14 +308,15 @@ namespace CmsApp.Migrations
                         .HasMaxLength(100);
 
                     b.Property<string>("FinanceName")
+                        .IsRequired()
                         .HasColumnType("varchar(150) CHARACTER SET utf8mb4")
                         .HasMaxLength(150);
 
                     b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime(6)")
-                        .HasMaxLength(50);
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Updateby")
+                        .IsRequired()
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
                         .HasMaxLength(50);
 
@@ -352,17 +324,11 @@ namespace CmsApp.Migrations
 
                     b.HasIndex("CreateBy");
 
-                    b.HasIndex("CreateDate");
-
                     b.HasIndex("FinanceHN");
-
-                    b.HasIndex("FinanceID");
 
                     b.HasIndex("FinanceIdcard");
 
                     b.HasIndex("FinanceName");
-
-                    b.HasIndex("UpdateDate");
 
                     b.HasIndex("Updateby");
 
@@ -373,26 +339,26 @@ namespace CmsApp.Migrations
                 {
                     b.Property<int>("GenderID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasMaxLength(100);
+                        .HasColumnType("int");
 
                     b.Property<string>("CreateBy")
+                        .IsRequired()
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
                         .HasMaxLength(50);
 
                     b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime(6)")
-                        .HasMaxLength(50);
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("GenderName")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
                     b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime(6)")
-                        .HasMaxLength(50);
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Updateby")
+                        .IsRequired()
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
                         .HasMaxLength(50);
 
@@ -400,13 +366,7 @@ namespace CmsApp.Migrations
 
                     b.HasIndex("CreateBy");
 
-                    b.HasIndex("CreateDate");
-
-                    b.HasIndex("GenderID");
-
                     b.HasIndex("GenderName");
-
-                    b.HasIndex("UpdateDate");
 
                     b.HasIndex("Updateby");
 
@@ -416,12 +376,10 @@ namespace CmsApp.Migrations
             modelBuilder.Entity("DAL.Models.DB.Tbl_Patients", b =>
                 {
                     b.Property<string>("PatientIDcard")
-                        .HasColumnType("varchar(15) CHARACTER SET utf8mb4")
-                        .HasMaxLength(15);
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
                     b.Property<int>("Age")
-                        .HasColumnType("int")
-                        .HasMaxLength(3);
+                        .HasColumnType("int");
 
                     b.Property<int>("BloodTypeID")
                         .HasColumnType("int");
@@ -433,6 +391,7 @@ namespace CmsApp.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Createby")
+                        .IsRequired()
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
                         .HasMaxLength(50);
 
@@ -446,42 +405,52 @@ namespace CmsApp.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Nationality")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
                     b.Property<string>("PatientAddress")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
                     b.Property<string>("PatientEmail")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
                     b.Property<string>("PatientFirstName")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
                     b.Property<string>("PatientHN")
+                        .IsRequired()
                         .HasColumnType("varchar(15) CHARACTER SET utf8mb4")
                         .HasMaxLength(15);
 
                     b.Property<string>("PatientLastName")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
                     b.Property<string>("PatientPrefix")
+                        .IsRequired()
                         .HasColumnType("varchar(10) CHARACTER SET utf8mb4")
                         .HasMaxLength(10);
 
                     b.Property<string>("PatientTel")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
                     b.Property<string>("Race")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
                     b.Property<string>("Religion")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
@@ -492,6 +461,7 @@ namespace CmsApp.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UpdateBy")
+                        .IsRequired()
                         .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
                         .HasMaxLength(50);
 
@@ -499,8 +469,6 @@ namespace CmsApp.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("PatientIDcard");
-
-                    b.HasIndex("Age");
 
                     b.HasIndex("Createby");
 
@@ -513,8 +481,6 @@ namespace CmsApp.Migrations
                     b.HasIndex("PatientFirstName");
 
                     b.HasIndex("PatientHN");
-
-                    b.HasIndex("PatientIDcard");
 
                     b.HasIndex("PatientLastName");
 
@@ -535,22 +501,14 @@ namespace CmsApp.Migrations
                 {
                     b.Property<int>("StatusID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("StatusImages")
-                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
-                        .HasMaxLength(100);
+                        .HasColumnType("int");
 
                     b.Property<string>("StatusName")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
                     b.HasKey("StatusID");
-
-                    b.HasIndex("StatusID");
-
-                    b.HasIndex("StatusImages");
 
                     b.HasIndex("StatusName");
 
@@ -561,16 +519,14 @@ namespace CmsApp.Migrations
                 {
                     b.Property<int>("TreatmentID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasMaxLength(100);
+                        .HasColumnType("int");
 
                     b.Property<string>("TreatmentName")
+                        .IsRequired()
                         .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
                         .HasMaxLength(100);
 
                     b.HasKey("TreatmentID");
-
-                    b.HasIndex("TreatmentID");
 
                     b.HasIndex("TreatmentName");
 
