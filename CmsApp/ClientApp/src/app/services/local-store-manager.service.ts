@@ -145,7 +145,7 @@ export class LocalStoreManager {
     this.testForInvalidKeys(key);
 
     let data = this.sessionStorageGetItem(key);
-    console.log(data);
+    console.log("Data ==> :" + data);
     if (data == null) {
       data = this.localStorageGetItem(key);
     }
