@@ -22,13 +22,15 @@ namespace DAL
         Task SeedAsync();
     }
 
+    // Database initializer
     public class DatabaseInitializer : IDatabaseInitializer
     {
-        private readonly ApplicationDbContext _context;
-        private readonly IAccountManager _accountManager;
+        private readonly ApplicationDbContext _context;       // createDbcontext 
+        private readonly IAccountManager _accountManager;     
         private readonly ILogger _logger;
-        private readonly string _defaultRoleName;
+        private readonly string _defaultRoleName;           //defaultRoleName
 
+        //constracutor => context , accountManager ,logger
         public DatabaseInitializer(ApplicationDbContext context, IAccountManager accountManager, ILogger<DatabaseInitializer> logger)
         {
             _accountManager = accountManager;
@@ -36,21 +38,24 @@ namespace DAL
             _logger = logger;
         }
 
+        //constactor => context , accountManager , logger, defaultRoleName
         public DatabaseInitializer(ApplicationDbContext context, IAccountManager accountManager, ILogger<DatabaseInitializer> logger, string defaultRoleName)
             : this(context, accountManager, logger)
         {
             _defaultRoleName = defaultRoleName;
         }
         
-        
+        // Seed Asyne
         virtual public async Task SeedAsync()
         {
+
             await _context.Database.MigrateAsync().ConfigureAwait(false);
 
             if (!await _context.Users.AnyAsync())
             {
                 _logger.LogInformation("Generating inbuilt accounts");
 
+                //create rolename
                 const string adminRoleName = "administrator";
                 const string userRoleName = "user";
 
@@ -130,7 +135,6 @@ namespace DAL
             //    };
 
 
-
             //    Product prod_1 = new Product
             //    {
             //        Name = "BMW M6",
@@ -202,8 +206,6 @@ namespace DAL
             //    _logger.LogInformation("Seeding initial data completed");
             //}
         }
-
-
 
         private async Task EnsureRoleAsync(string roleName, string description, string[] claims)
         {

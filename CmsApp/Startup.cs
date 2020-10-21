@@ -126,7 +126,8 @@ namespace CmsApp
                   options.TwitterConsumerSecret = Configuration["Twitter:ConsumerSecret"];
               });
 
-            var applicationUrl = Configuration["ApplicationUrl"].TrimEnd('/');
+            var applicationUrl = Configuration["ApplicationUrl"].TrimEnd('/');   //http://localhost:5050
+            Console.WriteLine("Application URL :" + applicationUrl);
 
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>

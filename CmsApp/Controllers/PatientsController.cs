@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
 using DAL;
@@ -36,7 +37,11 @@ namespace CmsApp.Controllers {
 
             var patients  = await _applicationDbContext.Patients.ToListAsync();
 
-            if (patients == null) return NotFound();
+            if (patients.Count == 0) {
+
+                return NotFound(HttpStatusCode.NotFound);
+            }
+
 
             return Ok(patients);
 
@@ -144,7 +149,13 @@ namespace CmsApp.Controllers {
         public async Task<ActionResult<IEnumerable<Tbl_Finance>>> Getdatafinance()
         {
             var getdatafinances = await _applicationDbContext.Finances.ToListAsync();
-            if (getdatafinances == null) return NotFound();
+
+            Console.WriteLine(getdatafinances);
+
+            if (getdatafinances.Count == 0) {
+
+                return NotFound(HttpStatusCode.NotFound);
+            }
             return Ok(getdatafinances);
         }
 
@@ -156,9 +167,7 @@ namespace CmsApp.Controllers {
 
             if (getidfinances == null) {
 
-                var notdata = "No data in table database... ";
-
-                return Ok(notdata);
+                return NotFound(HttpStatusCode.NotFound);
             }
 
             return Ok(getidfinances);
@@ -170,26 +179,32 @@ namespace CmsApp.Controllers {
         {
             var getallcontextemergency = await _applicationDbContext.ContextEmergencys.ToListAsync();
 
+            Console.WriteLine(getallcontextemergency);
+
             if(getallcontextemergency == null) {
 
-                var notdata = "No data in table database... ";
+               // var notdata = "No data in table database... ";
 
-                return Ok(notdata);
+                return NotFound(HttpStatusCode.NotFound);
             }
 
             return Ok(getallcontextemergency);
         }
-
+      
         //get id contextemergency id
         [HttpGet("contextemergencyid/{idcontextemergency}")]
-        public async Task<ActionResult<IEnumerable<Tbl_ContactEmergency>>> GetIdcontextemergency (int contextemergency)
+        public async Task<ActionResult<IEnumerable<Tbl_ContactEmergency>>> GetIdcontextemergency (int idcontactemergency)
         {
-            var getidcontextemergency = await _applicationDbContext.ContextEmergencys.FindAsync(contextemergency);
+            var getidcontextemergency = await _applicationDbContext.ContextEmergencys.FindAsync(idcontactemergency);
+
+            Console.WriteLine(getidcontextemergency);
 
             if(getidcontextemergency == null) {
-                var notdata = "No data in table database";
-                return Ok(notdata);
+
+               // var notdata = "No data in table database";
+                return NotFound(HttpStatusCode.NotFound);
             }
+
             return Ok(getidcontextemergency);
 
         }

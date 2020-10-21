@@ -12,10 +12,10 @@ import { ConfigurationService } from './configuration.service';
 @Injectable()
 export class AccountEndpoint extends EndpointBase {
 
-  get usersUrl() { return this.configurations.baseUrl + '/api/account/users'; }
-  get usersPublicUrl() { return this.configurations.baseUrl + '/api/account/public/users'; }
-  get userByUserNameUrl() { return this.configurations.baseUrl + '/api/account/users/username'; }
-  get userHasPasswordUrl() { return this.configurations.baseUrl + '/api/account/users/haspassword'; }
+  get usersUrl() { return this.configurations.baseUrl + '/api/account/users'; }                       //get  userUrl 
+  get usersPublicUrl() { return this.configurations.baseUrl + '/api/account/public/users'; }          // get usersPublicUrl
+  get userByUserNameUrl() { return this.configurations.baseUrl + '/api/account/users/username'; }     //get userByUserNameUrl
+  get userHasPasswordUrl() { return this.configurations.baseUrl + '/api/account/users/haspassword'; } //get userHasPasswordUrl
   get currentUserUrl() { return this.configurations.baseUrl + '/api/account/users/me'; }
   get currentUserPreferencesUrl() { return this.configurations.baseUrl + '/api/account/users/me/preferences'; }
   get sendConfirmEmailUrl() { return this.configurations.baseUrl + '/api/account/users/me/sendconfirmemail'; }
@@ -27,15 +27,21 @@ export class AccountEndpoint extends EndpointBase {
   get roleByRoleNameUrl() { return this.configurations.baseUrl + '/api/account/roles/name'; }
   get permissionsUrl() { return this.configurations.baseUrl + '/api/account/permissions'; }
 
+  //-----add patient---------
+  get patientallUrl() { return this.configurations.baseUrl + '/api/Patients/patientall'; }     //get api url patient all
 
+  //constructor create => configurations , http , authService
   constructor(private configurations: ConfigurationService, http: HttpClient, authService: AuthService) {
+
+    //to path => src/app/service/endpoint-base.service.ts
     super(http, authService);
-    console.log(this.usersUrl);
+   
   }
 
-
+  //http    ==> userEndpoint 
   getUserEndpoint<T>(userId?: string): Observable<T> {
     const endpointUrl = userId ? `${this.usersUrl}/${userId}` : this.currentUserUrl;
+    console.log("get user endpoint ==>" + endpointUrl);
 
     return this.http.get<T>(endpointUrl, this.requestHeaders).pipe<T>(
       catchError(error => {
@@ -43,7 +49,7 @@ export class AccountEndpoint extends EndpointBase {
       }));
   }
 
-
+  //http  ==> get User by Username endpoint 
   getUserByUserNameEndpoint<T>(userName: string): Observable<T> {
     const endpointUrl = `${this.userByUserNameUrl}/${userName}`;
 
@@ -53,7 +59,7 @@ export class AccountEndpoint extends EndpointBase {
       }));
   }
 
-
+  //http ==> get user has password endpoint
   getUserHasPasswordEndpoint<T>(userId: string): Observable<T> {
     const endpointUrl = `${this.userHasPasswordUrl}/${userId}`;
 
@@ -63,7 +69,7 @@ export class AccountEndpoint extends EndpointBase {
       }));
   }
 
-
+  //http  ==> get users endpoint
   getUsersEndpoint<T>(page?: number, pageSize?: number): Observable<T> {
     const endpointUrl = page && pageSize ? `${this.usersUrl}/${page}/${pageSize}` : this.usersUrl;
 
@@ -73,7 +79,7 @@ export class AccountEndpoint extends EndpointBase {
       }));
   }
 
-
+  //http ==> get new user endpoint
   getNewUserEndpoint<T>(userObject: any, isPublicRegistration?: boolean): Observable<T> {
     const endpointUrl = isPublicRegistration ? this.usersPublicUrl : this.usersUrl;
 
@@ -82,7 +88,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getNewUserEndpoint(userObject));
       }));
   }
-
+  //http ==> get update user endpoint
   getUpdateUserEndpoint<T>(userObject: any, userId?: string): Observable<T> {
     const endpointUrl = userId ? `${this.usersUrl}/${userId}` : this.currentUserUrl;
 
@@ -114,7 +120,7 @@ export class AccountEndpoint extends EndpointBase {
       }));
   }
 
-
+  //http ===> get user preferences endpoint
   getUserPreferencesEndpoint<T>(): Observable<T> {
 
     return this.http.get<T>(this.currentUserPreferencesUrl, this.requestHeaders).pipe<T>(
@@ -122,14 +128,14 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getUserPreferencesEndpoint());
       }));
   }
-
+  //http ==> get update user prefernces endpoint
   getUpdateUserPreferencesEndpoint<T>(configuration: string): Observable<T> {
     return this.http.put<T>(this.currentUserPreferencesUrl, JSON.stringify(configuration), this.requestHeaders).pipe<T>(
       catchError(error => {
         return this.handleError(error, () => this.getUpdateUserPreferencesEndpoint(configuration));
       }));
   }
-
+  //http ==> get send confirm email endpoint 
   getSendConfirmEmailEndpoint<T>(): Observable<T> {
     const endpointUrl = this.sendConfirmEmailUrl;
 
@@ -138,7 +144,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getSendConfirmEmailEndpoint());
       }));
   }
-
+  //http  ==> get confirm user account endpoint 
   getConfirmUserAccountEndpoint<T>(userId: string, confirmationCode: string): Observable<T> {
     const endpointUrl = `${this.confirmEmailUrl}?userid=${userId}&code=${confirmationCode}`;
 
@@ -147,7 +153,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getConfirmUserAccountEndpoint(userId, confirmationCode));
       }));
   }
-
+  //http ==> get recover password end point 
   getRecoverPasswordEndpoint<T>(usernameOrEmail: string): Observable<T> {
     const endpointUrl = this.recoverPasswordUrl;
 
@@ -156,7 +162,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getRecoverPasswordEndpoint(usernameOrEmail));
       }));
   }
-
+  //http ==> get reset password endpoint 
   getResetPasswordEndpoint<T>(usernameOrEmail: string, newPassword: string, resetCode: string): Observable<T> {
     const endpointUrl = this.resetPasswordUrl;
 
@@ -165,7 +171,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getResetPasswordEndpoint(usernameOrEmail, newPassword, resetCode));
       }));
   }
-
+  //http ==> get un block user endpoint
   getUnblockUserEndpoint<T>(userId: string): Observable<T> {
     const endpointUrl = `${this.unblockUserUrl}/${userId}`;
 
@@ -174,7 +180,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getUnblockUserEndpoint(userId));
       }));
   }
-
+  //http ==> get delete uesr endpoint
   getDeleteUserEndpoint<T>(userId: string): Observable<T> {
     const endpointUrl = `${this.usersUrl}/${userId}`;
 
@@ -184,10 +190,7 @@ export class AccountEndpoint extends EndpointBase {
       }));
   }
 
-
-
-
-
+//http ==> get role endpoint 
   getRoleEndpoint<T>(roleId: string): Observable<T> {
     const endpointUrl = `${this.rolesUrl}/${roleId}`;
 
@@ -197,7 +200,7 @@ export class AccountEndpoint extends EndpointBase {
       }));
   }
 
-
+  //http ==> get role by role name endpoint 
   getRoleByRoleNameEndpoint<T>(roleName: string): Observable<T> {
     const endpointUrl = `${this.roleByRoleNameUrl}/${roleName}`;
 
@@ -207,8 +210,7 @@ export class AccountEndpoint extends EndpointBase {
       }));
   }
 
-
-
+//http ==> get roles endpoint 
   getRolesEndpoint<T>(page?: number, pageSize?: number): Observable<T> {
     const endpointUrl = page && pageSize ? `${this.rolesUrl}/${page}/${pageSize}` : this.rolesUrl;
 
@@ -217,7 +219,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getRolesEndpoint(page, pageSize));
       }));
   }
-
+  //http ==> post new role endponit
   getNewRoleEndpoint<T>(roleObject: any): Observable<T> {
 
     return this.http.post<T>(this.rolesUrl, JSON.stringify(roleObject), this.requestHeaders).pipe<T>(
@@ -225,7 +227,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getNewRoleEndpoint(roleObject));
       }));
   }
-
+  //http ==> post update role endpoint 
   getUpdateRoleEndpoint<T>(roleObject: any, roleId: string): Observable<T> {
     const endpointUrl = `${this.rolesUrl}/${roleId}`;
 
@@ -234,7 +236,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getUpdateRoleEndpoint(roleObject, roleId));
       }));
   }
-
+  // http ===> method delete for delete role endpoint 
   getDeleteRoleEndpoint<T>(roleId: string): Observable<T> {
     const endpointUrl = `${this.rolesUrl}/${roleId}`;
 
@@ -244,7 +246,7 @@ export class AccountEndpoint extends EndpointBase {
       }));
   }
 
-
+  //http ==> get permission endpoint 
   getPermissionsEndpoint<T>(): Observable<T> {
 
     return this.http.get<T>(this.permissionsUrl, this.requestHeaders).pipe<T>(

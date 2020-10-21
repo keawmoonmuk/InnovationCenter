@@ -7,7 +7,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';                        //import HttpClientModule
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
@@ -25,15 +25,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppErrorHandler } from './app-error.handler';
 import { AppTitleService } from './services/app-title.service';
 import { AppTranslationService, TranslateLanguageLoader } from './services/app-translation.service';
-import { ConfigurationService } from './services/configuration.service';
-import { AlertService } from './services/alert.service';
+import { ConfigurationService } from './services/configuration.service';          // configuration service
+import { AlertService } from './services/alert.service';                          //alert service
 import { ThemeManager } from './services/theme-manager';
-import { LocalStoreManager } from './services/local-store-manager.service';
-import { OidcHelperService } from './services/oidc-helper.service';
+import { LocalStoreManager } from './services/local-store-manager.service';       //local storemanager
+import { OidcHelperService } from './services/oidc-helper.service';               //OidcHelper service
 import { NotificationService } from './services/notification.service';
-import { NotificationEndpoint } from './services/notification-endpoint.service';
-import { AccountService } from './services/account.service';
-import { AccountEndpoint } from './services/account-endpoint.service';
+import { NotificationEndpoint } from './services/notification-endpoint.service';  
+import { AccountService } from './services/account.service';                      //account service
+import { AccountEndpoint } from './services/account-endpoint.service';            //Service  account endpoint url 
 
 import { EqualValidator } from './directives/equal-validator.directive';
 import { LastElementDirective } from './directives/last-element.directive';
@@ -42,34 +42,34 @@ import { BootstrapTabDirective } from './directives/bootstrap-tab.directive';
 import { BootstrapToggleDirective } from './directives/bootstrap-toggle.directive';
 import { GroupByPipe } from './pipes/group-by.pipe';
 
-import { AppComponent } from './components/app.component';
-import { LoginComponent } from './components/login/login.component';
-import { AuthCallbackComponent } from './components/auth-callback/auth-callback.component';
+import { AppComponent } from './components/app.component';                        // import app component
+import { LoginComponent } from './components/login/login.component';              // import component login 
+import { AuthCallbackComponent } from './components/auth-callback/auth-callback.component'; 
 import { RegisterComponent } from './components/account/register/register.component';
 import { ConfirmEmailComponent } from './components/account/confirm-email/confirm-email.component';
 import { RecoverPasswordComponent } from './components/account/recover-password/recover-password.component';
 import { ResetPasswordComponent } from './components/account/reset-password/reset-password.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './components/home/home.component';                 // import component home
 import { CustomersComponent } from './components/customers/customers.component';  // import component customer
-import { ProductsComponent } from './components/products/products.component';   // import components product
-import { OrdersComponent } from './components/orders/orders.component';     // import components orders
-import { SettingsComponent } from './components/settings/settings.component';  //import components settings
-import { AboutComponent } from './components/about/about.component';    //import components about 
+import { ProductsComponent } from './components/products/products.component';     // import components product
+import { OrdersComponent } from './components/orders/orders.component';           // import components orders
+import { SettingsComponent } from './components/settings/settings.component';     // import components settings
+import { AboutComponent } from './components/about/about.component';              // import components about 
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
-import { BannerDemoComponent } from './components/controls/banner-demo.component';
-import { TodoDemoComponent } from './components/controls/todo-demo.component';
-import { StatisticsDemoComponent } from './components/controls/statistics-demo.component';
-import { NotificationsViewerComponent } from './components/controls/notifications-viewer.component';
-import { SearchBoxComponent } from './components/controls/search-box.component';
-import { UserInfoComponent } from './components/controls/user-info.component';
-import { UserPreferencesComponent } from './components/controls/user-preferences.component';
+import { BannerDemoComponent } from './components/controls/banner-demo.component';            //BannerDemo component
+import { TodoDemoComponent } from './components/controls/todo-demo.component';                // Todo Demo compponent
+import { StatisticsDemoComponent } from './components/controls/statistics-demo.component';    // StatisticsDemo
+import { NotificationsViewerComponent } from './components/controls/notifications-viewer.component';  // NotificationsView
+import { SearchBoxComponent } from './components/controls/search-box.component';              // SearchBoxm component
+import { UserInfoComponent } from './components/controls/user-info.component';                // userInfo component
+import { UserPreferencesComponent } from './components/controls/user-preferences.component';  
 import { UsersManagementComponent } from './components/controls/users-management.component';
 import { RolesManagementComponent } from './components/controls/roles-management.component';
 import { RoleEditorComponent } from './components/controls/role-editor.component';
-import { PaymentsComponent } from './components/payments/payments.component';    // import component payments
-import { PricelistComponent } from './components/pricelist/pricelist.component'; //import componet pricelist
-import { PatientsComponent } from './components/patients/patients.component';  //import component payments
+import { PaymentsComponent } from './components/payments/payments.component';                 // import component payments
+import { PricelistComponent } from './components/pricelist/pricelist.component';              // import componet pricelist
+import { PatientsComponent } from './components/patients/patients.component';                 // import component payments
 
 
 @NgModule({

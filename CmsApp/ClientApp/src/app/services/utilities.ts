@@ -117,7 +117,7 @@ export class Utilities {
 
     return responses;
   }
-
+  //get http data message 
   public static getHttpResponseMessage(data: HttpResponseBase | any): string {
     const httpMessage =
       Utilities.findHttpResponseMessage(Utilities.noNetworkMessageCaption, data) ||
@@ -167,7 +167,7 @@ export class Utilities {
       return response.error || response.message || response.statusText;
     }
   }
-
+  //No network
   public static checkNoNetwork(response: HttpResponseBase) {
     if (response instanceof HttpResponseBase) {
       return response.status === 0;
@@ -175,7 +175,7 @@ export class Utilities {
 
     return false;
   }
-
+  //Status code 403
   public static checkAccessDenied(response: HttpResponseBase) {
     if (response instanceof HttpResponseBase) {
       return response.status === 403;
@@ -183,7 +183,7 @@ export class Utilities {
 
     return false;
   }
-
+  //Status code 404
   public static checkNotFound(response: HttpResponseBase) {
     if (response instanceof HttpResponseBase) {
       return response.status === 404;
@@ -191,16 +191,24 @@ export class Utilities {
 
     return false;
   }
-
+  //check localhost   
   public static checkIsLocalHost(url: string, base?: string) {
+    console.log("file utilities.ts for func CheckIsLocalHost  url  :" + url)
+    console.log("file utilities.ts for func CheckIsLocalHost  url  :" + base)
+
     if (url) {
+
       const location = new URL(url, base);
+
+      console.log("file utilities.ts for func CheckIsLocalHost  location  :" + location)
+
       return location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+
     }
 
     return false;
   }
-
+  //get query params
   public static getQueryParamsFromString(paramString: string) {
     if (!paramString) {
       return null;
@@ -215,7 +223,7 @@ export class Utilities {
 
     return params;
   }
-
+  //for split in two
   public static splitInTwo(text: string, separator: string): { firstPart: string, secondPart: string } {
     const separatorIndex = text.indexOf(separator);
 
@@ -223,8 +231,8 @@ export class Utilities {
       return { firstPart: text, secondPart: null };
     }
 
-    const part1 = text.substr(0, separatorIndex).trim();
-    const part2 = text.substr(separatorIndex + 1).trim();
+    const part1 = text.substr(0, separatorIndex).trim();    //part 1
+    const part2 = text.substr(separatorIndex + 1).trim();   //part 2
 
     return { firstPart: part1, secondPart: part2 };
   }
@@ -338,18 +346,26 @@ export class Utilities {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
+  //*********baseUrl*****************
   public static baseUrl() {
     let base = '';
 
-    if (window.location.origin) {
+    if (window.location.origin)
+    {
+
       base = window.location.origin;
-    } else {
+      console.log("for (if ) base url : " + base);
+    }
+    else
+    {
       base = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+      console.log("for (else) base Url : " + base);
     }
 
     return base.replace(/\/$/, '');
   }
 
+  //--------print date only ------
   public static printDateOnly(date: Date) {
 
     date = new Date(date);
@@ -378,6 +394,7 @@ export class Utilities {
     return dateString;
   }
 
+  //----print time Only------
   public static printTimeOnly(date: Date) {
 
     date = new Date(date);
@@ -405,6 +422,7 @@ export class Utilities {
     return timeString;
   }
 
+  //print date data
   public static printDate(date: Date, separator = 'at') {
     return `${Utilities.printDateOnly(date)} ${separator} ${Utilities.printTimeOnly(date)}`;
   }
@@ -513,6 +531,7 @@ export class Utilities {
     return printedDays;
   }
 
+  //-----get age--------
   public static getAge(birthDate, otherDate) {
     birthDate = new Date(birthDate);
     otherDate = new Date(otherDate);
@@ -527,6 +546,7 @@ export class Utilities {
     return years;
   }
 
+  //----search array-----
   public static searchArray(searchTerm: string, caseSensitive: boolean, ...values: any[]) {
     if (!searchTerm) {
       return true;
@@ -543,6 +563,7 @@ export class Utilities {
     return data.indexOf(filter) !== -1;
   }
 
+  //------moveArrayItem--------
   public static moveArrayItem(array: any[], oldIndex, newIndex) {
 
     if (oldIndex < 0) {

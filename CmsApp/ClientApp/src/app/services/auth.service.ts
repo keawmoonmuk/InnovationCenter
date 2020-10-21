@@ -6,7 +6,7 @@ import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { LocalStoreManager } from './local-store-manager.service';  // Manage in Local Store
-import { OidcHelperService } from './oidc-helper.service';          
+import { OidcHelperService } from './oidc-helper.service';
 import { ConfigurationService } from './configuration.service';
 import { DBkeys } from './db-keys';
 import { JwtHelper } from './jwt-helper';
@@ -19,6 +19,7 @@ import { PermissionValues } from '../models/permission.model';
 
 @Injectable()
 export class AuthService {
+
   public get loginUrl() { return this.configurations.loginUrl; }      // get status login url
   public get homeUrl() { return this.configurations.homeUrl; }        // get page home url
 
@@ -40,7 +41,9 @@ export class AuthService {
   //initialize   Login start
   private initializeLoginStatus() {
     this.localStorage.getInitEvent().subscribe(() => {
+
       this.reevaluateLoginStatus();
+
     });
   }
 
@@ -154,6 +157,8 @@ export class AuthService {
   private processLoginResponse(response: LoginResponse, rememberMe?: boolean) {
     const accessToken = response.access_token;
 
+    console.log("accessToken : " + accessToken);
+
     if (accessToken == null) {
       throw new Error('accessToken cannot be null');
     }
@@ -184,21 +189,27 @@ export class AuthService {
       Array.isArray(decodedAccessToken.role) ? decodedAccessToken.role : [decodedAccessToken.role]);
     user.isEnabled = true;
 
-    //saveUserDetail  ==>
+    //*******saveUserDetail******** is paramenter => user ,permission,accessToken ,refreshToken, accessTokenExpiry, rememberMe
     this.saveUserDetails(user, permissions, accessToken, refreshToken, accessTokenExpiry, rememberMe);
 
     this.reevaluateLoginStatus(user);
+
+    console.log("user  => " + user);
 
     return user;
   }
   //save User Detail
   private saveUserDetails(user: User, permissions: PermissionValues[], accessToken: string, refreshToken: string, expiresIn: Date, rememberMe: boolean) {
+
     if (rememberMe) {
       this.localStorage.savePermanentData(accessToken, DBkeys.ACCESS_TOKEN);
       this.localStorage.savePermanentData(refreshToken, DBkeys.REFRESH_TOKEN);
       this.localStorage.savePermanentData(expiresIn, DBkeys.TOKEN_EXPIRES_IN);
       this.localStorage.savePermanentData(permissions, DBkeys.USER_PERMISSIONS);
       this.localStorage.savePermanentData(user, DBkeys.CURRENT_USER);
+      
+      //add Current patient
+  
     } else {
       this.localStorage.saveSyncedSessionData(accessToken, DBkeys.ACCESS_TOKEN);
       this.localStorage.saveSyncedSessionData(refreshToken, DBkeys.REFRESH_TOKEN);
@@ -222,9 +233,13 @@ export class AuthService {
     this.reevaluateLoginStatus();
   }
 
-  //-------------------current User-----------------
+  //-------------------ประเมิน user ใหม่-----------------
   private reevaluateLoginStatus(currentUser?: User) {
+
     const user = currentUser || this.localStorage.getDataObject<User>(DBkeys.CURRENT_USER);
+    //log user = Object {id: "2a432ac8-139b-409b-88ac-450c23704bbf", userName: "Kreangkrai", fullName: "kreangkria keaw", …}
+    console.log("user current : " + user);
+
     const isLoggedIn = user != null;
 
     if (this.previousIsLoggedInCheck !== isLoggedIn) {
@@ -253,19 +268,25 @@ export class AuthService {
     return this.loginStatus.asObservable();
   }
 
-  //get currentUser
+  //*****get currentUser*******
   get currentUser(): User {
-    const user = this.localStorage.getDataObject<User>(DBkeys.CURRENT_USER);
+    const user = this.localStorage.getDataObject<User>(DBkeys.CURRENT_USER);  //return ==> Object {id: "2a432ac8-139b-409b-88ac-450c23704bbf", userName: "Kreangkrai", fullName: "kreangkria keaw", …}
+
+    console.log("current User 1 : " + user);
+
     this.reevaluateLoginStatus(user);
+
 
     return user;
   }
 
   //--------get patient-------
   get currentPatient(): Patient {
+
     const patient = this.localStorage.getDataObject<Patient>(DBkeys.CURRENT_PATIENT);
+    console.log(patient);
     this.showvaluepatient(patient);
-    console.log(patient)
+
     return patient;
   }
 

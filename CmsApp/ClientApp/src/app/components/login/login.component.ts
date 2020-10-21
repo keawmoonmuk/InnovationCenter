@@ -17,7 +17,7 @@ import { UserLogin } from '../../models/user-login.model';    //import class mod
 export class LoginComponent implements OnInit, OnDestroy {
 
 
-  userLogin = new UserLogin();        
+  userLogin = new UserLogin();
   isLoading = false;
   isExternalLogin = false;
   formResetToggle = true;
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-   
+
     //when (checkbox rememberMe = true) = (authSevice.rememberMe)
     this.userLogin.rememberMe = this.authService.rememberMe;
 
@@ -90,7 +90,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   login() {
     this.isLoading = true;
     this.isExternalLogin = false;
-   
+
     this.alertService.startLoadingMessage('', this.gT('login.alerts.AttemptingLogin'));
 
     this.authService.loginWithPassword(this.userLogin.userName, this.userLogin.password, this.userLogin.rememberMe)
@@ -165,18 +165,20 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.authService.initLoginWithTwitter(this.userLogin.rememberMe);
   }
 
-
+  // Host สำรอง
   offerAlternateHost() {
+
+    //check Localhost origin และ check Localhost baseUrl   for parameter is url or base url 
     if (Utilities.checkIsLocalHost(location.origin) && Utilities.checkIsLocalHost(this.configurations.baseUrl)) {
-      this.alertService.showDialog(this.gT('login.alerts.DeveloperDemoApiNotice'), DialogType.prompt, (value: string) => {
-        this.configurations.baseUrl = value;
-        this.configurations.tokenUrl = value;
+        this.alertService.showDialog(this.gT('login.alerts.DeveloperDemoApiNotice'), DialogType.prompt, (value: string) => {
+        this.configurations.baseUrl = value;      //config base Url
+        this.configurations.tokenUrl = value;     //config token Url
         this.alertService.showStickyMessage(this.gT('login.alerts.ApiChanged'), this.gT('login.alerts.ApiChangedTo', { API: value }), MessageSeverity.warn);
       },
         null,
         null,
         null,
-        this.configurations.fallbackBaseUrl);
+        this.configurations.fallbackBaseUrl);     //base Url สำรอง
     }
   }
 

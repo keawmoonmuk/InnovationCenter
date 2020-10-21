@@ -16,13 +16,14 @@ export class EndpointBase {
   private taskPauser: Subject<any>;
   private isRefreshingLogin: boolean;
 
-  constructor(
-    protected http: HttpClient,
-    private authService: AuthService) {
+  //constructor ==> http , authService
+  constructor(protected http: HttpClient, private authService: AuthService)
+  { }
 
-  }
-
+  //---------request Header body----------- 
   protected get requestHeaders(): { headers: HttpHeaders | { [header: string]: string | string[]; } } {
+
+    //hearder
     const headers = new HttpHeaders({
       Authorization: 'Bearer ' + this.authService.accessToken,
       'Content-Type': 'application/json',
@@ -32,6 +33,7 @@ export class EndpointBase {
     return { headers };
   }
 
+  //--------refresh Login------------- 
   public refreshLogin() {
     return this.authService.refreshLogin().pipe(
       catchError(error => {
@@ -39,6 +41,7 @@ export class EndpointBase {
       }));
   }
 
+  //----------hanle Error--------------
   protected handleError(error, continuation: () => Observable<any>) {
     if (error.status === 401) {
       if (this.isRefreshingLogin) {

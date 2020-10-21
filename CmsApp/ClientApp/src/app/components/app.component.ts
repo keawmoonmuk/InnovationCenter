@@ -7,16 +7,15 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
 import { AlertService, AlertDialog, DialogType, AlertCommand, AlertMessage, MessageSeverity } from '../services/alert.service';
 import { NotificationService } from '../services/notification.service';
 import { AppTranslationService } from '../services/app-translation.service';
-import { AccountService } from '../services/account.service';
-import { LocalStoreManager } from '../services/local-store-manager.service';
-import { AppTitleService } from '../services/app-title.service';     // Set title app 
-import { AuthService } from '../services/auth.service';
-import { ConfigurationService } from '../services/configuration.service';
-import { Permission } from '../models/permission.model';
+import { AccountService } from '../services/account.service';                 // AcountService
+import { LocalStoreManager } from '../services/local-store-manager.service';  // LocalStoreManager
+import { AppTitleService } from '../services/app-title.service';    
+import { AuthService } from '../services/auth.service';                       // AuthService
+import { ConfigurationService } from '../services/configuration.service';     // Configuration Service
+import { Permission } from '../models/permission.model';                      // Permission 
 import { LoginComponent } from '../components/login/login.component';
 
 const alertify: any = require('../assets/scripts/alertify.js');
-
 
 @Component({
   selector: 'app-root',
@@ -52,7 +51,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
       return this.gT('app.Notifications');
     }
   }
-
+  // constructor create ==>storageManger , toastaService,toastaConfig , accountService , alerService , notifcationService , appTitleService , authService , trhalsateionService , configuration , router
   constructor(
     storageManager: LocalStoreManager,
     private toastaService: ToastaService,
@@ -76,8 +75,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.appTitleService.appName = this.appTitle;
 
-    console.log("log gT....")
-    console.log(this.gT);
+    console.log("log gT...." + this.gT)
+
   }
 
   //********login control *********
@@ -328,7 +327,8 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   //get Username in database
   get userName(): string {
-    return this.authService.currentUser ? this.authService.currentUser.userName : '';  // if authService.currentUser.jobTitle = true  
+
+    return this.authService.currentUser ? this.authService.currentUser.userName : '';  
   }
 
   //get fullname in database

@@ -141,12 +141,16 @@ export class LocalStoreManager {
     return data != null;
   }
 
+  //get Data
   public getData(key = LocalStoreManager.DBKEY_USER_DATA) {
-    this.testForInvalidKeys(key);
 
-    let data = this.sessionStorageGetItem(key);
+    this.testForInvalidKeys(key);  // ทดสอบสำหรับคีย์ที่ไม่ถูกต้อง
+
+    let data = this.sessionStorageGetItem(key); // get item session storage 
     console.log("Data ==> :" + data);
+
     if (data == null) {
+
       data = this.localStorageGetItem(key);
     }
 
@@ -155,12 +159,17 @@ export class LocalStoreManager {
 
   //****************getData Patients************************
   public getDataPatient(key = LocalStoreManager.DBKEY_USER_DATA) {
-    this.testForInvalidKeys(key);
+
+    console.log("key patient : " + key);
 
     let data = this.sessionStorageGetItem(key);
 
+    console.log("data key : " + data);
+
     if (data == null) {
+
       data = this.localStorageGetItem(key);
+
     }
 
     return data;
@@ -169,6 +178,9 @@ export class LocalStoreManager {
 
   //get data  odjcet   get global langauage
   public getDataObject<T>(key = LocalStoreManager.DBKEY_USER_DATA, isDateType = false): T {
+
+    console.log("key  :" + key);
+
     let data = this.getData(key);
 
     if (data != null) {
@@ -183,13 +195,21 @@ export class LocalStoreManager {
 
   //*************Get data object patient *******************
   public getDataObjectPatient<T>(key = LocalStoreManager.DBKEY_USER_DATA, isDateType = false): T {
+
+    console.log("key :" + key);
+
     let data = this.getDataPatient(key);
 
+    console.log("data patient : " + data);
+
     if (data != null) {
+
       if (isDateType) {
         data = new Date(data);
       }
+
       return data as T;
+
     } else {
       return null;
     }
@@ -285,7 +305,7 @@ export class LocalStoreManager {
     sessionStorage.removeItem(keyToRemove);
     this.removeFromSyncKeysHelper(keyToRemove);
   }
-
+  //ทดสอบสำหรับคีย์ที่ไม่ถูกต้อง
   private testForInvalidKeys(key: string) {
     if (!key) {
       throw new Error('key cannot be empty');

@@ -32,6 +32,9 @@ export class AccountService {
   }
 
   getUser(userId?: string) {
+
+    console.log("userid ==> " + userId);
+
     return this.accountEndpoint.getUserEndpoint<User>(userId);
   }
 

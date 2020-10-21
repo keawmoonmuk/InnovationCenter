@@ -32,7 +32,7 @@ export class ConfigurationService {
         this._globalLanguage = this.localStorage.getDataObject<string>(DBkeys.GLOBAL_LANGUAGE);  //get global language
         this.loadLocalChanges();
     }
-
+ 
     set language(value: string) {
         this._language = value;
         this.saveToLocalStore(value, DBkeys.LANGUAGE);
@@ -115,12 +115,12 @@ export class ConfigurationService {
     public static readonly defaultShowDashboardTodo: boolean = false;
     public static readonly defaultShowDashboardBanner: boolean = true;
   
-    public baseUrl = environment.baseUrl || Utilities.baseUrl();                          //base Url
-    public tokenUrl = environment.tokenUrl || environment.baseUrl || Utilities.baseUrl(); // token Url
-    public loginUrl = environment.loginUrl;                // log Url
-    public googleClientId = environment.googleClientId;   //google 
-    public facebookClientId = environment.facebookClientId; //fecebook
-    public fallbackBaseUrl = null;      //base url ทางเลือก
+    public baseUrl = environment.baseUrl || Utilities.baseUrl();                          //*******base Url********
+    public tokenUrl = environment.tokenUrl || environment.baseUrl || Utilities.baseUrl(); //*******token Url*******
+    public loginUrl = environment.loginUrl;                                               //*******log Url*********
+    public googleClientId = environment.googleClientId;                                   //*******google********** 
+    public facebookClientId = environment.facebookClientId;                               //*******fecebook********
+    public fallbackBaseUrl = null;                                                        //*******base url ทางเลือก**
     //public fallbackBaseUrl = 'https://quickapp-standard.ebenmonney.com';
     // ***End of defaults***
 
@@ -136,6 +136,7 @@ export class ConfigurationService {
 
     configurationImported$ = this.onConfigurationImported.asObservable();
 
+  // load local change
     private loadLocalChanges() {
         if (this.localStorage.exists(DBkeys.LANGUAGE)) {
             this._language = this.localStorage.getDataObject<string>(DBkeys.LANGUAGE);
@@ -172,10 +173,12 @@ export class ConfigurationService {
         }
     }
 
+  //SaveTolocalStore
     private saveToLocalStore(data: any, key: string) {
         setTimeout(() => this.localStorage.savePermanentData(data, key));
     }
 
+  //import json value
     public import(jsonValue: string) {
         this.clearLocalChanges();
 
@@ -214,6 +217,7 @@ export class ConfigurationService {
         this.onConfigurationImported.next();
     }
 
+  //export change Only
     public export(changesOnly = true): string {
         const exportValue: UserConfiguration = {
             language: changesOnly ? this._language : this.language,
@@ -228,6 +232,7 @@ export class ConfigurationService {
         return JSON.stringify(exportValue);
     }
 
+  //clear localchanges
     public clearLocalChanges() {
         this._language = null;
         this._themeId = null;
@@ -249,6 +254,7 @@ export class ConfigurationService {
         this.resetTheme();
     }
 
+  //reset Language
     private resetLanguage() {
 
         if (this._globalLanguage) {
@@ -263,7 +269,7 @@ export class ConfigurationService {
             }
         }
     }
-
+  //reset theme
     private resetTheme() {
         this.themeManager.installTheme();
         this._themeId = null;

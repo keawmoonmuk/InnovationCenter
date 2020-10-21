@@ -23,17 +23,25 @@ namespace CmsApp
         {
             var host = CreateHostBuilder(args).Build();
 
+            Console.WriteLine("host :" + host);
 
             //Seed database
             using (var scope = host.Services.CreateScope())
             {
+                //get service
                 var services = scope.ServiceProvider;
-
+                Console.WriteLine("is scope : " + scope);
+                Console.WriteLine("is services : "+ services);
+                //Conected database sucess..
                 try
                 {
+                    //get initializer  default
                     var databaseInitializer = services.GetRequiredService<IDatabaseInitializer>();
+                    Console.WriteLine("database Initializer : " + databaseInitializer);
+
                     databaseInitializer.SeedAsync().Wait();
                 }
+                //Not Coneected database 
                 catch (Exception ex)
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
@@ -45,7 +53,6 @@ namespace CmsApp
 
             host.Run();
         }
-
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
