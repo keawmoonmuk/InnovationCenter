@@ -1,0 +1,772 @@
+2020-10-22T09:14:57.6850268+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T09:14:57.7121859+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T09:14:58.5574603+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T09:14:58.5758810+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T09:14:58.5786487+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T09:15:27.9458367+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:15:28.1176785+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:15:58.1653066+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:15:58.1909173+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:16:28.2315522+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:16:28.2544066+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:16:58.2779231+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:16:58.2881122+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:17:28.3282334+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:17:28.3525121+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:17:58.3773020+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:17:58.4013759+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:18:28.4470496+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:18:28.4578676+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:18:58.4908699+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:18:58.4984356+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:19:28.5382850+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:19:28.5614241+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:19:58.5942173+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:19:58.6160615+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:20:28.6668122+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:20:28.6876969+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:20:58.7395336+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:20:58.7890868+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:21:28.8020535+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:21:28.8128017+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:21:58.8772801+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:21:58.8982624+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:22:16.1827212+07:00 80000004-0003-f900-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2020-10-22T09:22:17.7564817+07:00 8000002e-0001-f300-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryKeyEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2020-10-22T09:22:17.8262439+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token" (f7642de5)
+2020-10-22T09:22:19.1622698+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Credentials validated for username: "kreangkrai" (cb811aa7)
+2020-10-22T09:22:19.2723221+07:00 80000006-0003-f900-b63f-84710c7967bb [INF] Token request validation success, TokenRequestValidationLog { ClientId: "cmsapp_spa", ClientName: null, GrantType: "password", Scopes: "cmsapp_api email offline_access openid phone profile roles", AuthorizationCode: null, RefreshToken: null, UserName: "kreangkrai", AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("username": "kreangkrai"), ("password": "***REDACTED***"), ("client_id": "cmsapp_spa"), ("grant_type": "password"), ("scope": "openid email phone profile offline_access roles cmsapp_api")] } (3a073258)
+2020-10-22T09:22:28.9166833+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:22:28.9289333+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:22:58.9505716+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:22:58.9611958+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:23:13.0039201+07:00 80000002-0001-ef00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2020-10-22T09:23:13.0987406+07:00 80000003-0001-ef00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryKeyEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2020-10-22T09:23:28.9862442+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:23:29.0074182+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:23:59.0308629+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:23:59.0410455+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:24:25.8691070+07:00 80000025-0002-fa00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2020-10-22T09:24:26.2654849+07:00 80000006-0003-f700-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryKeyEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2020-10-22T09:24:26.3264197+07:00 80000008-0003-f700-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token" (f7642de5)
+2020-10-22T09:24:26.5763606+07:00 80000008-0003-f700-b63f-84710c7967bb [INF] Token request validation success, TokenRequestValidationLog { ClientId: "cmsapp_spa", ClientName: null, GrantType: "refresh_token", Scopes: null, AuthorizationCode: null, RefreshToken: "nbS-SlpJbY14XNo2VeLDpreYPqIaFwNa9d5rSz9wB5o", UserName: null, AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("refresh_token": "***REDACTED***"), ("client_id": "cmsapp_spa"), ("grant_type": "refresh_token")] } (3a073258)
+2020-10-22T09:24:29.0537793+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:24:29.0637279+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:24:59.0885141+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:24:59.0979724+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:25:29.1197882+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:25:29.1264939+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:25:58.0215277+07:00  [ERR]     ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+    
+    28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                                   ~~~~~~~~~~~~~
+    
+      src/app/components/controls/user-info.component.ts:18:16
+        18   templateUrl: './user-info.component.html',
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Error occurs in the template of component UserInfoComponent.
+    
+ (492cca79)
+2020-10-22T09:25:59.1439234+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:25:59.1534055+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:26:29.1870731+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:26:29.2073962+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:26:59.2234723+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:26:59.2469960+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:27:29.2676981+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:27:29.2764137+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:27:59.3243143+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:27:59.3485892+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:28:29.3669256+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:28:29.3747399+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:28:59.4139001+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:28:59.4246184+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:29:29.7435254+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:29:29.7509953+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:29:59.7722591+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:29:59.7771929+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:30:29.8078330+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:30:29.8190121+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:30:59.8511409+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:30:59.8584397+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:31:29.9007725+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:31:29.9112242+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:31:59.9414855+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:31:59.9480440+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:32:29.9837893+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:32:29.9920021+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:33:00.0485741+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:33:00.0770464+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:33:30.0928464+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:33:30.1015772+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:34:00.1364113+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:34:00.1582843+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:34:30.2095090+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:34:30.2198645+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:35:00.2400900+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:35:00.2498552+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:35:30.2693619+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:35:30.2776957+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:36:00.3022396+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:36:00.3130109+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:36:30.3520483+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:36:30.3740020+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:37:00.4021684+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:37:00.4267140+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:37:30.4546393+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:37:30.4612220+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:38:00.4845704+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:38:00.4932232+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:38:30.5034761+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:38:30.5123716+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:39:00.5354453+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:39:00.5443934+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:39:30.7687830+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:39:30.8602172+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:39:33.0775484+07:00  [ERR]     ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+    
+    28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                                   ~~~~~~~~~~~~~
+    
+      src/app/components/controls/user-info.component.ts:18:16
+        18   templateUrl: './user-info.component.html',
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Error occurs in the template of component UserInfoComponent.
+    
+ (492cca79)
+2020-10-22T09:40:01.0678636+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:40:01.0948495+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:40:31.2185668+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:40:31.2563134+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:41:01.2770246+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:41:01.2878542+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:41:07.2003750+07:00  [ERR]     ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+    
+    28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                                   ~~~~~~~~~~~~~
+    
+      src/app/components/controls/user-info.component.ts:18:16
+        18   templateUrl: './user-info.component.html',
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Error occurs in the template of component UserInfoComponent.
+    
+ (492cca79)
+2020-10-22T09:41:31.3470346+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:41:31.3608598+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:42:01.3923094+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:42:01.4173357+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:42:31.4455654+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:42:31.4550041+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:43:01.4706261+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:43:01.4789219+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:43:31.4869890+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:43:31.4965154+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:44:01.5170549+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:44:01.5245325+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:44:31.5590316+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:44:31.5678932+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:45:01.6065532+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:45:01.6315925+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:45:32.0389434+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:45:32.0469567+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:46:02.0624717+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:46:02.0706339+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:46:18.8770065+07:00  [ERR]     ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+    
+    28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                                   ~~~~~~~~~~~~~
+    
+      src/app/components/controls/user-info.component.ts:18:16
+        18   templateUrl: './user-info.component.html',
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Error occurs in the template of component UserInfoComponent.
+    
+ (492cca79)
+2020-10-22T09:46:32.0952643+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:46:32.1051182+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:47:02.1158309+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:47:02.1238967+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:47:32.1848541+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:47:32.1933873+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:48:02.2211281+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:48:02.2433988+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:48:32.2822972+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:48:32.2903806+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:49:02.3175821+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:49:02.3263683+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:49:32.3448609+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:49:32.3546009+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:50:02.3887354+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:50:02.4048579+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:50:32.4827862+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:50:32.4924612+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:51:02.5307463+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:51:02.5512174+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:51:32.5742764+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:51:32.5837295+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:52:02.6232444+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:52:02.6336956+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:52:32.6665523+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:52:32.6911673+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:53:02.7231574+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:53:02.7329025+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:53:32.7671351+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:53:32.7751096+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:54:02.7867238+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:54:02.7952547+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:54:32.8421664+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:54:32.8634299+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:55:02.8896945+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:55:02.9119873+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:55:32.9556313+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:55:32.9772937+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:56:03.0102968+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:56:03.0312662+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:56:33.0690857+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:56:33.0765915+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:57:03.0892812+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:57:03.0982486+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:57:33.1339106+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:57:33.1434780+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:58:03.1649379+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:58:03.1862392+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:58:33.2386581+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:58:33.2570501+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:59:03.2859518+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:59:03.2947459+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T09:59:33.3251193+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T09:59:33.3400347+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T10:00:03.3627701+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T10:00:03.3717134+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T10:00:33.4013722+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T10:00:33.4277855+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T10:01:03.4564208+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T10:01:03.4649574+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T10:01:33.4941829+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T10:01:33.5044066+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T10:02:03.5254569+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T10:02:03.5334910+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T10:02:33.5690139+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T10:02:33.5782284+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T10:03:03.6171005+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T10:03:03.6247692+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:04:42.5606145+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T15:04:42.5909850+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T15:04:43.3524552+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T15:04:43.3570050+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T15:04:43.3604181+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T15:05:12.8209401+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:05:12.9036330+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:05:42.9459725+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:05:42.9543971+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:06:13.0028808+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:06:13.0414198+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:06:43.0757564+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:06:43.0861524+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:07:05.1072442+07:00  [ERR] ERROR in src/app/components/patients/patients.component.html:14:23 - error TS2339: Property 'code' does not exist on type 'PatientsComponent'.
+
+14           <pre *ngIf="code"> {(result$|async)|json} </pre>
+                         ~~~~
+
+  src/app/components/patients/patients.component.ts:10:16
+    10   templateUrl: './patients.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component PatientsComponent.
+src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+
+28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                               ~~~~~~~~~~~~~
+
+  src/app/components/controls/user-info.component.ts:18:16
+    18   templateUrl: './user-info.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component UserInfoComponent.
+
+ (438dd804)
+2020-10-22T15:07:13.1159122+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:07:13.1388702+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:07:43.1580246+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:07:43.1799575+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:08:13.2195070+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:08:13.2305521+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:08:43.2788779+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:08:43.3405430+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:09:13.5308347+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:09:13.5390390+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:09:24.5825774+07:00  [ERR]     ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+    
+    28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                                   ~~~~~~~~~~~~~
+    
+      src/app/components/controls/user-info.component.ts:18:16
+        18   templateUrl: './user-info.component.html',
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Error occurs in the template of component UserInfoComponent.
+    
+ (492cca79)
+2020-10-22T15:09:43.2057115+07:00 80000006-0001-ec00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2020-10-22T15:09:43.6657932+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:09:43.8839925+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:09:45.3823295+07:00 80000008-0001-ec00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryKeyEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2020-10-22T15:09:45.4735854+07:00 8000009a-0002-fa00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token" (f7642de5)
+2020-10-22T15:09:46.7471941+07:00 8000009a-0002-fa00-b63f-84710c7967bb [INF] Credentials validated for username: "kreangkrai" (cb811aa7)
+2020-10-22T15:09:46.8238561+07:00 8000009a-0002-fa00-b63f-84710c7967bb [INF] Token request validation success, TokenRequestValidationLog { ClientId: "cmsapp_spa", ClientName: null, GrantType: "password", Scopes: "cmsapp_api email offline_access openid phone profile roles", AuthorizationCode: null, RefreshToken: null, UserName: "kreangkrai", AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("username": "kreangkrai"), ("password": "***REDACTED***"), ("client_id": "cmsapp_spa"), ("grant_type": "password"), ("scope": "openid email phone profile offline_access roles cmsapp_api")] } (3a073258)
+2020-10-22T15:10:13.9200152+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:10:13.9435764+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:10:44.3249189+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:10:44.5301665+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:10:56.6408014+07:00  [ERR]     ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+    
+    28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                                   ~~~~~~~~~~~~~
+    
+      src/app/components/controls/user-info.component.ts:18:16
+        18   templateUrl: './user-info.component.html',
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Error occurs in the template of component UserInfoComponent.
+    
+ (492cca79)
+2020-10-22T15:11:14.6361654+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:11:14.7048096+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:11:15.0699450+07:00  [ERR]     ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+    
+    28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                                   ~~~~~~~~~~~~~
+    
+      src/app/components/controls/user-info.component.ts:18:16
+        18   templateUrl: './user-info.component.html',
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Error occurs in the template of component UserInfoComponent.
+    
+ (492cca79)
+2020-10-22T15:11:44.7385578+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:11:44.9669515+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:12:15.0166910+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:12:15.0509053+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:12:45.0786354+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:12:45.0879937+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:16:01.7084899+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T15:16:01.7503048+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T15:16:02.1606819+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T15:16:02.1637165+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T15:16:02.1673355+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T15:16:31.9212197+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:16:31.9682464+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:16:44.1147578+07:00  [ERR] ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+
+28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                               ~~~~~~~~~~~~~
+
+  src/app/components/controls/user-info.component.ts:18:16
+    18   templateUrl: './user-info.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component UserInfoComponent.
+
+ (11a72248)
+2020-10-22T15:17:02.0077866+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:17:02.0319014+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:17:32.5024905+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:17:32.7160776+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:18:17.4316089+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T15:18:17.4776695+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T15:18:17.8193794+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T15:18:17.8231109+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T15:18:17.8497839+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T15:18:48.2687052+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:18:48.3729287+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:19:04.5414151+07:00  [ERR] ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+
+28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                               ~~~~~~~~~~~~~
+
+  src/app/components/controls/user-info.component.ts:18:16
+    18   templateUrl: './user-info.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component UserInfoComponent.
+
+ (11a72248)
+2020-10-22T15:19:18.4060474+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:19:18.4153303+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:19:48.4361102+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:19:48.4598080+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:20:20.7418662+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T15:20:20.7941285+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T15:20:21.1420992+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T15:20:21.1468253+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T15:20:21.1735905+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T15:20:51.0346824+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:20:51.1034738+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:20:55.7815749+07:00  [ERR] ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+
+28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                               ~~~~~~~~~~~~~
+
+  src/app/components/controls/user-info.component.ts:18:16
+    18   templateUrl: './user-info.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component UserInfoComponent.
+
+ (11a72248)
+2020-10-22T15:21:21.1540539+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:21:21.1767976+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:21:51.2075018+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:21:51.2293685+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:30:47.0594099+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T15:30:47.1049886+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T15:30:47.4705714+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T15:30:47.4803456+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T15:30:47.4980114+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T15:31:17.4100139+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:31:17.4657119+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:31:26.8902747+07:00  [ERR] ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+
+28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                               ~~~~~~~~~~~~~
+
+  src/app/components/controls/user-info.component.ts:18:16
+    18   templateUrl: './user-info.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component UserInfoComponent.
+
+ (11a72248)
+2020-10-22T15:31:47.4954811+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:31:47.5046745+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:32:17.5336860+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:32:17.5568993+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:33:17.0000688+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T15:33:17.2718279+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T15:33:18.5699355+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T15:33:18.6462673+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T15:33:18.6608518+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T15:33:47.0522706+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:33:47.0987826+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:33:59.0739127+07:00  [ERR] ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+
+28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                               ~~~~~~~~~~~~~
+
+  src/app/components/controls/user-info.component.ts:18:16
+    18   templateUrl: './user-info.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component UserInfoComponent.
+
+ (11a72248)
+2020-10-22T15:35:10.3562814+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T15:35:10.4310627+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T15:35:11.3143991+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T15:35:11.3177079+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T15:35:11.3222916+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T15:35:40.5125291+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:35:40.5385546+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:35:54.1699470+07:00  [ERR] ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+
+28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                               ~~~~~~~~~~~~~
+
+  src/app/components/controls/user-info.component.ts:18:16
+    18   templateUrl: './user-info.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component UserInfoComponent.
+
+ (11a72248)
+2020-10-22T15:36:10.5724384+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:36:10.5819978+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:36:40.6389323+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:36:40.6611952+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:36:44.7376375+07:00 80000084-0002-f600-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token" (f7642de5)
+2020-10-22T15:36:46.1099594+07:00 80000084-0002-f600-b63f-84710c7967bb [INF] Credentials validated for username: "kreangkrai" (cb811aa7)
+2020-10-22T15:36:46.2181499+07:00 80000084-0002-f600-b63f-84710c7967bb [INF] Token request validation success, TokenRequestValidationLog { ClientId: "swaggerui", ClientName: "Swagger UI", GrantType: "password", Scopes: "cmsapp_api", AuthorizationCode: null, RefreshToken: null, UserName: "kreangkrai", AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("grant_type": "password"), ("username": "kreangkrai"), ("password": "***REDACTED***"), ("client_id": "swaggerui"), ("client_secret": "***REDACTED***")] } (3a073258)
+2020-10-22T15:36:51.2565066+07:00 80000098-0002-f700-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2020-10-22T15:36:51.4946992+07:00 80000099-0002-f700-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryKeyEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2020-10-22T15:40:41.4416813+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T15:40:41.4928987+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T15:40:41.8517017+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T15:40:41.8560855+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T15:40:41.8591843+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T15:41:11.6965376+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:41:11.7451022+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:41:16.2423271+07:00  [ERR] ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+
+28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                               ~~~~~~~~~~~~~
+
+  src/app/components/controls/user-info.component.ts:18:16
+    18   templateUrl: './user-info.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component UserInfoComponent.
+
+ (11a72248)
+2020-10-22T15:44:01.2938063+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T15:44:01.3515920+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T15:44:01.7846254+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T15:44:01.8360695+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T15:44:01.8604511+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T15:44:31.5602311+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:44:31.6005753+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:44:42.7582271+07:00  [ERR] ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+
+28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                               ~~~~~~~~~~~~~
+
+  src/app/components/controls/user-info.component.ts:18:16
+    18   templateUrl: './user-info.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component UserInfoComponent.
+
+ (11a72248)
+2020-10-22T15:45:01.6405852+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:45:01.6494520+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:54:00.3320161+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T15:54:00.4687510+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T15:54:00.9297985+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T15:54:00.9330268+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T15:54:00.9474945+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T15:54:30.6548935+07:00  [INF] Removing 1 grants (62cd9308)
+2020-10-22T15:54:30.9991969+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T15:54:36.0318304+07:00  [ERR] ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+
+28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                               ~~~~~~~~~~~~~
+
+  src/app/components/controls/user-info.component.ts:18:16
+    18   templateUrl: './user-info.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component UserInfoComponent.
+
+ (11a72248)
+2020-10-22T15:55:01.0614786+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T15:55:01.0839618+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:00:16.4215132+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T16:00:16.4698567+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T16:00:17.0020231+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T16:00:17.0267476+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T16:00:17.0298369+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T16:00:46.8458956+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:00:46.9047174+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:00:58.0398420+07:00  [ERR] ERROR in src/app/components/controls/user-info.component.html:28:45 - error TS2551: Property 'JobTitle' does not exist on type 'User'. Did you mean 'jobTitle'?
+
+28         <p class="form-control-plaintext">{user.JobTitle}</p>
+                                               ~~~~~~~~~~~~~
+
+  src/app/components/controls/user-info.component.ts:18:16
+    18   templateUrl: './user-info.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component UserInfoComponent.
+
+ (11a72248)
+2020-10-22T16:01:16.9411840+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:01:16.9587387+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:01:47.0020181+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:01:47.0309884+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:05:51.7668383+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T16:05:51.8007001+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T16:05:52.2795311+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T16:05:52.2867255+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T16:05:52.2910427+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T16:06:21.8740331+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:06:21.9288565+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:06:52.0172515+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:06:52.0617300+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:07:22.1064074+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:07:22.1210420+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:07:52.1422507+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:07:52.1773662+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:08:22.2193540+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:08:22.2448881+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:16:34.4504120+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T16:16:34.5018610+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T16:16:34.9464867+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T16:16:34.9665024+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T16:16:34.9689243+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T16:17:04.9908443+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:17:05.0450738+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:17:35.0841770+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:17:35.1095134+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:18:05.1389746+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:18:05.1521462+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:18:35.1840267+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:18:35.1948207+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:23:50.9860435+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T16:23:51.0435574+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T16:23:51.5734300+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T16:23:51.6140345+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T16:23:51.6193060+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T16:24:21.3013190+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:24:21.4018735+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:24:51.4467025+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:24:51.4689380+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:25:13.8224185+07:00 80000089-0001-f200-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2020-10-22T16:25:15.6736921+07:00 80000055-0000-f700-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryKeyEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2020-10-22T16:25:15.7614580+07:00 8000001c-0002-f100-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token" (f7642de5)
+2020-10-22T16:25:16.9357000+07:00 8000001c-0002-f100-b63f-84710c7967bb [INF] Credentials validated for username: "kreangkrai" (cb811aa7)
+2020-10-22T16:25:17.0733538+07:00 8000001c-0002-f100-b63f-84710c7967bb [INF] Token request validation success, TokenRequestValidationLog { ClientId: "cmsapp_spa", ClientName: null, GrantType: "password", Scopes: "cmsapp_api email offline_access openid phone profile roles", AuthorizationCode: null, RefreshToken: null, UserName: "kreangkrai", AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("username": "kreangkrai"), ("password": "***REDACTED***"), ("client_id": "cmsapp_spa"), ("grant_type": "password"), ("scope": "openid email phone profile offline_access roles cmsapp_api")] } (3a073258)
+2020-10-22T16:25:21.5028867+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:25:21.5193520+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:25:51.5458869+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:25:51.5843644+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:26:21.6189512+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:26:21.6456238+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:30:18.2541183+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T16:30:18.3128595+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T16:30:18.7059869+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T16:30:18.7427763+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T16:30:18.7760853+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T16:30:48.5634994+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:30:48.6191550+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:31:01.8729141+07:00  [ERR] ERROR in src/app/components/patients/patients.component.html:8:10 - error TS2339: Property 'patientIDcard' does not exist on type 'any[]'.
+
+8     <p>{patient.patientIDcard}</p>
+           ~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/components/patients/patients.component.ts:10:16
+    10   templateUrl: './patients.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component PatientsComponent.
+
+ (f25dccad)
+2020-10-22T16:31:18.6875139+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:31:18.7149932+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:31:55.2821955+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T16:31:55.3359059+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T16:31:55.7171905+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T16:31:55.7370171+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T16:31:55.7401914+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T16:32:25.6580968+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:32:25.7190228+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:32:56.0414282+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:32:56.1882401+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:33:16.4371889+07:00 8000008f-0002-f600-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2020-10-22T16:33:17.7645869+07:00 8000001e-0000-f400-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryKeyEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2020-10-22T16:33:17.8802459+07:00 80000023-0001-ec00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token" (f7642de5)
+2020-10-22T16:33:19.1075672+07:00 80000023-0001-ec00-b63f-84710c7967bb [INF] Credentials validated for username: "kreangkrai" (cb811aa7)
+2020-10-22T16:33:19.1900094+07:00 80000023-0001-ec00-b63f-84710c7967bb [INF] Token request validation success, TokenRequestValidationLog { ClientId: "cmsapp_spa", ClientName: null, GrantType: "password", Scopes: "cmsapp_api email offline_access openid phone profile roles", AuthorizationCode: null, RefreshToken: null, UserName: "kreangkrai", AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("username": "kreangkrai"), ("password": "***REDACTED***"), ("client_id": "cmsapp_spa"), ("grant_type": "password"), ("scope": "openid email phone profile offline_access roles cmsapp_api")] } (3a073258)
+2020-10-22T16:33:26.2628115+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:33:26.2992803+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:33:56.3383922+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:33:56.3646451+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:34:28.1061295+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:34:28.1175419+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:36:50.4244210+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:36:50.4828398+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:37:30.3584794+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:37:30.3891379+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:38:00.6231183+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:38:00.6657467+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:39:34.5956343+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T16:39:34.6550095+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T16:39:35.0882966+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T16:39:35.1138403+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T16:39:35.1183227+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T16:40:05.1237896+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:40:05.1809929+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:40:34.5002969+07:00  [ERR] ERROR in src/app/components/patients/patients.component.html:7:18 - error TS2339: Property 'patientIDcard' does not exist on type 'any[]'.
+
+7       <h3><pre>{patient.patientIDcard}</pre></h3>
+                   ~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/components/patients/patients.component.ts:10:16
+    10   templateUrl: './patients.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component PatientsComponent.
+
+ (a9c2c7d5)
+2020-10-22T16:40:35.3436494+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:40:35.3760686+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:41:05.4175976+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:41:05.4657087+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:41:35.4900586+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:41:35.5127950+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:42:05.5622735+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:42:05.5856569+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:42:35.6277490+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:42:35.6429490+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:45:05.0391871+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T16:45:05.1043107+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T16:45:05.4574096+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T16:45:05.4628968+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T16:45:05.4659824+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T16:45:35.3341858+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:45:35.3637639+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:46:03.8008921+07:00  [ERR] ERROR in src/app/components/patients/patients.component.html:9:12 - error TS2339: Property 'patientIDcard' does not exist on type 'any[]'.
+
+9       <p>{patient.patientIDcard}</p>
+             ~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/components/patients/patients.component.ts:10:16
+    10   templateUrl: './patients.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component PatientsComponent.
+src/app/components/patients/patients.component.html:10:12 - error TS2339: Property 'patientFirstName' does not exist on type 'any[]'.
+
+10       <p>{patient.patientFirstName}</p>
+              ~~~~~~~~~~~~~~~~~~~~~~~~
+
+  src/app/components/patients/patients.component.ts:10:16
+    10   templateUrl: './patients.component.html',
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Error occurs in the template of component PatientsComponent.
+
+ (118b84a4)
+2020-10-22T16:46:05.4132420+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:46:05.4424047+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:46:35.4858756+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:46:35.5136866+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:47:05.5497932+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:47:05.5588828+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:47:35.6113567+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:47:36.1612580+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:49:22.1868957+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T16:49:22.2266754+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T16:49:22.7456954+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T16:49:22.7701126+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T16:49:22.7939235+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T16:49:52.9323522+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:49:52.9729450+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:50:23.0106778+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:50:23.0355129+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:50:53.0905500+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:50:53.1352920+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:51:23.1795621+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:51:23.1899366+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:51:53.2211028+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:51:53.2602115+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:52:23.3136294+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:52:23.3369683+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:52:53.3948819+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:52:53.4249211+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:53:23.4806856+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:53:23.4929081+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:53:53.5343867+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:53:53.5599023+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:54:23.5899199+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:54:23.6158326+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:54:53.6554133+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:54:53.6832712+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:55:51.1369028+07:00  [INF] Starting IdentityServer4 version "3.1.3.0" (8add0571)
+2020-10-22T16:55:51.2239333+07:00  [INF] Using the default authentication scheme "Identity.Application" for IdentityServer (4a54f457)
+2020-10-22T16:55:51.9836028+07:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-10-22T16:55:52.0102752+07:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-10-22T16:55:52.0155126+07:00  [INF] Content root path: "D:\CmsApp\CmsApp" (b5d60022)
+2020-10-22T16:56:21.7124842+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:56:21.7906481+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:56:51.8404959+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:56:51.8740027+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:57:21.9390665+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:57:21.9552040+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:57:51.9824201+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:57:52.0092799+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:58:22.0390455+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:58:22.0632657+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:58:52.1027559+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:58:52.1139253+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:59:22.1637023+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:59:22.1751194+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:59:52.2241316+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T16:59:52.2565388+07:00  [INF] Removing 0 device flow codes (171ba47d)
+2020-10-22T16:59:54.3426342+07:00 80000020-0003-f900-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryEndpoint" for "/.well-known/openid-configuration" (f7642de5)
+2020-10-22T16:59:55.8650365+07:00 80000062-0000-fc00-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.DiscoveryKeyEndpoint" for "/.well-known/openid-configuration/jwks" (f7642de5)
+2020-10-22T16:59:55.9564096+07:00 80000080-0001-f300-b63f-84710c7967bb [INF] Invoking IdentityServer endpoint: "IdentityServer4.Endpoints.TokenEndpoint" for "/connect/token" (f7642de5)
+2020-10-22T16:59:57.4728279+07:00 80000080-0001-f300-b63f-84710c7967bb [INF] Credentials validated for username: "kreangkrai" (cb811aa7)
+2020-10-22T16:59:57.5893608+07:00 80000080-0001-f300-b63f-84710c7967bb [INF] Token request validation success, TokenRequestValidationLog { ClientId: "cmsapp_spa", ClientName: null, GrantType: "password", Scopes: "cmsapp_api email offline_access openid phone profile roles", AuthorizationCode: null, RefreshToken: null, UserName: "kreangkrai", AuthenticationContextReferenceClasses: null, Tenant: null, IdP: null, Raw: [("username": "kreangkrai"), ("password": "***REDACTED***"), ("client_id": "cmsapp_spa"), ("grant_type": "password"), ("scope": "openid email phone profile offline_access roles cmsapp_api")] } (3a073258)
+2020-10-22T17:00:22.3186250+07:00  [INF] Removing 0 grants (62cd9308)
+2020-10-22T17:00:22.3300135+07:00  [INF] Removing 0 device flow codes (171ba47d)

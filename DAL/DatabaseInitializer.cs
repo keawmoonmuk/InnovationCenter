@@ -65,6 +65,7 @@ namespace DAL
                 if (!string.IsNullOrWhiteSpace(_defaultRoleName))
                     await EnsureRoleAsync(_defaultRoleName, "Default public role", new string[] { });
 
+                //call CreateUserAsyne
                 await CreateUserAsync("admin", "tempP@ss123", "Inbuilt Administrator", "admin@ebenmonney.com", "+1 (123) 000-0000", new string[] { adminRoleName });
                 await CreateUserAsync("user", "tempP@ss123", "Inbuilt Standard User", "user@ebenmonney.com", "+1 (123) 000-0001", new string[] { userRoleName });
 

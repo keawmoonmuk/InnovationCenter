@@ -8,7 +8,6 @@ import { AuthService } from './auth.service';
 import { EndpointBase } from './endpoint-base.service';
 import { ConfigurationService } from './configuration.service';
 
-
 @Injectable()
 export class AccountEndpoint extends EndpointBase {
 
@@ -79,7 +78,7 @@ export class AccountEndpoint extends EndpointBase {
       }));
   }
 
-  //http ==> get new user endpoint
+  //http ==> post new user endpoint
   getNewUserEndpoint<T>(userObject: any, isPublicRegistration?: boolean): Observable<T> {
     const endpointUrl = isPublicRegistration ? this.usersPublicUrl : this.usersUrl;
 
@@ -88,7 +87,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getNewUserEndpoint(userObject));
       }));
   }
-  //http ==> get update user endpoint
+  //http ==> put update user endpoint
   getUpdateUserEndpoint<T>(userObject: any, userId?: string): Observable<T> {
     const endpointUrl = userId ? `${this.usersUrl}/${userId}` : this.currentUserUrl;
 
@@ -98,8 +97,10 @@ export class AccountEndpoint extends EndpointBase {
       }));
   }
 
-  getPatchUpdateUserEndpoint<T>(patch: {}, userId?: string): Observable<T>;
-  getPatchUpdateUserEndpoint<T>(value: any, op: string, path: string, from?: any, userId?: string): Observable<T>;
+  getPatchUpdateUserEndpoint<T>(patch: {}, userId?: string): Observable<T>;   //get Pactch Update
+  getPatchUpdateUserEndpoint<T>(value: any, op: string, path: string, from?: any, userId?: string): Observable<T>;  //getPatchtUpdate
+
+  //get pactch update
   getPatchUpdateUserEndpoint<T>(valueOrPatch: any, opOrUserId?: string, path?: string, from?: any, userId?: string): Observable<T> {
     let endpointUrl: string;
     let patchDocument: {};
@@ -128,14 +129,14 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getUserPreferencesEndpoint());
       }));
   }
-  //http ==> get update user prefernces endpoint
+  //http ==> put update user prefernces endpoint
   getUpdateUserPreferencesEndpoint<T>(configuration: string): Observable<T> {
     return this.http.put<T>(this.currentUserPreferencesUrl, JSON.stringify(configuration), this.requestHeaders).pipe<T>(
       catchError(error => {
         return this.handleError(error, () => this.getUpdateUserPreferencesEndpoint(configuration));
       }));
   }
-  //http ==> get send confirm email endpoint 
+  //http ==> post send confirm email endpoint 
   getSendConfirmEmailEndpoint<T>(): Observable<T> {
     const endpointUrl = this.sendConfirmEmailUrl;
 
@@ -144,7 +145,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getSendConfirmEmailEndpoint());
       }));
   }
-  //http  ==> get confirm user account endpoint 
+  //http  ==> put confirm user account endpoint 
   getConfirmUserAccountEndpoint<T>(userId: string, confirmationCode: string): Observable<T> {
     const endpointUrl = `${this.confirmEmailUrl}?userid=${userId}&code=${confirmationCode}`;
 
@@ -153,7 +154,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getConfirmUserAccountEndpoint(userId, confirmationCode));
       }));
   }
-  //http ==> get recover password end point 
+  //http ==> post recover password end point 
   getRecoverPasswordEndpoint<T>(usernameOrEmail: string): Observable<T> {
     const endpointUrl = this.recoverPasswordUrl;
 
@@ -162,7 +163,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getRecoverPasswordEndpoint(usernameOrEmail));
       }));
   }
-  //http ==> get reset password endpoint 
+  //http ==> post reset password endpoint 
   getResetPasswordEndpoint<T>(usernameOrEmail: string, newPassword: string, resetCode: string): Observable<T> {
     const endpointUrl = this.resetPasswordUrl;
 
@@ -171,7 +172,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getResetPasswordEndpoint(usernameOrEmail, newPassword, resetCode));
       }));
   }
-  //http ==> get un block user endpoint
+  //http ==> put un block user endpoint
   getUnblockUserEndpoint<T>(userId: string): Observable<T> {
     const endpointUrl = `${this.unblockUserUrl}/${userId}`;
 
@@ -227,7 +228,7 @@ export class AccountEndpoint extends EndpointBase {
         return this.handleError(error, () => this.getNewRoleEndpoint(roleObject));
       }));
   }
-  //http ==> post update role endpoint 
+  //http ==> put update role endpoint 
   getUpdateRoleEndpoint<T>(roleObject: any, roleId: string): Observable<T> {
     const endpointUrl = `${this.rolesUrl}/${roleId}`;
 

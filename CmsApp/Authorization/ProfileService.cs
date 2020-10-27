@@ -36,15 +36,23 @@ namespace CmsApp.Authorization
             var user = await _userManager.FindByIdAsync(sub);
             var principal = await _claimsFactory.CreateAsync(user);
 
+            Console.WriteLine("sub =>"+ sub);
+            Console.WriteLine("user =>" + user);
+            Console.WriteLine("principal => " + principal);
+
             var claims = principal.Claims.ToList();
             claims = claims.Where(claim => context.RequestedClaimTypes.Contains(claim.Type)).ToList();
 
+            Console.WriteLine("Claims => "+ claims);
+            //jobTitle
             if (user.JobTitle != null)
                 claims.Add(new Claim(PropertyConstants.JobTitle, user.JobTitle));
 
+            //fullname
             if (user.FullName != null)
                 claims.Add(new Claim(PropertyConstants.FullName, user.FullName));
 
+            //configuration
             if (user.Configuration != null)
                 claims.Add(new Claim(PropertyConstants.Configuration, user.Configuration));
 
@@ -56,6 +64,9 @@ namespace CmsApp.Authorization
         {
             var sub = context.Subject.GetSubjectId();
             var user = await _userManager.FindByIdAsync(sub);
+
+            Console.WriteLine("IsActiveAsyne for sub  => " + sub);
+            Console.WriteLine("IsActiveAsyne for user => " + user);
 
             context.IsActive = (user != null) && user.IsEnabled;
         }

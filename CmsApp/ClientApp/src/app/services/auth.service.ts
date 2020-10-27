@@ -43,7 +43,7 @@ export class AuthService {
     this.localStorage.getInitEvent().subscribe(() => {
 
       this.reevaluateLoginStatus();
-
+        
     });
   }
 
@@ -178,7 +178,7 @@ export class AuthService {
     if (!this.isLoggedIn) {
       this.configurations.import(decodedAccessToken.configuration);
     }
-
+    // Class User
     const user = new User(
       decodedAccessToken.sub,
       decodedAccessToken.name,

@@ -37,14 +37,16 @@ export class SettingsComponent implements OnInit, OnDestroy {
   @ViewChild('tab', { static: true })
   tab: BootstrapTabDirective;
 
-
+  
   constructor(private router: Router, private route: ActivatedRoute, private accountService: AccountService)
   {}
 
+  // จะถูกเรียก เมื่อ component ถูกสร้างขั้นมา
   ngOnInit() {
     this.fragmentSubscription = this.route.fragment.subscribe(anchor => this.showContent(anchor));
   }
 
+  //unsubscribe  เพื่อไม่ไห้ memory เต็ม
   ngOnDestroy() {
     this.fragmentSubscription.unsubscribe();
   }

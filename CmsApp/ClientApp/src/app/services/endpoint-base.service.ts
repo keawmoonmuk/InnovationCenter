@@ -1,7 +1,3 @@
-// =============================
-// Email: info@ebenmonney.com
-// www.ebenmonney.com/templates
-// =============================
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -29,20 +25,24 @@ export class EndpointBase {
       'Content-Type': 'application/json',
       Accept: 'application/json, text/plain, */*'
     });
-
+    console.log("hearders : " + headers);
     return { headers };
   }
 
   //--------refresh Login------------- 
   public refreshLogin() {
     return this.authService.refreshLogin().pipe(
+ 
       catchError(error => {
+
         return this.handleError(error, () => this.refreshLogin());
+
       }));
   }
 
   //----------hanle Error--------------
   protected handleError(error, continuation: () => Observable<any>) {
+
     if (error.status === 401) {
       if (this.isRefreshingLogin) {
         return this.pauseTask(continuation);

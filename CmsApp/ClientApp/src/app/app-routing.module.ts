@@ -48,8 +48,7 @@ export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
         return super.parse(processedUrl);
     }
 }
-//  CanActivate สำหรับเป็นตัวกลางพิจารณาการเข้าถึง Route Path
-//routing
+//CanActivate สำหรับเป็นตัวกลางพิจารณาการเข้าถึง Route Path
 const routes: Routes = [
     
     { path: '', component: HomeComponent, canActivate: [AuthGuard], data: { title: 'Home' } },
