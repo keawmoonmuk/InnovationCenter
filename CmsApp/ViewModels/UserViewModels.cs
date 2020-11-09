@@ -18,24 +18,22 @@ namespace CmsApp.ViewModels
         public bool IsLockedOut { get; set; }
         public bool EmailConfirmed { get; set; }
 
-        [MinimumCount(1, ErrorMessage = "Roles cannot be empty")]
+        [MinimumCount(1, ErrorMessage = "Roles cannot be empty")]   // not empty
+
         public string[] Roles { get; set; }
     }
-
-
 
     public class UserEditViewModel : UserBaseViewModel
     {
-        public string CurrentPassword { get; set; }
+        public string CurrentPassword { get; set; }                 //current password
 
-        [MinLength(6, ErrorMessage = "New Password must be at least 6 characters")]
-        public string NewPassword { get; set; }
+        [MinLength(6, ErrorMessage = "New Password must be at least 6 characters")]    //password last 6 charactes
+        public string NewPassword { get; set; }                     // newpassword
 
-        [MinimumCount(1, ErrorMessage = "Roles cannot be empty")]
+        [MinimumCount(1, ErrorMessage = "Roles cannot be empty")]   //not empty
+
         public string[] Roles { get; set; }
     }
-
-
 
     public class UserPublicRegisterViewModel : UserBaseViewModel
     {
@@ -44,7 +42,7 @@ namespace CmsApp.ViewModels
             IsEnabled = true;
         }
 
-        [MinLength(6, ErrorMessage = "New Password must be at least 6 characters")]
+        [MinLength(6, ErrorMessage = "New Password must be at least 6 characters")]     //password last six charecteres
         public string NewPassword { get; set; }
     }
 
@@ -52,7 +50,7 @@ namespace CmsApp.ViewModels
 
     public class UserPasswordRecovery
     {
-        [Required(ErrorMessage = "Username or email address is required")]
+        [Required(ErrorMessage = "Username or email address is required")]      // required username or email
         public string UsernameOrEmail { get; set; }
     }
 
@@ -83,8 +81,7 @@ namespace CmsApp.ViewModels
         public string Configuration { get; set; }
     }
 
-
-
+    //User Base View Model
     public abstract class UserBaseViewModel
     {
         public string Id { get; set; }

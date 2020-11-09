@@ -102,6 +102,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
     this.authService.loginWithPassword(this.userEdit.userName, this.userEdit.newPassword, false)
       .subscribe(
+
         user => {
           setTimeout(() => {
             this.alertService.stopLoadingMessage();

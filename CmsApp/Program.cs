@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using CmsApp.Helpers;
+using System.Diagnostics;   //debug 
 
 namespace CmsApp
  {
@@ -23,21 +24,21 @@ namespace CmsApp
         {
             var host = CreateHostBuilder(args).Build();
 
-            Console.WriteLine("host :" + host);
+            Debug.WriteLine("host =>" + host);
 
             //Seed database
             using (var scope = host.Services.CreateScope())
             {
                 //get service
                 var services = scope.ServiceProvider;
-                Console.WriteLine("is scope : " + scope);
-                Console.WriteLine("is services : "+ services);
+                Debug.WriteLine("is scope => " + scope);
+                Debug.WriteLine("is services => "+ services);
                 //Conected database sucess..
                 try
                 {
                     //get initializer  default
                     var databaseInitializer = services.GetRequiredService<IDatabaseInitializer>();
-                    Console.WriteLine("database Initializer : " + databaseInitializer);
+                    Debug.WriteLine("database Initializer => " + databaseInitializer);
 
                     databaseInitializer.SeedAsync().Wait();
                 }

@@ -25,7 +25,7 @@
     <div class="form-group row">
       <label [class.col-lg-3]="isViewOnly" [class.col-lg-2]="!isViewOnly" class="col-form-label" for="jobTitle-{{uniqueId}}">{{'users.editor.JobTitle' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-lg-9]="isViewOnly" [class.col-lg-10]="!isViewOnly">
-        <p class="form-control-plaintext">{{user.userName}}</p>
+        <p class="form-control-plaintext">{{user.jobTitle}}</p>
       </div>
       <div *ngIf="isEditMode" [class.col-lg-9]="isViewOnly" [class.col-lg-10]="!isViewOnly">
         <input appAutofocus type="text" attr.id="jobTitle-{{uniqueId}}" name="jobTitle" placeholder="Enter Job Title" class="form-control" [(ngModel)]="userEdit.jobTitle" />

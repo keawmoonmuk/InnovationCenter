@@ -31,6 +31,7 @@ export class AccountService {
 
   }
 
+  //getUser
   getUser(userId?: string) {
 
     console.log("userid ==> " + userId);
@@ -38,10 +39,12 @@ export class AccountService {
     return this.accountEndpoint.getUserEndpoint<User>(userId);
   }
 
+  //getUserHasPassword
   getUserHasPassword(userId?: string) {
     return this.accountEndpoint.getUserHasPasswordEndpoint<boolean>(userId || this.currentUser.id);
   }
 
+  //getUserAndRoles
   getUserAndRoles(userId?: string) {
 
     return forkJoin([
@@ -49,11 +52,13 @@ export class AccountService {
       this.accountEndpoint.getRolesEndpoint<Role[]>()]);
   }
 
+  //getUsers page , pageSize
   getUsers(page?: number, pageSize?: number) {
 
     return this.accountEndpoint.getUsersEndpoint<User[]>(page, pageSize);
   }
 
+  //getUserAndRoles page, pageSize
   getUsersAndRoles(page?: number, pageSize?: number) {
 
     return forkJoin([
@@ -61,6 +66,7 @@ export class AccountService {
       this.accountEndpoint.getRolesEndpoint<Role[]>()]);
   }
 
+  //updateUser
   updateUser(user: UserEdit) {
     if (user.id) {
       return this.accountEndpoint.getUpdateUserEndpoint(user, user.id);
@@ -73,10 +79,12 @@ export class AccountService {
     }
   }
 
+  //new User
   newUser(user: UserEdit, isPublicRegistration?: boolean) {
     return this.accountEndpoint.getNewUserEndpoint<User>(user, isPublicRegistration);
   }
 
+  //getUserPreferences
   getUserPreferences() {
     return this.accountEndpoint.getUserPreferencesEndpoint<string>();
   }

@@ -56,7 +56,7 @@ export class AccountEndpoint extends EndpointBase {
       catchError(error => {
         return this.handleError(error, () => this.getUserByUserNameEndpoint(userName));
       }));
-  }
+  } 
 
   //http ==> get user has password endpoint
   getUserHasPasswordEndpoint<T>(userId: string): Observable<T> {

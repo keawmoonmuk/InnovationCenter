@@ -30,7 +30,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   removePrebootScreen: boolean;
   newNotificationCount = 0;
   appTitle = 'AppName';
-
+  
   stickyToasties: number[] = [];
 
   dataLoadingConsecutiveFailures = 0;
@@ -75,7 +75,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.appTitleService.appName = this.appTitle;
 
-    console.log("log gT...." + this.gT)
+    console.log("app component.ts for gt  =>" + this.gT)
 
   }
 
@@ -164,17 +164,15 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
   ngOnDestroy() {
+    console.log("app componet.ts for clear unsubscribe");
     this.unsubscribeNotifications();
   }
-
 
   private unsubscribeNotifications() {
     if (this.notificationsLoadingSubscription) {
       this.notificationsLoadingSubscription.unsubscribe();
     }
   }
-
-
 
   initNotificationsLoading() {
 
@@ -215,8 +213,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
           });
     }
   }
-
-
 
   showDialog(dialog: AlertDialog) {
 
@@ -261,7 +257,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-
   //showToast
   showToast(alert: AlertCommand) {
 
@@ -277,7 +272,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
       title: alert.message.summary,
       msg: alert.message.detail,
     };
-
 
     if (alert.operation === 'add_sticky') {
       toastOptions.timeout = 0;
@@ -316,12 +310,17 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   //logut
   logout() {
+
+    console.log("app componet.ts for authService.logout ");
     this.authService.logout();
+
+    console.log("app componet.ts for authService.redirect logout user ");
     this.authService.redirectLogoutUser();
   }
 
   //Get Year
   getYear() {
+    console.log("app.component.ts func getYear... ");
     return new Date().getUTCFullYear();
   }
 

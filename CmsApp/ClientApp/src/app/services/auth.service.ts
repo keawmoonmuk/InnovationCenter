@@ -2,20 +2,20 @@
 //import for angular 
 import { Injectable } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, config } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { LocalStoreManager } from './local-store-manager.service';  // Manage in Local Store
 import { OidcHelperService } from './oidc-helper.service';
 import { ConfigurationService } from './configuration.service';
 import { DBkeys } from './db-keys';
-import { JwtHelper } from './jwt-helper';
-import { Utilities } from './utilities';
+import { JwtHelper } from './jwt-helper';                                   //Jwt
+import { Utilities } from './utilities';                                    //Utilies
 import { AccessToken, LoginResponse } from '../models/login-response.model';
 import { User } from '../models/user.model';                                //import class User
 import { Patient } from '../models/patient.model'                           //import class patient
 
-import { PermissionValues } from '../models/permission.model';
+import { PermissionValues } from '../models/permission.model';              //Permisssin Values
 
 @Injectable()
 export class AuthService {
@@ -56,17 +56,24 @@ export class AuthService {
     this.router.navigate([page], navigationExtras);
   }
 
+  //to homepage
   gotoHomePage() {
+    console.log("auth.service.ts for gotoHomepage...");
     this.router.navigate([this.homeUrl]);
   }
 
   //Redirect LoginUser
   redirectLoginUser() {
+    console.log("auth.service.ts for redirectLoginUser...");
     const redirect = this.loginRedirectUrl && this.loginRedirectUrl !== '/' && this.loginRedirectUrl !== ConfigurationService.defaultHomeUrl ? this.loginRedirectUrl : this.homeUrl;
+    console.log("auth.service.ts func redirctLoginUser  (redirect) =>" + redirect);
     this.loginRedirectUrl = null;
 
     const urlParamsAndFragment = Utilities.splitInTwo(redirect, '#');
+    console.log("auth.service.ts func redirectLoginUser (urlParamsAndFragment) =>" + urlParamsAndFragment);
+
     const urlAndParams = Utilities.splitInTwo(urlParamsAndFragment.firstPart, '?');
+    console.log("auth.service.ts func redirectLoginUser (urlAndParams) =>" + urlAndParams);
 
     const navigationExtras: NavigationExtras = {
       fragment: urlParamsAndFragment.secondPart,
@@ -79,33 +86,54 @@ export class AuthService {
 
   // Redirect Logout User
   redirectLogoutUser() {
+    console.log("auth.service.ts func redirectLogoutUser...");
     const redirect = this.logoutRedirectUrl ? this.logoutRedirectUrl : this.loginUrl;
-    this.logoutRedirectUrl = null;
+    console.log("auth.service.ts func redirectLogoutUser (redirect) =>" + redirect);
 
+    this.logoutRedirectUrl = null;
+   
     this.router.navigate([redirect]);
 
   }
 
   redirectForLogin() {
+    console.log("auth.service.ts func redirectForLogin.....");
+
     this.loginRedirectUrl = this.router.url;
+    console.log("auth.service.ts func redirectForLogin (loginRedirectUrl) => " + this.loginRedirectUrl);
+
     this.router.navigate([this.loginUrl]);
   }
 
   reLogin() {
+    console.log("auth.service.ts func reLogin....");
     if (this.reLoginDelegate) {
+      console.log("auth.service.ts func reLogin whern recive Deleage Login ได้รับสิทธิ์ login...");
       this.reLoginDelegate();
     } else {
+      console.log("auth.service.ts func reLogin when not recive Deleage Login ไม่ได้รับสิทธิ์ login....");
+      console.log("redirect to forlogin (func redirectForLogin)...");
       this.redirectForLogin();
     }
   }
 
   refreshLogin() {
+    console.log("auth.service.ts func refreshLogin....");
     return this.oidcHelperService.refreshLogin()
       .pipe(map(resp => this.processLoginResponse(resp, this.rememberMe)));
   }
   //login username and password
   loginWithPassword(userName: string, password: string, rememberMe?: boolean) {
+
+    console.log("auth.service.ts func loginWithPassword...");
+    console.log("auth.service.ts func loginWithPassword   userName => " + userName);
+    console.log("auth.service.ts func loginWithPassword   password => " + password);
+    console.log("auth.service.ts func loginwithPassword   rememberMe  => " + rememberMe);
+
     if (this.isLoggedIn) {
+
+      console.log("auth.service.ts func loginWithPassword When isLoggedIn = true...");
+
       this.logout();
     }
 
@@ -114,7 +142,18 @@ export class AuthService {
   }
 
   loginWithExternalToken(token: string, provider: string, email?: string, password?: string) {
+
+    console.log("auth.service.ts func loginWintExternalToken.....");
+    console.log("auth.service.ts func loginWithPassword...");
+    console.log("auth.service.ts func loginWithPassword   token => " + token);
+    console.log("auth.service.ts func loginWithPassword   provider => " + provider);
+    console.log("auth.service.ts func loginwithPassword   email  => " + email);
+    console.log("auth.service.ts func loginwithPassword   password  => " + password);
+
     if (this.isLoggedIn) {
+
+      console.log("auth.service.ts func loginWithExternalToken When isLoggedIn = true...");
+
       this.logout();
     }
 
@@ -123,7 +162,14 @@ export class AuthService {
   }
 
   initLoginWithGoogle(rememberMe?: boolean) {
+
+    console.log("auth.service.ts func initLoginWithGoogle...");
+    console.log("auth.service.ts func initLoginWithGoogle  rememberMe => " + rememberMe);
+
     if (this.isLoggedIn) {
+
+      console.log("auth.service.ts func initLoginWithGoogle When isLoggedIn = true...");
+
       this.logout();
     }
 
@@ -155,13 +201,19 @@ export class AuthService {
 
   //*******************Response Login********************* 
   private processLoginResponse(response: LoginResponse, rememberMe?: boolean) {
+
     const accessToken = response.access_token;
 
-    console.log("accessToken : " + accessToken);
+    console.log("auth.service.ts func processLoginResponse  accessToken => " + accessToken);
 
     if (accessToken == null) {
+
+      console.log("auth.service.ts func processLoginResponse when accessToken == null....");
+
       throw new Error('accessToken cannot be null');
     }
+
+    console.log("auth.service.ts func processLoginResponse when accessToken != null...");
 
     rememberMe = rememberMe || this.rememberMe;
 
@@ -175,7 +227,19 @@ export class AuthService {
 
     const permissions: PermissionValues[] = Array.isArray(decodedAccessToken.permission) ? decodedAccessToken.permission : [decodedAccessToken.permission];
 
+    console.log("auth.service.ts func processLoginResponse rememberMe =>  " + rememberMe);
+    console.log("auth.service.ts func processLoginResponse refreshToken =>  " + refreshToken);
+    console.log("auth.service.ts func processLoginResponse expiresIn =>  " + expiresIn);
+    console.log("auth.service.ts func processLoginResponse tokenExpiryDate =>  " + tokenExpiryDate);
+    console.log("auth.service.ts func processLoginResponse accessTokenExpiry =>  " + accessTokenExpiry);
+    console.log("auth.service.ts func processLoginResponse jwtHelper =>  " + jwtHelper);
+    console.log("auth.service.ts func processLoginResponse decodeAccessToken =>  " + decodedAccessToken);
+    console.log("auth.service.ts func processLoginResponse token expire for set secords =>  " + tokenExpiryDate.setSeconds(tokenExpiryDate.getSeconds() + expiresIn));
+
     if (!this.isLoggedIn) {
+
+      console.log("auth.service.ts func processLoginrResponse  when isLoggedIn == null....");
+
       this.configurations.import(decodedAccessToken.configuration);
     }
     // Class User
@@ -190,6 +254,7 @@ export class AuthService {
     user.isEnabled = true;
 
     //*******saveUserDetail******** is paramenter => user ,permission,accessToken ,refreshToken, accessTokenExpiry, rememberMe
+    console.log("auth.service.ts func processLoginrResponse for saveUserDetails...." );
     this.saveUserDetails(user, permissions, accessToken, refreshToken, accessTokenExpiry, rememberMe);
 
     this.reevaluateLoginStatus(user);
@@ -201,27 +266,38 @@ export class AuthService {
   //save User Detail
   private saveUserDetails(user: User, permissions: PermissionValues[], accessToken: string, refreshToken: string, expiresIn: Date, rememberMe: boolean) {
 
+    console.log("auth.service.ts funct processLoginResponse  user => " + user);
+    console.log("auth.service.ts funct processLoginResponse  permissions => " + permissions);
+    console.log("auth.service.ts funct processLoginResponse  accessToken => " + accessToken);
+    console.log("auth.service.ts funct processLoginResponse  refreshToken => " + refreshToken);
+    console.log("auth.service.ts funct processLoginResponse  expiresIn => " + expiresIn);
+    console.log("auth.service.ts funct processLoginResponse  rememberMe => " + rememberMe);
+
     if (rememberMe) {
+      console.log("auth.service.ts func processLoginResponse when rememberMe == true ....");
+
       this.localStorage.savePermanentData(accessToken, DBkeys.ACCESS_TOKEN);
       this.localStorage.savePermanentData(refreshToken, DBkeys.REFRESH_TOKEN);
       this.localStorage.savePermanentData(expiresIn, DBkeys.TOKEN_EXPIRES_IN);
       this.localStorage.savePermanentData(permissions, DBkeys.USER_PERMISSIONS);
       this.localStorage.savePermanentData(user, DBkeys.CURRENT_USER);
-      
-      //add Current patient
-  
-    } else {
+
+    } else
+    {
+      console.log("auth.service.ts func processLoginResponse when rememberMe == false");
+
       this.localStorage.saveSyncedSessionData(accessToken, DBkeys.ACCESS_TOKEN);
       this.localStorage.saveSyncedSessionData(refreshToken, DBkeys.REFRESH_TOKEN);
       this.localStorage.saveSyncedSessionData(expiresIn, DBkeys.TOKEN_EXPIRES_IN);
       this.localStorage.saveSyncedSessionData(permissions, DBkeys.USER_PERMISSIONS);
       this.localStorage.saveSyncedSessionData(user, DBkeys.CURRENT_USER);
     }
-
+    console.log("auth.service.ts func processLoginResponse for savePermanentData save ถาวร...");
     this.localStorage.savePermanentData(rememberMe, DBkeys.REMEMBER_ME);
   }
   //----------------logout--------------------
   logout(): void {
+    console.log("auth.service.ts func logout...");
     this.localStorage.deleteData(DBkeys.ACCESS_TOKEN);
     this.localStorage.deleteData(DBkeys.REFRESH_TOKEN);
     this.localStorage.deleteData(DBkeys.TOKEN_EXPIRES_IN);
@@ -238,11 +314,14 @@ export class AuthService {
 
     const user = currentUser || this.localStorage.getDataObject<User>(DBkeys.CURRENT_USER);
     //log user = Object {id: "2a432ac8-139b-409b-88ac-450c23704bbf", userName: "Kreangkrai", fullName: "kreangkria keaw", …}
-    console.log("user current : " + user);
+    console.log("auth.service.ts func reevaluateLoginStatus   user => " + user);
 
     const isLoggedIn = user != null;
 
+    console.log("auth.service.ts func reevaluateLoginStatus when isLoggedIn for user != null");
+
     if (this.previousIsLoggedInCheck !== isLoggedIn) {
+
       setTimeout(() => {
         this.loginStatus.next(isLoggedIn);
       });
@@ -270,12 +349,12 @@ export class AuthService {
 
   //*****get currentUser*******
   get currentUser(): User {
-    const user = this.localStorage.getDataObject<User>(DBkeys.CURRENT_USER);  //return ==> Object {id: "2a432ac8-139b-409b-88ac-450c23704bbf", userName: "Kreangkrai", fullName: "kreangkria keaw", …}
+    const user = this.localStorage.getDataObject<User>(DBkeys.CURRENT_USER);
+    //return ==> Object {id: "2a432ac8-139b-409b-88ac-450c23704bbf", userName: "Kreangkrai", fullName: "kreangkria keaw", …}
 
-    console.log("current User 1 : " + user);
-
+    console.log("auth.service.ts func currentUser user => " + user);
+    console.log("auth.service.ts func currentUser for reevaluatLoginStatus");
     this.reevaluateLoginStatus(user);
-
 
     return user;
   }
@@ -292,36 +371,50 @@ export class AuthService {
 
   //get Permissions
   get userPermissions(): PermissionValues[] {
+    console.log("auth.service.ts func userPermission...");
     return this.localStorage.getDataObject<PermissionValues[]>(DBkeys.USER_PERMISSIONS) || [];
   }
 
   //get accessToken
   get accessToken(): string {
+
+    console.log("auth.service.ts func accessToken....");
+    console.log("auth.service.ts func accessToken for get accessToken  =>" + this.oidcHelperService.accessToken);
     return this.oidcHelperService.accessToken;
   }
 
   //get for ExpirryDate accessToken
   get accessTokenExpiryDate(): Date {
+
+    console.log("auth.service.ts func accessTokenExpiryDate  for get accessTokenExpiryDate => " + this.oidcHelperService.accessTokenExpiryDate);
     return this.oidcHelperService.accessTokenExpiryDate;
   }
 
   //get refreshToken
   get refreshToken(): string {
+    console.log("auth.service.ts func refreshToken for get return refreshToken" + this.oidcHelperService.refreshToken);
     return this.oidcHelperService.refreshToken;
   }
 
   //get Session Expired
   get isSessionExpired(): boolean {
+    console.log("auth.service.ts func isSessionExpired for get return isSessionExpired " + this.oidcHelperService.isSessionExpired);
     return this.oidcHelperService.isSessionExpired;
   }
 
   //get LoggendIn
   get isLoggedIn(): boolean {
+
+    console.log("auth.service.ts func isLoggedIn for currentUser != Null....");
+
     return this.currentUser != null;
   }
 
   //get rememberMe
   get rememberMe(): boolean {
+
+    console.log("auth.service.ts func rememberMe for get return rememberMe (localStorage.getDataObject)" );
+
     return this.localStorage.getDataObject<boolean>(DBkeys.REMEMBER_ME) === true;
   }
 }

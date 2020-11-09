@@ -1,13 +1,13 @@
 
 import { Component, NgZone, OnInit, ViewChild, Input } from '@angular/core';
 
-import { AlertService, MessageSeverity } from '../../services/alert.service';
+import { AlertService, MessageSeverity } from '../../services/alert.service';      //AccountService
 import { AccountService } from '../../services/account.service';
 import { Utilities } from '../../services/utilities';
-import { LocalStoreManager } from '../../services/local-store-manager.service';
+import { LocalStoreManager } from '../../services/local-store-manager.service';   //LocalStoreManger
 import { DBkeys } from '../../services/db-keys';
-import { User } from '../../models/user.model';
-import { UserEdit } from '../../models/user-edit.model';
+import { User } from '../../models/user.model';                   //User
+import { UserEdit } from '../../models/user-edit.model';         //User Edit
 import { Role } from '../../models/role.model';
 import { Permission } from '../../models/permission.model';
 //add Patient 
@@ -79,6 +79,8 @@ export class UserInfoComponent implements OnInit {
   }
     
   ngOnInit() {
+
+    //isGeneralEditor = true
     if (!this.isGeneralEditor) {
       this.loadCurrentUserData();
     }
@@ -88,15 +90,18 @@ export class UserInfoComponent implements OnInit {
   private loadCurrentUserData() {
     this.alertService.startLoadingMessage();
 
+    //load user current password status
     this.loadCurrentUserPasswordStatus();
 
-    if (this.canViewAllRoles) {
+    if (this.canViewAllRoles)
+    {
       this.accountService.getUserAndRoles().subscribe(results => this.onCurrentUserDataLoadSuccessful(results[0], results[1]), error => this.onCurrentUserDataLoadFailed(error));
-    } else {
+    } else
+    {
       this.accountService.getUser().subscribe(user => this.onCurrentUserDataLoadSuccessful(user, user.roles.map(x => new Role(x))), error => this.onCurrentUserDataLoadFailed(error));
     }
   }
-
+  //load user data successful
   private onCurrentUserDataLoadSuccessful(user: User, roles: Role[]) {
     this.alertService.stopLoadingMessage();
     this.user = user;
@@ -113,7 +118,7 @@ export class UserInfoComponent implements OnInit {
       this.alertService.showStickyMessage('Email not verified!', confirmEmailMsg, MessageSeverity.info, null, () => window[sendVerificationEmailWindowsFuncName] = null);
     }
   }
-
+  //Load user data failed
   private onCurrentUserDataLoadFailed(error: any) {
     this.alertService.stopLoadingMessage();
     this.alertService.showStickyMessage('Load Error', `Unable to retrieve user data from the server.\r\nErrors: "${Utilities.getHttpResponseMessages(error)}"`,
@@ -121,7 +126,7 @@ export class UserInfoComponent implements OnInit {
 
     this.user = new User();
   }
-
+  // load user pass status
   private loadCurrentUserPasswordStatus() {
     this.accountService.getUserHasPassword()
       .subscribe(hasPassword => {
@@ -156,18 +161,17 @@ export class UserInfoComponent implements OnInit {
     });
   }
 
-
+  //get role byname
   getRoleByName(name: string) {
     return this.allRoles.find((r) => r.name === name);
   }
 
-
-
+//show error 
   showErrorAlert(caption: string, message: string) {
     this.alertService.showMessage(caption, message, MessageSeverity.error);
   }
 
-
+  //delete password
   deletePasswordFromUser(user: UserEdit | User) {
     const userEdit = user as UserEdit;
 
@@ -195,19 +199,22 @@ export class UserInfoComponent implements OnInit {
     this.isChangePassword = false;
   }
 
-  //-------------save----------------
+  //-------------save new user----------------
   save() {
     this.isSaving = true;
     this.alertService.startLoadingMessage('Saving changes...');
 
+    //create newUser & updateUser
     if (this.isNewUser) {
+
       this.accountService.newUser(this.userEdit).subscribe(user => this.saveSuccessHelper(user), error => this.saveFailedHelper(error));
-    } else {
+    } else
+    {
       this.accountService.updateUser(this.userEdit).subscribe(response => this.saveSuccessHelper(), error => this.saveFailedHelper(error));
     }
   }
 
-
+  //save success Helper
   private saveSuccessHelper(user?: User) {
     this.testIsRoleUserCountChanged(this.user, this.userEdit);
 
@@ -247,7 +254,7 @@ export class UserInfoComponent implements OnInit {
     }
   }
 
-
+  //save faule helper
   private saveFailedHelper(error: any) {
     this.isSaving = false;
     this.alertService.stopLoadingMessage();
@@ -428,11 +435,11 @@ export class UserInfoComponent implements OnInit {
     return `verification_email_sent:${userId}`;
   }
 
-
+  //get all roles permission
   get canViewAllRoles() {
     return this.accountService.userHasPermission(Permission.viewRolesPermission);
   }
-
+  //get assignroles
   get canAssignRoles() {
     return this.accountService.userHasPermission(Permission.assignRolesPermission);
   }

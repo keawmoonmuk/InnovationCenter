@@ -14,7 +14,7 @@ import { LoginResponse } from '../models/login-response.model';
 @Injectable()
 export class OidcHelperService {
 
-  private get baseUrl() { return this.configurations.baseUrl; }    //get baseUrl
+  private get baseUrl() { return this.configurations.baseUrl; }               //get baseUrl
   private clientId = 'cmsapp_spa'
   //private clientId = 'quickapp_spa';
   private scope = 'openid email phone profile offline_access roles cmsapp_api';

@@ -10,10 +10,10 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
-    <Description>ASPNET Core 3.1 - Angular 9 startup template for Application Development</Description>
-    <Copyright>Copyright © 2019 www.ebenmonney.com</Copyright>
-    <PackageProjectUrl>https://www.ebenmonney.com/quickapp</PackageProjectUrl>
-    <Company>EBENMONNEY</Company>
+    <Description></Description>
+    <Copyright></Copyright>
+    <PackageProjectUrl></PackageProjectUrl>
+    <Company></Company>
     <Version>4.0.0</Version>
     <AssemblyName>CmsApp</AssemblyName>
     <RootNamespace>CmsApp</RootNamespace>

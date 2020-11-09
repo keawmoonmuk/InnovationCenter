@@ -1,6 +1,7 @@
 
 //UserLogin 
 export class UserLogin {
+
     constructor(userName?: string,  password?: string,  rememberMe?: boolean) {
         this.userName = userName;
         this.password = password;

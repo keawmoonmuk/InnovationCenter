@@ -32,6 +32,7 @@ using Microsoft.Extensions.Options;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;    //mysql 
 using DAL.DATA;
 using DAL.Models.Identity;
+using System.Diagnostics;   //debug
 
 namespace CmsApp
 {
@@ -50,9 +51,11 @@ namespace CmsApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
+            string connectionString = Configuration["ConnectionStrings:DefaultConnection"];     //"Server=localhost;Database=CmsApp;Uid=root;Password=mdt1234;"
             string migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;  //cmsapp
 
+            Debug.WriteLine("ConnectionString => " + connectionString);
+            Debug.WriteLine("MigrationsAssembly =>" + migrationsAssembly);
             ////***********connect Sqlserver******************
             //services.AddDbContext<ApplicationDbContext>(options =>
             //    options.UseSqlServer(connectionString, b => b.MigrationsAssembly(migrationsAssembly)));
@@ -127,7 +130,7 @@ namespace CmsApp
               });
 
             var applicationUrl = Configuration["ApplicationUrl"].TrimEnd('/');   //http://localhost:5050
-            Console.WriteLine("Application URL :" + applicationUrl);
+            Debug.WriteLine("Application URL => " + applicationUrl);
 
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
@@ -136,6 +139,10 @@ namespace CmsApp
                     options.SupportedTokens = SupportedTokens.Jwt;
                     options.RequireHttpsMetadata = false; // Note: Set to true in production
                     options.ApiName = IdentityServerConfig.ApiName;
+
+                    Debug.WriteLine("options authority  =>" + options.Authority);
+                    Debug.WriteLine("options supported tokens =>" + options.SupportedTokens);
+                    Debug.WriteLine("options api name" + options.ApiName);
                 });
 
             services.AddAuthorization(options =>

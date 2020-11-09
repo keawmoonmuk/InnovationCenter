@@ -194,7 +194,7 @@ export class Utilities {
   //check localhost   
   public static checkIsLocalHost(url: string, base?: string) {
     console.log("file utilities.ts for func CheckIsLocalHost  url  :" + url)
-    console.log("file utilities.ts for func CheckIsLocalHost  url  :" + base)
+    console.log("file utilities.ts for func CheckIsLocalHost  base url  :" + base)
 
     if (url) {
 

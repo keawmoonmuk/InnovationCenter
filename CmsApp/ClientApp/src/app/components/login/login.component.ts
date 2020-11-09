@@ -29,9 +29,8 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   gT = (key: string | Array<string>, interpolateParams?: object) => this.translationService.getTranslation(key, interpolateParams);
 
-  constructor(private alertService: AlertService, private translationService: AppTranslationService, private authService: AuthService, private configurations: ConfigurationService) {
-
-  }
+  constructor(private alertService: AlertService, private translationService: AppTranslationService, private authService: AuthService, private configurations: ConfigurationService)
+  {}
 
   ngOnInit() {
 

@@ -88,10 +88,19 @@ export class LocalStoreManager {
     this.addToSessionStorage(data, key);
   }
 
+  //save PermanentData save ถาวร
   public savePermanentData(data: any, key = LocalStoreManager.DBKEY_USER_DATA) {
+
+    console.log("local-store-manager.service.ts func savePermanentData  for testForInvalidKeys...");
+    console.log("local-store-manager.servict.ts func savePermanentData  key => " + key);
     this.testForInvalidKeys(key);
 
+    console.log("local-store-manager.service.ts func savePermanentData  for removeFromSessionStorage...");
+    console.log("local-store-manager.servict.ts func savePermanentData  key => " + key);
     this.removeFromSessionStorage(key);
+
+    console.log("local-store-manager.service.ts func savePermanentData  for localStorageSetItem...");
+    console.log("local-store-manager.servict.ts func savePermanentData  key => " + key);
     this.localStorageSetItem(key, data);
   }
 
@@ -307,7 +316,9 @@ export class LocalStoreManager {
   }
   //ทดสอบสำหรับคีย์ที่ไม่ถูกต้อง
   private testForInvalidKeys(key: string) {
+
     if (!key) {
+      console.log("local-store-manager.service.ts func testForInvalidKeys when ! key... ");
       throw new Error('key cannot be empty');
     }
 
