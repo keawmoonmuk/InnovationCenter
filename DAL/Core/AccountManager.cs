@@ -37,9 +37,6 @@ namespace DAL.Core
 
         }
 
-
-
-
         public async Task<ApplicationUser> GetUserByIdAsync(string userId)
         {
             return await _userManager.FindByIdAsync(userId);

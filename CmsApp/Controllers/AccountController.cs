@@ -22,6 +22,8 @@ namespace CmsApp.Controllers
 {
     [Authorize(AuthenticationSchemes = IdentityServerAuthenticationDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
+
+    // create  Imapper , account manager , authroaztionserver , emailserder
     public class AccountController : ControllerBase
     {
         private readonly IMapper _mapper;
@@ -44,7 +46,7 @@ namespace CmsApp.Controllers
             _logger = logger;
         }
 
-       //https://localhost:port/api/Account/user/me
+        //https://localhost:port/api/Account/user/me
         [HttpGet("users/me")]
         [ProducesResponseType(200, Type = typeof(UserViewModel))]
         public async Task<IActionResult> GetCurrentUser()
